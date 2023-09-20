@@ -1,0 +1,77 @@
+* {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1200px;
+}
+header {
+  display: flex;
+  background-color: #ff737e;
+}
+header nav ul {
+  display: flex;
+  list-style-type: none;
+  margin-top: 13px;
+}
+header nav ul li a {
+  text-decoration: none;
+  margin: 10px;
+  text-transform: uppercase;
+  color: white;
+  transition: 1s;
+  font-family: "Roboto", sans-serif;
+}
+header nav ul li a:hover {
+  color: black;
+}
+header .sign button {
+  margin-top: 5px;
+  width: 100px;
+  height: 40px;
+  border: 0;
+  border-radius: 5px;
+  color: #ff737e;
+  background-color: aliceblue;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+}
+main {
+  margin-top: 50px;
+}
+main > h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 30px;
+}
+main > .all {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+}
+main > .all .sp {
+  text-align: center;
+}
+main > .all .sp figure img {
+  transition-duration: 1s;
+}
+main > .all .sp figure img:hover {
+  width: 275px;
+  height: 260px;
+}
+main > .all .sp figcaption {
+  font-size: large;
+  font-family: "Roboto", sans-serif;
+}
+main > .all .sp p {
+  color: red;
+  font-family: "Roboto", sans-serif;
+}
+footer {
+  margin-top: 50px;
+  height: 60px;
+  font-size: 20px;
+  padding-top: 30px;
+  text-align: center;
+  background-color: whitesmoke;
+  color: black;
+}

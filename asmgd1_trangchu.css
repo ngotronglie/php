@@ -1,0 +1,100 @@
+* {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1200px;
+}
+header {
+  display: flex;
+  background-color: #ff737e;
+}
+header nav ul {
+  display: flex;
+  list-style-type: none;
+  margin-top: 13px;
+}
+header nav ul li a {
+  text-decoration: none;
+  margin: 10px;
+  text-transform: uppercase;
+  color: white;
+  transition: 1s;
+  font-family: "Roboto", sans-serif;
+}
+header nav ul li a:hover {
+  color: black;
+}
+header .nut {
+  display: flex;
+}
+header .nut input {
+  width: 200px;
+  height: 30px;
+  border-radius: 5px;
+  margin: 10px;
+  border: violet;
+  font-family: "Roboto", sans-serif;
+}
+header .nut button {
+  margin-top: 10px;
+  height: 30px;
+  width: 80px;
+  background-color: plum;
+  border: 0;
+  border-radius: 5px;
+  color: whitesmoke;
+  transition: 1s;
+  font-family: "Roboto", sans-serif;
+}
+header .nut button:hover {
+  background-color: aqua;
+  color: black;
+}
+main h2 {
+  margin: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+}
+main .main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 0px 30px 30px 30px;
+}
+main .main .product figure img {
+  transition: transform 1s;
+}
+main .main .product figure img:hover {
+  transform: rotate(10deg);
+}
+main .main .product figcaption {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+main .main1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 0px 40px 40px 40px;
+  gap: 50px;
+}
+main .main1 .product1 figure {
+  text-align: center;
+  margin: 10px;
+}
+main .main1 .product1 figcaption {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: larger;
+}
+main .main1 .product1 p {
+  text-align: justify;
+  font-family: "Roboto", sans-serif;
+}
+footer {
+  height: 60px;
+  font-size: 20px;
+  padding-top: 30px;
+  text-align: center;
+  background-color: whitesmoke;
+  color: black;
+}

@@ -1,0 +1,100 @@
+* {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1200px;
+}
+header {
+  display: flex;
+  background-color: #ff737e;
+}
+header nav ul {
+  display: flex;
+  list-style-type: none;
+  margin-top: 13px;
+}
+header nav ul li a {
+  text-decoration: none;
+  margin: 10px;
+  text-transform: uppercase;
+  color: white;
+  transition: 1s;
+  font-family: "Roboto", sans-serif;
+}
+header nav ul li a:hover {
+  color: black;
+}
+header .nut {
+  display: flex;
+}
+header .nut input {
+  width: 200px;
+  height: 30px;
+  border-radius: 5px;
+  margin: 10px;
+  border: violet;
+  font-family: "Roboto", sans-serif;
+}
+header .nut button {
+  margin-top: 10px;
+  height: 30px;
+  width: 80px;
+  background-color: plum;
+  border: 0;
+  border-radius: 5px;
+  color: whitesmoke;
+  transition: 1s;
+  font-family: "Roboto", sans-serif;
+}
+header .nut button:hover {
+  background-color: aqua;
+  color: black;
+}
+main {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+main .product {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+main .product form {
+  text-align: center;
+}
+main .product form p {
+  font-family: "Roboto", sans-serif;
+  font-size: larger;
+  color: rgb(197, 43, 43);
+  margin: 10px;
+}
+main .product label {
+  font-family: "Roboto", sans-serif;
+  color: violet;
+}
+main .product form input {
+  color: whitesmoke;
+  background-color: red;
+  font-family: "Roboto", sans-serif;
+  list-style-type: none;
+}
+main .product form .gia {
+  border: 0;
+}
+main .product form .nut {
+  width: 120px;
+  height: 40px;
+  border-radius: 5px;
+  margin-top: 10px;
+  border: 1px solid violet;
+}
+main .h2 {
+  margin: 30px;
+}
+
+footer {
+  height: 60px;
+  font-size: 20px;
+  padding-top: 30px;
+  text-align: center;
+  background-color: whitesmoke;
+  color: black;
+}

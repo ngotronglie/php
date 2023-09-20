@@ -1,0 +1,74 @@
+* {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1200px;
+}
+header {
+  display: flex;
+  background-color: #ff737e;
+}
+header nav ul {
+  display: flex;
+  list-style-type: none;
+  margin-top: 13px;
+}
+header nav ul li a {
+  text-decoration: none;
+  margin: 10px;
+  text-transform: uppercase;
+  color: white;
+  transition: 1s;
+  font-family: "Roboto", sans-serif;
+}
+header nav ul li a:hover {
+  color: black;
+}
+header .sign button {
+  margin-top: 5px;
+  width: 100px;
+  height: 40px;
+  border: 0;
+  border-radius: 5px;
+  color: #ff737e;
+  background-color: aliceblue;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+}
+form {
+  margin-top: 50px;
+  text-align: center;
+}
+form h2 {
+  margin-bottom: 30px;
+  font-family: "Roboto", sans-serif;
+}
+form p {
+  font-family: "Roboto", sans-serif;
+}
+form .a1 {
+  width: 300px;
+  height: 25px;
+  margin-bottom: 10px;
+}
+form .a2 {
+  width: 300px;
+  height: 400px;
+  margin-bottom: 10px;
+}
+form .nut {
+  width: 100px;
+  height: 30px;
+  background-color: #ff737e;
+  border-radius: 5px;
+  border: 0;
+  font-family: "Roboto", sans-serif;
+}
+footer {
+  margin-top: 50px;
+  height: 60px;
+  font-size: 20px;
+  padding-top: 30px;
+  text-align: center;
+  background-color: whitesmoke;
+  color: black;
+}
