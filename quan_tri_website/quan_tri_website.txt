@@ -1,0 +1,5 @@
+có 2 cách truy cập 1 trang web
+	qua cổng ip
+	tên miền
+
+không được trùng domain 
