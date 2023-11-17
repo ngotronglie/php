@@ -1,10 +1,10 @@
-### **scrum**
+# **scrum**
 
-# Minh bạch
+### Minh bạch
 
-# thanh tra
+### thanh tra
 
-# thích nghi
+### thích nghi
 
 <pre>
     đây là khung code
