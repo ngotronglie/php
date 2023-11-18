@@ -83,6 +83,7 @@
               }
               case 'delete_binhluan':{
                 include 'binhluan/delete_binhluan.php';
+                break;
               }
               // ------------------- hóa đơn -----------------------------------------
               case 'list_hoadon':{

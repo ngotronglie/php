@@ -10,11 +10,20 @@
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="assets/images/favicon.png"
+      href="../assets/images/favicon.png"
     />
-    <title>Matrix Template - The Ultimate Multipurpose admin template</title>
+    <title>Kaka - Nhân viên</title>
     <!-- Custom CSS -->
     <link href="../assets/libs/flot/css/float-chart.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../assets/extra-libs/multicheck/multicheck.css"
+    />
+    <link
+      href="../assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css"
+      rel="stylesheet"
+    />
     <!-- Custom CSS -->
     <link href="../assets/dist/css/style.min.css" rel="stylesheet" />
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

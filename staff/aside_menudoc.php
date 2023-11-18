@@ -94,7 +94,7 @@
               <li class="sidebar-item">
                 <a
                   class="sidebar-link waves-effect waves-dark sidebar-link"
-                  href="#"
+                  href="../index.php"
                   aria-expanded="false"
                   ><i class="fas fa-home"></i
                   ><span class="hide-menu">view user</span></a
