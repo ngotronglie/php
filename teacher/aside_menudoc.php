@@ -12,7 +12,7 @@
                   class="sidebar-link waves-effect waves-dark sidebar-link"
                   href="index.php?act=list_lophoc"
                   aria-expanded="false"
-                  ><i class="fas fa-bell"></i
+                  ><i class="fas fa-warehouse"></i
                   ><span class="hide-menu">Lớp học</span></a
                 >
               </li>
@@ -45,7 +45,7 @@
                   class="sidebar-link has-arrow waves-effect waves-dark"
                   href="javascript:void(0)"
                   aria-expanded="false"
-                  ><i class="mdi mdi-receipt"></i
+                  ><i class="fas fa-users"></i
                   ><span class="hide-menu">sinh viên</span></a
                 >
                 <ul aria-expanded="false" class="collapse first-level">
