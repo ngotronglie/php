@@ -4,9 +4,6 @@
           <!-- Sidebar navigation-->
           <nav class="sidebar-nav">
             <ul id="sidebarnav" class="p-t-30">
-            <li class="sidebar-item">
-
-
               <li class="sidebar-item">
                 <a
                   class="sidebar-link waves-effect waves-dark sidebar-link"
@@ -16,7 +13,6 @@
                   ><span class="hide-menu">Lớp học</span></a
                 >
               </li>
-
               <li class="sidebar-item">
                 <a
                   class="sidebar-link has-arrow waves-effect waves-dark"
