@@ -42,15 +42,9 @@
                             </div>
                         </div> 
                         <div class="form-group row">
-                            <label for="lname" class="col-sm-3 text-right control-label col-form-label">nhận xét</label>
-                            <div class="col-sm-9">
-                                <input type="text" min="0" max="10" class="form-control" id="lname">
-                            </div>
-                        </div> 
-                        <div class="form-group row">
                             <label for="role" class="col-sm-3 text-right control-label col-form-label">Trạng thái hoạt động</label>
                             <div class="col-sm-9">
-                                <select class="form-control" id="role" name="role">
+                                <select class="form-control" id="role" name="role" value="đang hoạt động">
                                     <option value="0">Đi học</option>
                                     <option value="1">Bỏ học</option>
                                     

@@ -1,5 +1,4 @@
 
-
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
@@ -17,7 +16,6 @@
                                     <th scope="col">khóa học</th>
                                     <th scope="col">lớp học</th>
                                     <th scope="col">điểm</th>
-                                    <th scope="col">nhận xét</th>
                                     <th scope="col">học lực</th>
                                     <th scope="col">trạng thái hoạt động</th>
                                     <th scope="col">action</th>
@@ -31,8 +29,7 @@
                                     <td>0376278382</td>
                                     <td>c# cho người mới bắt đầu</td>
                                     <td>F304</td>
-                                    <td>9.5</td>
-                                    <td>rất tiến bộ trong học tập</td>
+                                    <td>9,5</td>
                                     <td>xuất sắc</td>
                                     <td><span style="color:#fff !important" class=" badge bg-success">đi học</span></td>
                                     <td>
@@ -46,8 +43,7 @@
                                     <td>0376278382</td>
                                     <td>c# cho người mới bắt đầu</td>
                                     <td>F304</td>
-                                    <td>9.5</td>
-                                    <td>rất tiến bộ trong học tập</td>
+                                    <td>9,5</td>
                                     <td>xuất sắc</td>
                                     <td><span style="color:#fff !important" class=" badge bg-success">đi học</span></td>
                                     <td>
@@ -61,8 +57,7 @@
                                     <td>0376278382</td>
                                     <td>c# cho người mới bắt đầu</td>
                                     <td>F304</td>
-                                    <td>9.5</td>
-                                    <td>rất tiến bộ trong học tập</td>
+                                    <td>9,5</td>
                                     <td>xuất sắc</td>
                                     <td><span style="color:#fff !important" class=" badge bg-success">đi học</span></td>
                                     <td>
@@ -76,8 +71,7 @@
                                     <td>0376278382</td>
                                     <td>c# cho người mới bắt đầu</td>
                                     <td>F304</td>
-                                    <td>9.5</td>
-                                    <td>rất tiến bộ trong học tập</td>
+                                    <td>9,5</td>
                                     <td>xuất sắc</td>
                                     <td><span style="color:#fff !important" class=" badge bg-success">đi học</span></td>
                                     <td>
@@ -91,8 +85,7 @@
                                     <td>0376278382</td>
                                     <td>c# cho người mới bắt đầu</td>
                                     <td>F304</td>
-                                    <td>9.5</td>
-                                    <td>rất tiến bộ trong học tập</td>
+                                    <td>9,5</td>
                                     <td>xuất sắc</td>
                                     <td><span style="color:#fff !important" class=" badge bg-success">đi học</span></td>
                                     <td>
@@ -120,8 +113,7 @@
                                     <td>0376278382</td>
                                     <td>c# cho người mới bắt đầu</td>
                                     <td>F304</td>
-                                    <td>9.5</td>
-                                    <td>rất tiến bộ trong học tập</td>
+                                    <td>9,5</td>
                                     <td>xuất sắc</td>
                                     <td><span style="color:#fff !important" class=" badge bg-success">đi học</span></td>
                                     <td>
@@ -135,8 +127,7 @@
                                     <td>0376278382</td>
                                     <td>c# cho người mới bắt đầu</td>
                                     <td>F304</td>
-                                    <td>9.5</td>
-                                    <td>rất tiến bộ trong học tập</td>
+                                    <td>9,5</td>
                                     <td>xuất sắc</td>
                                     <td><span style="color:#fff !important" class=" badge bg-success">đi học</span></td>
                                     <td>
@@ -150,8 +141,7 @@
                                     <td>0376278382</td>
                                     <td>c# cho người mới bắt đầu</td>
                                     <td>F304</td>
-                                    <td>9.5</td>
-                                    <td>rất tiến bộ trong học tập</td>
+                                    <td>9,5</td>
                                     <td>xuất sắc</td>
                                     <td><span style="color:#fff !important" class=" badge bg-success">đi học</span></td>
                                     <td>

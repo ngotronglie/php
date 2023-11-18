@@ -4,6 +4,7 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Danh sách sinh viên</h5>
+                    <a href="index.php?act=add_giangvien" class="btn btn-success">Thêm giảng viên</a>
                     <div class="table-responsive">
                         <table id="zero_config" class="table table-striped table-bordered">
                             <thead>
@@ -29,6 +30,7 @@
                                     <td>rấc là xênh gái</td>
                                     <td>
                                         <a style="margin-right:5px" href="index.php?act=update_giangvien" class="btn btn-warning">Sửa</a>
+                                        <button class="btn btn-danger">xóa</button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -41,6 +43,7 @@
                                     <td>rấc là xênh gái</td>
                                     <td>
                                         <a style="margin-right:5px" href="index.php?act=update_giangvien" class="btn btn-warning">Sửa</a>
+                                        <button class="btn btn-danger">xóa</button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -53,6 +56,7 @@
                                     <td>rấc là xênh gái</td>
                                     <td>
                                         <a style="margin-right:5px" href="index.php?act=update_giangvien" class="btn btn-warning">Sửa</a>
+                                        <button class="btn btn-danger">xóa</button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -65,6 +69,7 @@
                                     <td>rấc là xênh gái</td>
                                     <td>
                                         <a style="margin-right:5px" href="index.php?act=update_giangvien" class="btn btn-warning">Sửa</a>
+                                        <button class="btn btn-danger">xóa</button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -77,6 +82,7 @@
                                     <td>rấc là xênh gái</td>
                                     <td>
                                         <a style="margin-right:5px" href="index.php?act=update_giangvien" class="btn btn-warning">Sửa</a>
+                                        <button class="btn btn-danger">xóa</button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -89,6 +95,7 @@
                                     <td>rấc là xênh gái</td>
                                     <td>
                                         <a style="margin-right:5px" href="index.php?act=update_giangvien" class="btn btn-warning">Sửa</a>
+                                        <button class="btn btn-danger">xóa</button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -101,6 +108,7 @@
                                     <td>rấc là xênh gái</td>
                                     <td>
                                         <a style="margin-right:5px" href="index.php?act=update_giangvien" class="btn btn-warning">Sửa</a>
+                                        <button class="btn btn-danger">xóa</button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -113,6 +121,7 @@
                                     <td>rấc là xênh gái</td>
                                     <td>
                                         <a style="margin-right:5px" href="index.php?act=update_giangvien" class="btn btn-warning">Sửa</a>
+                                        <button class="btn btn-danger">xóa</button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -125,6 +134,7 @@
                                     <td>rấc là xênh gái</td>
                                     <td>
                                         <a style="margin-right:5px" href="index.php?act=update_giangvien" class="btn btn-warning">Sửa</a>
+                                        <button class="btn btn-danger">xóa</button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -137,6 +147,7 @@
                                     <td>rấc là xênh gái</td>
                                     <td>
                                         <a style="margin-right:5px" href="index.php?act=update_giangvien" class="btn btn-warning">Sửa</a>
+                                        <button class="btn btn-danger">xóa</button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -149,6 +160,7 @@
                                     <td>rấc là xênh gái</td>
                                     <td>
                                         <a style="margin-right:5px" href="index.php?act=update_giangvien" class="btn btn-warning">Sửa</a>
+                                        <button class="btn btn-danger">xóa</button>
                                     </td>
                                 </tr>
 
