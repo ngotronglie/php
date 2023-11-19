@@ -107,6 +107,7 @@
                                     <td>c# cho người mới bắt đầu</td>
                                     <td>F304</td>
                                     <td>0</td>
+                                    <td>không biết bị sao</td>
                                     <td>kém</td>
                                     <td><span style="color:#fff !important" class=" badge bg-success">đi học</span></td>
                                     <td>
@@ -166,6 +167,7 @@
                                     <td>c# cho người mới bắt đầu</td>
                                     <td>F304</td>
                                     <td>2,5</td>
+                                    <td>không biết thế nào</td>
                                     <td>yếu</td>
                                     <td><span style="color:#fff !important" class=" badge bg-danger">bỏ học</span></td>
                                     <td>
@@ -180,6 +182,7 @@
                                     <td>c# cho người mới bắt đầu</td>
                                     <td>F304</td>
                                     <td>0</td>
+                                    <td>chả biết sao nữa</td>
                                     <td>xuất sắc</td>
                                     <td><span style="color:#fff !important" class=" badge bg-success">đi học</span></td>
                                     <td>
@@ -196,6 +199,7 @@
                                     <th>khóa học</th>
                                     <th>lớp học</th>
                                     <th>điểm</th>
+                                    <th>nhận xét</th>
                                     <th>học lực</th>
                                     <th>trạng thái hoạt động</th>
                                     <th>action</th>

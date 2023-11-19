@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-    <?php include 'head.php'?>
+    <?php include 'view/head.php'?>
 
   <body>
     <div class="preloader">
@@ -11,8 +11,8 @@
     </div>
     
     <div id="main-wrapper">
-    <?php include 'header.php'?>
-    <?php include 'aside_menudoc.php'?>
+    <?php include 'view/header.php'?>
+    <?php include 'view/aside_menudoc.php'?>
     <div class="page-wrapper">
         <?php 
           if(isset($_GET['act']) && $_GET['act']!= ""){
@@ -53,17 +53,17 @@
               default:
               //  include 'footer.php';
               
-                include 'script.php';
+                include 'view/script.php';
                 break;
             }
           }else{
-            include 'thongke.php';
+            include 'view/thongke.php';
           }
         
         ?>
         
-        <?php include 'footer.php';?>
+        <?php include 'view/footer.php';?>
     </div>
-    <?php include 'script.php'?>
+    <?php include 'view/script.php'?>
   </body>
 </html>
