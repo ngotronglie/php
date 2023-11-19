@@ -11,6 +11,7 @@
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">Tên khóa học</th>
+                                    <th scope="col">Danh mục</th>
                                     <th scope="col">ảnh</th>
                                     <th scope="col">nội dung khóa học</th>
                                     <th scope="col">giá khóa học</th>
@@ -23,6 +24,7 @@
                                 <tr>
                                     <th scope="row">1</th>
                                     <td scope="col">Tên khóa học</td>
+                                    <td scope="col">Công nghệ thông tin</td>
                                     <td scope="col">ảnh</td>
                                     <td scope="col">nội dung khóa học</td>
                                     <td scope="col">giá khóa học</td>
@@ -36,6 +38,7 @@
                                 <tr>
                                     <th scope="row">1</th>
                                     <td scope="col">Tên khóa học</td>
+                                    <td scope="col">Công nghệ thông tin</td>
                                     <td scope="col">ảnh</td>
                                     <td scope="col">nội dung khóa học</td>
                                     <td scope="col">giá khóa học</td>
@@ -49,6 +52,7 @@
                                 <tr>
                                     <th scope="row">1</th>
                                     <td scope="col">Tên khóa học</td>
+                                    <td scope="col">Công nghệ thông tin</td>
                                     <td scope="col">ảnh</td>
                                     <td scope="col">nội dung khóa học</td>
                                     <td scope="col">giá khóa học</td>
@@ -62,6 +66,7 @@
                                 <tr>
                                     <th scope="row">1</th>
                                     <td scope="col">Tên khóa học</td>
+                                    <td scope="col">Công nghệ thông tin</td>
                                     <td scope="col">ảnh</td>
                                     <td scope="col">nội dung khóa học</td>
                                     <td scope="col">giá khóa học</td>
@@ -75,6 +80,7 @@
                                 <tr>
                                     <th scope="row">1</th>
                                     <td scope="col">Tên khóa học</td>
+                                    <td scope="col">Công nghệ thông tin</td>
                                     <td scope="col">ảnh</td>
                                     <td scope="col">nội dung khóa học</td>
                                     <td scope="col">giá khóa học</td>
@@ -88,6 +94,7 @@
                                 <tr>
                                     <th scope="row">1</th>
                                     <td scope="col">Tên khóa học</td>
+                                    <td scope="col">Công nghệ thông tin</td>
                                     <td scope="col">ảnh</td>
                                     <td scope="col">nội dung khóa học</td>
                                     <td scope="col">giá khóa học</td>
@@ -101,6 +108,7 @@
                                 <tr>
                                     <th scope="row">1</th>
                                     <td scope="col">Tên khóa học</td>
+                                    <td scope="col">Công nghệ thông tin</td>
                                     <td scope="col">ảnh</td>
                                     <td scope="col">nội dung khóa học</td>
                                     <td scope="col">giá khóa học</td>
@@ -114,6 +122,7 @@
                                 <tr>
                                     <th scope="row">1</th>
                                     <td scope="col">Tên khóa học</td>
+                                    <td scope="col">Công nghệ thông tin</td>
                                     <td scope="col">ảnh</td>
                                     <td scope="col">nội dung khóa học</td>
                                     <td scope="col">giá khóa học</td>
@@ -127,6 +136,7 @@
                                 <tr>
                                     <th scope="row">1</th>
                                     <td scope="col">Tên khóa học</td>
+                                    <td scope="col">Công nghệ thông tin</td>
                                     <td scope="col">ảnh</td>
                                     <td scope="col">nội dung khóa học</td>
                                     <td scope="col">giá khóa học</td>
@@ -140,6 +150,7 @@
                                 <tr>
                                     <th scope="row">1</th>
                                     <td scope="col">Tên khóa học</td>
+                                    <td scope="col">Công nghệ thông tin</td>
                                     <td scope="col">ảnh</td>
                                     <td scope="col">nội dung khóa học</td>
                                     <td scope="col">giá khóa học</td>
@@ -153,6 +164,7 @@
                                 <tr>
                                     <th scope="row">1</th>
                                     <td scope="col">Tên khóa học</td>
+                                    <td scope="col">Công nghệ thông tin</td>
                                     <td scope="col">ảnh</td>
                                     <td scope="col">nội dung khóa học</td>
                                     <td scope="col">giá khóa học</td>
@@ -166,6 +178,7 @@
                                 <tr>
                                     <th scope="row">1</th>
                                     <td scope="col">Tên khóa học</td>
+                                    <td scope="col">Công nghệ thông tin</td>
                                     <td scope="col">ảnh</td>
                                     <td scope="col">nội dung khóa học</td>
                                     <td scope="col">giá khóa học</td>
@@ -179,6 +192,7 @@
                                 <tr>
                                     <th scope="row">1</th>
                                     <td scope="col">Tên khóa học</td>
+                                    <td scope="col">Công nghệ thông tin</td>
                                     <td scope="col">ảnh</td>
                                     <td scope="col">nội dung khóa học</td>
                                     <td scope="col">giá khóa học</td>
@@ -194,6 +208,7 @@
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">Tên khóa học</th>
+                                    <th scope="col">danh mục</th>
                                     <th scope="col">ảnh</th>
                                     <th scope="col">nội dung khóa học</th>
                                     <th scope="col">giá khóa học</th>

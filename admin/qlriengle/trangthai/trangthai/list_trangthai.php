@@ -6,8 +6,8 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title m-b-0 mb-3">Danh sách đánh giá</h5>
-                        <a style="margin-right:5px" href="index.php?act=add_danhgia" class="btn btn-success">Thêm</a>
+                        <h5 class="card-title m-b-0 mb-3">Danh sách trạng thái </h5>
+                        <a style="margin-right:5px" href="index.php?act=add_danhmuc_trangthai" class="btn btn-success">Thêm</a>
                     </div>
                     
                     <table class="table">
@@ -20,8 +20,9 @@
                             <tbody>
                                 <tr>
                                     <th scope="row">1</th>
-                                    <td>Tốt</td>
+                                    <td>đang hoạt động</td>
                                     <td>
+                                        <a href="index.php?act=update_danhmuc_trangthai" class="btn btn-warning">sửa</a>
                                         <button class="btn btn-danger" data-bs-id="" data-bs-toggle="modal"
                                             data-bs-target="#modalDelete">
                                             Xóa
@@ -30,8 +31,9 @@
                                 </tr>
                                 <tr>
                                     <th scope="row">2</th>
-                                    <td>khá</td>
+                                    <td>dừng hoạt động </td>
                                     <td>
+                                        <a href="index.php?act=update_danhmuc_trangthai" class="btn btn-warning">sửa</a>
                                         <button class="btn btn-danger" data-bs-id="" data-bs-toggle="modal"
                                             data-bs-target="#modalDelete">
                                             Xóa
@@ -40,8 +42,9 @@
                                 </tr>
                                 <tr>
                                     <th scope="row">3</th>
-                                    <td>trung bình</td>
+                                    <td>sắp hoạt động</td>
                                     <td>
+                                        <a href="index.php?act=update_danhmuc_trangthai" class="btn btn-warning">sửa</a>
                                         <button class="btn btn-danger" data-bs-id="" data-bs-toggle="modal"
                                             data-bs-target="#modalDelete">
                                             Xóa

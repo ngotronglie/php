@@ -30,9 +30,13 @@
                                     <td>sale ngày 11 tháng 11</td>
                                     <td>
                                         <a style="margin-right:5px" href="#" class="btn btn-warning">Sửa</a>
-                                        <button class="btn btn-danger" data-bs-id="<?php echo $value['id']; ?>" data-bs-toggle="modal"
-                                            data-bs-target="#modalDelete">
-                                            Xóa
+                                        <button
+                                            type="button"
+                                            class="btn btn-danger margin-5 text-white"
+                                            data-toggle="modal"
+                                            data-target="#Modal2"
+                                        >
+                                            xóa
                                         </button>
                                     </td>
                                 </tr>
@@ -43,9 +47,13 @@
                                     <td>sale ngày lễ lớn</td>
                                     <td>
                                         <a style="margin-right:5px" href="#" class="btn btn-warning">Sửa</a>
-                                        <button class="btn btn-danger" data-bs-id="<?php echo $value['id']; ?>" data-bs-toggle="modal"
-                                            data-bs-target="#modalDelete">
-                                            Xóa
+                                        <button
+                                            type="button"
+                                            class="btn btn-danger margin-5 text-white"
+                                            data-toggle="modal"
+                                            data-target="#Modal2"
+                                        >
+                                            xóa
                                         </button>
                                     </td>
                                 </tr>
@@ -55,10 +63,14 @@
                                     <td>HIHI</td>
                                     <td>sale ngày bình thường</td>
                                     <td>
-                                        <a style="margin-right:5px" href="index.php?act=update_thongbao" class="btn btn-warning">Sửa</a>
-                                        <button class="btn btn-danger" data-bs-id="<?php echo $value['id']; ?>" data-bs-toggle="modal"
-                                            data-bs-target="#modalDelete">
-                                            Xóa
+                                        <a style="margin-right:5px" href="#" class="btn btn-warning">Sửa</a>
+                                        <button
+                                            type="button"
+                                            class="btn btn-danger margin-5 text-white"
+                                            data-toggle="modal"
+                                            data-target="#Modal2"
+                                        >
+                                            xóa
                                         </button>
                                     </td>
                                 </tr>
@@ -99,3 +111,44 @@
         document.getElementById("btn-delete").setAttribute("href", link)
     })
 </script>
+<div
+    class="modal fade"
+    id="Modal2"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+    >
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+            tôi đang ở đây
+            </h5>
+            <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+            >
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+        bạn có chắc xóa không ? 
+        </div>
+        <div class="modal-footer">
+            <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+                >
+                không
+            </button>
+            <button type="button" class="btn btn-danger">
+                xóa
+            </button>
+        </div>
+    </div>
+    </div>
+</div>

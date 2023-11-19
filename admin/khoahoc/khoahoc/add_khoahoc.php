@@ -12,6 +12,16 @@
                             </div>
                         </div>
                         <div class="form-group row">
+                            <label for="role" class="col-sm-3 text-right control-label col-form-label">Danh mục</label>
+                            <div class="col-sm-9">
+                                <select class="form-control" id="role" name="role" value="đang hoạt động">
+                                    <option value="2">Công nghệ thông tin</option>
+                                    <option value="1">marketting</option>
+                                    <option value="0">Thiết kế đồ họa</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
                             <label for="fname" class="col-sm-3 text-right control-label col-form-label">ảnh</label>
                             <div class="col-sm-9">
                                 <input type="file" class="form-control" id="fname">

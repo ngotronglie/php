@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-    <?php include 'head.php'?>
+    <?php include 'view/head.php'?>
 
   <body>
     <div class="preloader">
@@ -11,8 +11,8 @@
     </div>
     
     <div id="main-wrapper">
-    <?php include 'header.php'?>
-    <?php include 'aside_menudoc.php'?>
+    <?php include 'view/header.php'?>
+    <?php include 'view/aside_menudoc.php'?>
     <div class="page-wrapper">
         <?php 
           if(isset($_GET['act']) && $_GET['act']!= ""){
@@ -101,41 +101,41 @@
                 include 'hoadon/list_hoadon.php';
                 break;
               }
-              // ------------------------ lop hoc ---------------------------------
+              // ------------------------ lop hoc < thời gian >---------------------------------
               case 'list_lophoc':{
-                include 'lophoc/qllop/list_lophoc.php';
+                include 'lophoc/lophoc/list_thoigian.php';
                 break;
               }
 
               case 'add_lophoc':{
-                include 'lophoc/qllop/add_lophoc.php';
+                include 'lophoc/lophoc/add_thoigian.php';
                 break;
               }
 
               case 'update_lophoc':{
-                include 'lophoc/qllop/update_lophoc.php';
+                include 'lophoc/lophoc/update_thoigian.php';
                 break;
               }
               case 'delete_lophoc':{
-                include 'lophoc/qllop/delete_lophoc.php';
+                include 'lophoc/lophoc/delete_thoigian.php';
                 break;
               }
-              // --------------------------thời gian lớp---------------
+              // --------------------------phòng học lớp---------------
               case 'list_thoigian':{
-                include 'lophoc/sapxep/list_thoigian.php';
+                include 'lophoc/phonghoc/list_lophoc.php';
                 break;
               }
 
               case 'add_thoigian':{
-                include 'lophoc/sapxep/add_thoigian.php';
+                include 'lophoc/phonghoc/add_lophoc.php';
                 break;
               }
               case 'update_thoigian':{
-                include 'lophoc/sapxep/update_thoigian.php';
+                include 'lophoc/phonghoc/update_lophoc.php';
                 break;
               }
               case 'add_thoigian':{
-                include 'lophoc/sapxep/delete_thoigian.php';
+                include 'lophoc/phonghoc/delete_lophoc.php';
                 break;
               }
 //            ------------------------------- feedback ---------------------------------
@@ -143,7 +143,23 @@
                 include 'qlriengle/feedback/list_feedback.php';
                 break;
               }
-
+              case 'add_feedback':{
+                include 'qlriengle/feedback/add_feedback.php';
+                break;
+              }
+              // ------------------------------- question feedback ---------------------------------
+              case 'add_question_feedback':{
+                include 'qlriengle/feedback/question/add_question_feedback.php';
+                break;
+              }
+              case 'list_question_feedback':{
+                include 'qlriengle/feedback/question/list_question_feedback.php';
+                break;
+              }
+              case 'delete_question_feedback':{
+                include 'qlriengle/feedback/question/delete_question_feedback.php';
+                break;
+              }
               //  -------------------- banner marketing ----------------------------
               case 'list_sinhvien':{
                 include 'qlsinhvien/list_sinhvien.php';
@@ -155,53 +171,70 @@
               }
               // ---------------khoa hoc------------------------
               case 'list_khoahoc':{
-                include 'khoahoc/list_khoahoc.php';
+                include 'khoahoc/khoahoc/list_khoahoc.php';
                 break;
               }
               case 'add_khoahoc':{
-                include 'khoahoc/add_khoahoc.php';
+                include 'khoahoc/khoahoc/add_khoahoc.php';
                 break;
               }
               case 'update_khoahoc':{
-                include 'khoahoc/update_khoahoc.php';
+                include 'khoahoc/khoahoc/update_khoahoc.php';
                 break;
               }
               case 'delete_khoahoc':{
-                include 'khoahoc/delete_khoahoc.php';
+                include 'khoahoc/khoahoc/delete_khoahoc.php';
                 break;
               }
 //            -------------------------------- danh mục khóa học --------------------------------
               case 'add_danhmuc_khoahoc':{
-                include 'qlriengle/danhmuc_khoahoc/add_danhmuc.php';
+                include 'khoahoc/danhmuc_khoahoc/add_danhmuc.php';
                 break;
               }
               case 'list_danhmuc_khoahoc':{
-                include 'qlriengle/danhmuc_khoahoc/list_danhmuc.php';
+                include 'khoahoc/danhmuc_khoahoc/list_danhmuc.php';
                 break;
               }
               case 'update_danhmuc_khoahoc':{
-                include 'qlriengle/danhmuc_khoahoc/update_danhmuc.php';
+                include 'khoahoc/danhmuc_khoahoc/update_danhmuc.php';
                 break;
               }
               case 'delete_danhmuc_khoahoc':{
-                include 'qlriengle/danhmuc_khoahoc/delete_danhmuc.php';
+                include 'khoahoc/danhmuc_khoahoc/delete_danhmuc.php';
                 break;
               }
-//            -------------------------------- danh mục khóa học --------------------------------
+//            -------------------------------- danh mục trạng thái --------------------------------
               case 'list_danhmuc_trangthai':{
-                include 'qlriengle/danhmuc_trangthai/list_trangthai.php';
+                include 'qlriengle/trangthai/danhmuc_trangthai/list_trangthai.php';
                 break;
               }
               case 'add_danhmuc_trangthai':{
-                include 'qlriengle/danhmuc_trangthai/add_trangthai.php';
+                include 'qlriengle/trangthai/danhmuc_trangthai/add_trangthai.php';
                 break;
               }
               case 'update_danhmuc_trangthai':{
-                include 'qlriengle/danhmuc_trangthai/update_trangthai.php';
+                include 'qlriengle/trangthai/danhmuc_trangthai/update_trangthai.php';
                 break;
               }
               case 'delete_danhmuc_trangthai':{
-                include 'qlriengle/danhmuc_trangthai/delete_trangthai.php';
+                include 'qlriengle/trangthai/danhmuc_trangthai/delete_trangthai.php';
+                break;
+              }
+//              --------------------------trạng thái --------------------------------
+              case 'list_trangthai':{
+                include 'qlriengle/trangthai/trangthai/list_trangthai.php';
+                break;
+              }
+              case 'add_trangthai':{
+                include 'qlriengle/trangthai/trangthai/add_trangthai.php';
+                break;
+              }
+              case 'update_trangthai':{
+                include 'qlriengle/trangthai/trangthai/update_trangthai.php';
+                break;
+              }
+              case 'delete_trangthai':{
+                include 'trangthai/trangthai/delete_trangthai.php';
                 break;
               }
               // ------------------------ giờ học ---------------------------------------------
@@ -221,19 +254,50 @@
                 include 'qlriengle/giohoc/delete_giohoc.php';
                 break;
               }
+              // đánh giá --------------------------------------------------------------
+              
+              case 'list_danhgia':{
+                include 'qlriengle/danhgia/list_danhgia.php';
+                break;
+              }
+              case 'add_danhgia':{
+                include 'qlriengle/danhgia//add_danhgia.php';
+                break;
+              }
+              case 'delete_danhgia':{
+                include 'qlriengle/danhgia/delete_danhgia.php';
+                break;
+              }
+              // -------- tai khoan --------------------------------
+              case 'list_taikhoan':{
+                include 'taikhoan/list_taikhoan.php';
+                break;
+              }
+              case 'add_taikhoan':{
+                include 'taikhoan/add_taikhoan.php';
+                break;
+              }
+              case 'update_taikhoan':{
+                include 'taikhoan/update_taikhoan.php';
+                break;
+              }
+              case 'delete_taikhoan':{
+                include 'taikhoan/delete_taikhoan.php';
+                break;
+              }
               default:
               //  include 'footer.php';
-                include 'thongke.php'; 
-                include 'script.php';
+                include 'view/thongke.php'; 
+                include 'view/script.php';
                 break;
             }
           }else{
-            include 'thongke.php';
+            include 'view/thongke.php';
           }
         
         ?>
-        <?php include 'footer.php';?>
+        <?php include 'view/footer.php';?>
     </div>
-    <?php include 'script.php'?>
+    <?php include 'view/script.php'?>
   </body>
 </html>

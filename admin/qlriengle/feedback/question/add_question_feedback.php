@@ -4,11 +4,11 @@
             <div class="card">
                 <form class="form-horizontal" action="">
                     <div class="card-body">
-                        <h4 class="card-title">Thêm đánh giá</h4>
+                        <h4 class="card-title">Thêm câu hỏi</h4>
                         <div class="form-group row">
-                            <label for="fname" class="col-sm-3 text-right control-label col-form-label">đánh giá</label>
+                            <label for="fname" class="col-sm-3 text-right control-label col-form-label">câu hỏi</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="fname" placeholder="thêm danh mục khóa học">
+                                <input type="text" class="form-control" id="fname" placeholder="thêm câu hỏi">
                             </div>
                         </div>    
                     </div>

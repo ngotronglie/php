@@ -2,11 +2,11 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <form class="form-horizontal" action="">
+                <form class="form-horizontal" action="index.php?act=list_khuyenmai">
                     <div class="card-body">
-                        <h4 class="card-title">Thêm đánh giá</h4>
+                        <h4 class="card-title">Thêm danh mục trạng thái</h4>
                         <div class="form-group row">
-                            <label for="fname" class="col-sm-3 text-right control-label col-form-label">đánh giá</label>
+                            <label for="fname" class="col-sm-3 text-right control-label col-form-label">danh mục trạng thái</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" id="fname" placeholder="thêm danh mục khóa học">
                             </div>

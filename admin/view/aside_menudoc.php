@@ -42,85 +42,48 @@
         </li>
         <li class="sidebar-item">
           <a
-            class="sidebar-link has-arrow waves-effect waves-dark"
-            href="javascript:void(0)"
+            class="sidebar-link waves-effect waves-dark sidebar-link"
+            href="index.php?act=list_binhluan"
             aria-expanded="false"
             ><i class="far fa-comment-alt"></i
             ><span class="hide-menu">bình luận</span></a
           >
-          <ul aria-expanded="false" class="collapse first-level">
-            <li class="sidebar-item">
-              <a href="index.php?act=list_binhluan" class="sidebar-link"
-                ><i class="far fa-edit"></i
-                ><span class="hide-menu">khóa học 1</span></a
-              >
-            </li>
-            <li class="sidebar-item">
-              <a href="index.php?act=list_binhluan" class="sidebar-link"
-                ><i class="far fa-edit"></i
-                ><span class="hide-menu">khóa học 2</span></a
-              >
-            </li>
-          </ul>
         </li>
         <li class="sidebar-item">
           <a
-            class="sidebar-link has-arrow waves-effect waves-dark"
-            href="javascript:void(0)"
+            class="sidebar-link waves-effect waves-dark sidebar-link"
+            href="index.php?act=list_hoadon"
             aria-expanded="false"
             ><i class="mdi mdi-receipt"></i
-            ><span class="hide-menu">hóa đơn</span></a
+            ><span class="hide-menu">Hóa đơn</span></a
           >
-          <ul aria-expanded="false" class="collapse first-level">
-            <li class="sidebar-item">
-              <a href="index.php?act=list_hoadon" class="sidebar-link"
-                ><i class="far fa-edit"></i
-                ><span class="hide-menu">khóa học 1</span></a
-              >
-            </li>
-            <li class="sidebar-item">
-              <a href="index.php?act=list_hoadon" class="sidebar-link"
-                ><i class="far fa-edit"></i
-                ><span class="hide-menu">khóa học 2</span></a
-              >
-            </li>
-          </ul>
+        </li>
+        <li class="sidebar-item">
+          <a
+            class="sidebar-link waves-effect waves-dark sidebar-link"
+            href="index.php?act=list_danhgia"
+            aria-expanded="false"
+            ><i class="fas fa-list-alt"></i
+            ><span class="hide-menu">Đánh giá</span></a
+          >
         </li>
         <li class="sidebar-item">
           <a
             class="sidebar-link has-arrow waves-effect waves-dark"
             href="javascript:void(0)"
             aria-expanded="false"
-            ><i class="far fa-folder-open"></i
-            ><span class="hide-menu">quản lí riêng lẻ</span></a
+            ><i class="fas fa-envelope"></i
+            ><span class="hide-menu">feedback</span></a
           >
           <ul aria-expanded="false" class="collapse first-level">
             <li class="sidebar-item">
-              <a href="index.php?act=list_danhmuc_khoahoc" class="sidebar-link"
+              <a href="index.php?act=list_feedback" class="sidebar-link"
                 ><i class="far fa-edit"></i
-                ><span class="hide-menu">danh mục khóa học</span></a
+                ><span class="hide-menu">feedback</span></a
               >
             </li>
             <li class="sidebar-item">
-              <a href="index.php?act=list_danhgia" class="sidebar-link"
-                ><i class="far fa-edit"></i
-                ><span class="hide-menu">đánh giá</span></a
-              >
-            </li>
-            <li class="sidebar-item">
-              <a href="index.php?act=list_danhmuc_trangthai" class="sidebar-link"
-                ><i class="far fa-edit"></i
-                ><span class="hide-menu">danh mục trạng thái</span></a
-              >
-            </li>
-            <li class="sidebar-item">
-              <a href="index.php?act=list_giohoc" class="sidebar-link"
-                ><i class="far fa-edit"></i
-                ><span class="hide-menu">giờ học</span></a
-              >
-            </li>
-            <li class="sidebar-item">
-              <a href="index.php?act=list_cauhoifeedback" class="sidebar-link"
+              <a href="index.php?act=list_question_feedback" class="sidebar-link"
                 ><i class="far fa-edit"></i
                 ><span class="hide-menu">câu hỏi feedback</span></a
               >
@@ -129,19 +92,56 @@
         </li>
         <li class="sidebar-item">
           <a
-            class="sidebar-link waves-effect waves-dark sidebar-link"
-            href="index.php?act=list_khoahoc"
+            class="sidebar-link has-arrow waves-effect waves-dark"
+            href="javascript:void(0)"
             aria-expanded="false"
-            ><i class="far fa-clone"></i
+            ><i class="fas fa-folder-open"></i
             ><span class="hide-menu">khóa học</span></a
           >
+          <ul aria-expanded="false" class="collapse first-level">
+            <li class="sidebar-item">
+              <a href="index.php?act=list_khoahoc" class="sidebar-link"
+                ><i class="far fa-edit"></i
+                ><span class="hide-menu">khóa học</span></a
+              >
+            </li>
+            <li class="sidebar-item">
+              <a href="index.php?act=list_danhmuc_khoahoc" class="sidebar-link"
+                ><i class="far fa-edit"></i
+                ><span class="hide-menu">danh mục khóa học</span></a
+              >
+            </li>
+          </ul>
         </li>
         <li class="sidebar-item">
           <a
             class="sidebar-link has-arrow waves-effect waves-dark"
             href="javascript:void(0)"
             aria-expanded="false"
-            ><i class="mdi mdi-receipt"></i
+            ><i class="fab fa-nintendo-switch"></i
+            ><span class="hide-menu">trạng thái</span></a
+          >
+          <ul aria-expanded="false" class="collapse first-level">
+            <li class="sidebar-item">
+              <a href="index.php?act=list_trangthai" class="sidebar-link"
+                ><i class="far fa-edit"></i
+                ><span class="hide-menu">trạng thái</span></a
+              >
+            </li>
+            <li class="sidebar-item">
+              <a href="index.php?act=list_danhmuc_trangthai" class="sidebar-link"
+                ><i class="far fa-edit"></i
+                ><span class="hide-menu">danh mục trạng thái</span></a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="sidebar-item">
+          <a
+            class="sidebar-link has-arrow waves-effect waves-dark"
+            href="javascript:void(0)"
+            aria-expanded="false"
+            ><i class="far fa-copy"></i
             ><span class="hide-menu">Lớp học</span></a
           >
           <ul aria-expanded="false" class="collapse first-level">
@@ -154,10 +154,25 @@
             <li class="sidebar-item">
               <a href="index.php?act=list_thoigian" class="sidebar-link"
                 ><i class="far fa-edit"></i
-                ><span class="hide-menu">sắp xếp thời gian</span></a
+                ><span class="hide-menu">phòng học</span></a
+              >
+            </li>
+            <li class="sidebar-item">
+              <a href="index.php?act=list_giohoc" class="sidebar-link"
+                ><i class="far fa-edit"></i
+                ><span class="hide-menu">giờ học</span></a
               >
             </li>
           </ul>
+        </li>
+        <li class="sidebar-item">
+          <a
+            class="sidebar-link waves-effect waves-dark sidebar-link"
+            href="index.php?act=list_taikhoan"
+            aria-expanded="false"
+            ><i class="fas fa-address-book"></i
+            ><span class="hide-menu">tài khoản</span></a
+          >
         </li>
         <li class="sidebar-item">
           <a

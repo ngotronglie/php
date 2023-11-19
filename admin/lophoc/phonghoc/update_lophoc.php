@@ -16,13 +16,7 @@
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" id="lname" value="lớp học vui nhộn">
                             </div>
-                        </div>   
-                        <div class="form-group row">
-                            <label for="lname" class="col-sm-3 text-right control-label col-form-label">tên khóa học</label>
-                            <div class="col-sm-9">
-                                <input type="text" value="c# cho người mới bắt đầu" class="form-control" id="lname" disabled>
-                            </div>
-                        </div>      
+                        </div>       
                         <div class="form-group row">
                         <label for="role" class="col-sm-3 text-right control-label col-form-label">giờ học</label>
                             <div class="col-sm-9">
@@ -34,7 +28,7 @@
                             </div>
                         </div> 
                         <div class="form-group row">
-                            <label for="lname" class="col-sm-3 text-right control-label col-form-label" >tổng slot</label>
+                            <label for="lname" class="col-sm-3 text-right control-label col-form-label">tổng slot</label>
                             <div class="col-sm-9">
                                 <input type="text" value="23" class="form-control" id="lname" disabled>
                             </div>

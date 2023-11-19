@@ -5,6 +5,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
+                    <a href="index.php?act=add_feedback" class="btn btn-success mb-2">thêm câu hỏi</a>
                     <h5 class="card-title">Danh sách feedback</h5>
                     <div class="table-responsive">
                         <table id="zero_config" class="table table-striped table-bordered">

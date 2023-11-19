@@ -6,7 +6,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title m-b-0 mb-3">Danh sách danh mục khóa học</h5>
+                        <h5 class="card-title m-b-0 mb-3">Danh sách danh mục trạng thái </h5>
                         <a style="margin-right:5px" href="index.php?act=add_danhmuc_trangthai" class="btn btn-success">Thêm</a>
                     </div>
                     
@@ -14,14 +14,13 @@
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">tên danh mục khóa học</th>
-                                    <th scope="col">action</th>
+                                    <th scope="col">tên danh mục trạng thái</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <th scope="row">1</th>
-                                    <td>Công nghệ thông tin</td>
+                                    <td>đang hoạt động</td>
                                     <td>
                                         <a href="index.php?act=update_danhmuc_trangthai" class="btn btn-warning">sửa</a>
                                         <button class="btn btn-danger" data-bs-id="" data-bs-toggle="modal"
@@ -32,7 +31,7 @@
                                 </tr>
                                 <tr>
                                     <th scope="row">2</th>
-                                    <td>Thiết kế đò họa </td>
+                                    <td>dừng hoạt động </td>
                                     <td>
                                         <a href="index.php?act=update_danhmuc_trangthai" class="btn btn-warning">sửa</a>
                                         <button class="btn btn-danger" data-bs-id="" data-bs-toggle="modal"
@@ -43,7 +42,7 @@
                                 </tr>
                                 <tr>
                                     <th scope="row">3</th>
-                                    <td>mar</td>
+                                    <td>sắp hoạt động</td>
                                     <td>
                                         <a href="index.php?act=update_danhmuc_trangthai" class="btn btn-warning">sửa</a>
                                         <button class="btn btn-danger" data-bs-id="" data-bs-toggle="modal"

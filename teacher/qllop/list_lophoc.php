@@ -18,7 +18,7 @@
                                     <th scope="col">ngày khai giảng</th>
                                     <th scope="col">ngày bế giảng</th>
                                     <th scope="col">giờ học</th>
-                                    <th scope="col">tổng slot</th>
+                                    <th scope="col">nhóm zalo</th>
                                     <th scope="col">trạng thái</th>
                                     <th scope="col">action</th>
                                 </tr>
@@ -32,7 +32,7 @@
                                     <td>18/11/2023</td>
                                     <td>18/12/2023</td>
                                     <td>lúc 7h - thứ 2/4/6 hàng tuần</td>
-                                    <td>40</td>
+                                    <td>https://zalo.me/g/xkddzi068</td>
                                     <td><span style="color:#fff !important" class=" badge bg-success">đang hoạt động</span></td>
                                     <td>
                                         <a href="#" class="btn btn-warning">sửa</a>
@@ -46,7 +46,7 @@
                                     <td>18/11/2023</td>
                                     <td>18/12/2023</td>
                                     <td>lúc 7h - thứ 2/4/6 hàng tuần</td>
-                                    <td>30</td>
+                                    <td>https://zalo.me/g/xkddzi068</td>
                                     <td><span style="color:#fff !important" class="badge bg-danger">Dừng hoạt động</span></td>
                                     <td>
                                         <a href="index.php?act=update_lophoc" class="btn btn-warning">sửa</a>
@@ -60,7 +60,7 @@
                                     <td>18/11/2023</td>
                                     <td>18/12/2023</td>
                                     <td>lúc 7h - thứ 2/4/6 hàng tuần</td>
-                                    <td>40</td>
+                                    <td>https://zalo.me/g/xkddzi068</td>
                                     <td><span style="color:#fff !important" class="badge bg-danger">Dừng hoạt động</span></td>
                                     <td>
                                         <a href="index.php?act=update_lophoc" class="btn btn-warning">sửa</a>
@@ -74,7 +74,7 @@
                                     <td>18/8/2023</td>
                                     <td>18/12/2023</td>
                                     <td>lúc 7h - thứ 2/4/6 hàng tuần</td>
-                                    <td>40</td>
+                                    <td>https://zalo.me/g/xkddzi068</td>
                                     <td><span style="color:#fff !important" class="badge bg-secondary">Đã kết thúc</span></td>
                                     <td>
                                         <a href="index.php?act=update_lophoc" class="btn btn-warning">sửa</a>
@@ -88,7 +88,7 @@
                                     <td>18/11/2023</td>
                                     <td>18/12/2023</td>
                                     <td>lúc 7h - thứ 2/4/6 hàng tuần</td>
-                                    <td>40</td>
+                                    <td>https://zalo.me/g/xkddzi068</td>
                                     <td><span style="color:#fff !important" class="badge bg-danger">Dừng hoạt động</span></td>
                                     <td>
                                         <a href="index.php?act=update_lophoc" class="btn btn-warning">sửa</a>
@@ -102,7 +102,7 @@
                                     <td>18/11/2023</td>
                                     <td>18/12/2023</td>
                                     <td>lúc 8h - thứ 3/5/7 hàng tuần</td>
-                                    <td>40</td>
+                                    <td>https://zalo.me/g/xkddzi068</td>
                                     <td><span style="color:#fff !important" class="badge bg-danger">Dừng hoạt động</span></td>
                                     <td>
                                         <a href="index.php?act=update_lophoc" class="btn btn-warning">sửa</a>
@@ -116,7 +116,7 @@
                                     <td>18/11/2023</td>
                                     <td>18/12/2023</td>
                                     <td>lúc 7h - thứ 2/4/6 hàng tuần</td>
-                                    <td>40</td>
+                                    <td>https://zalo.me/g/xkddzi068</td>
                                     <td><span style="color:#fff !important" class="badge bg-danger">Dừng hoạt động</span></td>
                                     <td>
                                         <a href="index.php?act=update_lophoc" class="btn btn-warning">sửa</a>
@@ -130,7 +130,7 @@
                                     <td>18/11/2023</td>
                                     <td>18/12/2023</td>
                                     <td>lúc 7h - thứ 2/4/6 hàng tuần</td>
-                                    <td>40</td>
+                                    <td>https://zalo.me/g/xkddzi068</td>
                                     <td><span style="color:#fff !important" class="badge bg-danger">Dừng hoạt động</span></td>
                                     <td>
                                         <a href="index.php?act=update_lophoc" class="btn btn-warning">sửa</a>
@@ -144,7 +144,7 @@
                                     <td>18/11/2023</td>
                                     <td>18/12/2023</td>
                                     <td>lúc 7h - thứ 2/4/6 hàng tuần</td>
-                                    <td>40</td>
+                                    <td>https://zalo.me/g/xkddzi068</td>
                                     <td><span style="color:#fff !important" class="badge bg-danger">Dừng hoạt động</span></td>
                                     <td>
                                         <a href="index.php?act=update_lophoc" class="btn btn-warning">sửa</a>
@@ -158,7 +158,7 @@
                                     <td>18/11/2023</td>
                                     <td>18/12/2023</td>
                                     <td>lúc 7h - thứ 2/4/6 hàng tuần</td>
-                                    <td>40</td>
+                                    <td>https://zalo.me/g/xkddzi068</td>
                                     <td><span style="color:#fff !important" class="badge bg-danger">Dừng hoạt động</span></td>
                                     <td>
                                         <a href="index.php?act=update_lophoc" class="btn btn-warning">sửa</a>
@@ -172,7 +172,7 @@
                                     <td>18/11/2023</td>
                                     <td>18/12/2023</td>
                                     <td>lúc 7h - thứ 2/4/6 hàng tuần</td>
-                                    <td>40</td>
+                                    <td>https://zalo.me/g/xkddzi068</td>
                                     <td><span style="color:#fff !important" class="badge bg-danger">Dừng hoạt động</span></td>
                                     <td>
                                         <a href="index.php?act=update_lophoc" class="btn btn-warning">sửa</a>
@@ -182,16 +182,16 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>Name</th>
-                                    <th>Position</th>
-                                    <th>Office</th>
-                                    <th>Age</th>
-                                    <th>Start date</th>
-                                    <th>Salary</th>
-                                    <th>sdf</th>
-                                    <th>sdf</th>
-                                    <th>sdf</th>
-                                    <th>sdf</th>
+                                    <th scope="col">#</th>
+                                    <th scope="col">phòng</th>
+                                    <th scope="col">mô tả lớp học</th>
+                                    <th scope="col">tên khóa học</th>
+                                    <th scope="col">ngày khai giảng</th>
+                                    <th scope="col">ngày bế giảng</th>
+                                    <th scope="col">giờ học</th>
+                                    <th scope="col">nhóm zalo</th>
+                                    <th scope="col">trạng thái</th>
+                                    <th scope="col">action</th>
                                 </tr>
                             </tfoot>
                         </table>
