@@ -1,7 +1,14 @@
+<?php
+   ob_start(); 
+  include '../model/pdo.php';
+  include '../model/khoahoc/danhmuc_khoahoc.php';
+  include '../model/lop/giohoc.php';
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
     <?php include 'view/head.php'?>
-
   <body>
     <div class="preloader">
       <div class="lds-ripple">
@@ -9,12 +16,15 @@
         <div class="lds-pos"></div>
       </div>
     </div>
-    
     <div id="main-wrapper">
-    <?php include 'view/header.php'?>
-    <?php include 'view/aside_menudoc.php'?>
+    <?php include 'view/header.php';?>
+    <?php include 'view/aside_menudoc.php';?>
     <div class="page-wrapper">
         <?php 
+
+          $danhmuc_khoahoc = danhsach_danhmuc_khoahoc();
+          $giohoc = danhsach_giohoc();
+
           if(isset($_GET['act']) && $_GET['act']!= ""){
             $act = $_GET['act'];
             switch ($act) {
@@ -187,20 +197,37 @@
                 break;
               }
 //            -------------------------------- danh mục khóa học --------------------------------
-              case 'add_danhmuc_khoahoc':{
-                include 'khoahoc/danhmuc_khoahoc/add_danhmuc.php';
-                break;
-              }
               case 'list_danhmuc_khoahoc':{
                 include 'khoahoc/danhmuc_khoahoc/list_danhmuc.php';
                 break;
               }
+              case 'add_danhmuc_khoahoc':{
+                if(isset($_POST['btn_save'])){
+                  add_danhmuc_khoahoc($_POST['name_danhmuc_khoahoc']);
+                  header('location: index.php?act=list_danhmuc_khoahoc');
+                }
+                include 'khoahoc/danhmuc_khoahoc/add_danhmuc.php';
+                break;
+              }
               case 'update_danhmuc_khoahoc':{
+                if(isset($_GET['iddm_khoahoc']) && $_GET['iddm_khoahoc'] > 0){
+                  $dm_khoahoc = getone_danhmuc_khoahoc($_GET['iddm_khoahoc']);
+                }
+                if(isset($_POST['update_dm_khoahoc'])){
+                  $iddm_khoahoc_ = $_POST['id_dm_kh'];
+                  $ten_dm_khoahoc_ = $_POST['name_dm_kh'];
+                  update_danhmuc_khoahoc($iddm_khoahoc_ , $ten_dm_khoahoc_);
+                  header("location: ?act=list_danhmuc_khoahoc");
+                }
                 include 'khoahoc/danhmuc_khoahoc/update_danhmuc.php';
                 break;
               }
               case 'delete_danhmuc_khoahoc':{
-                include 'khoahoc/danhmuc_khoahoc/delete_danhmuc.php';
+                if(isset($_GET['iddm']) && $_GET['iddm'] > 0){
+                  delete_danhmuc_khoahoc($_GET['iddm']);
+                  header("location:index.php?act=list_danhmuc_khoahoc");
+                }
+                
                 break;
               }
 //            -------------------------------- danh mục trạng thái --------------------------------
@@ -243,15 +270,31 @@
                 break;
               }
               case 'add_giohoc':{
+                if(isset($_POST['btn_save'])){
+                  add_giohoc($_POST['name_giohoc']);
+                  header('location: index.php?act=list_giohoc');
+                }
                 include 'qlriengle/giohoc/add_giohoc.php';
                 break;
               }
               case 'update_giohoc':{
+                if(isset($_GET['id_giohoc']) && $_GET['id_giohoc'] > 0){
+                  $one_giohoc = getone_giohoc($_GET['id_giohoc']);
+                }
+                if(isset($_POST['btn_update_giohoc'])){
+                  $id_giohoc_ = $_POST['id_giohoc_'];
+                  $name_giohoc_ = $_POST['name_giohoc_'];
+                  update_giohoc($id_giohoc_ , $name_giohoc_);
+                  header("location: ?act=list_giohoc");
+                }
                 include 'qlriengle/giohoc/update_giohoc.php';
                 break;
               }
               case 'delete_giohoc':{
-                include 'qlriengle/giohoc/delete_giohoc.php';
+                if(isset($_GET['id_giohoc']) && $_GET['id_giohoc'] > 0){
+                  delete_giohoc($_GET['id_giohoc']);
+                  header("location:index.php?act=list_giohoc");
+                }
                 break;
               }
               // đánh giá --------------------------------------------------------------

@@ -27,7 +27,7 @@
                                     <td><img src="" alt="ảnh"></td>
                                     <td>17/11/2023</td>
                                     <td>
-                                        <button class="btn btn-danger" data-bs-id="" data-bs-toggle="modal"
+                                        <button onclick="return confirm('bạn có muốn xóa không?')" class="btn btn-danger" data-bs-id="" data-bs-toggle="modal"
                                             data-bs-target="#modalDelete">
                                             Xóa
                                         </button>
@@ -38,7 +38,7 @@
                                     <td><img src="" alt="ảnh"></td>
                                     <td>17/11/2023</td>
                                     <td>
-                                        <button class="btn btn-danger" data-bs-id="" data-bs-toggle="modal"
+                                        <button onclick="return confirm('bạn có muốn xóa không?')" class="btn btn-danger" data-bs-id="" data-bs-toggle="modal"
                                             data-bs-target="#modalDelete">
                                             Xóa
                                         </button>
@@ -49,7 +49,7 @@
                                     <td><img src="" alt="ảnh"></td>
                                     <td>17/11/2023</td>
                                     <td>
-                                        <button class="btn btn-danger" data-bs-id="" data-bs-toggle="modal"
+                                        <button onclick="return confirm('bạn có muốn xóa không?')" class="btn btn-danger" data-bs-id="" data-bs-toggle="modal"
                                             data-bs-target="#modalDelete">
                                             Xóa
                                         </button>
@@ -62,33 +62,3 @@
         </div>
     </div>
 </div>
-
-
-<div class="modal fade" id="modalDelete" tabindex="-1" aria-labelledby="modalDeleteLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalDeleteLabel">Thông báo</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                Hành động này không thể hoàn tác. Bạn có muốn xóa không?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-                <a href="" class="btn btn-danger" id="btn-delete">Xác nhận xóa</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<script>
-    var modalDelete = document.getElementById('modalDelete')
-    modalDelete.addEventListener('show.bs.modal', function(event) {
-        var button = event.relatedTarget
-        var idsp = button.getAttribute('data-bs-id')
-        var link = `?act=deletesp&idsp=${idsp}`
-        document.getElementById("btn-delete").setAttribute("href", link)
-    })
-</script>

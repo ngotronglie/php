@@ -29,28 +29,6 @@
                                         </button>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>dừng hoạt động </td>
-                                    <td>
-                                        <a href="index.php?act=update_danhmuc_trangthai" class="btn btn-warning">sửa</a>
-                                        <button class="btn btn-danger" data-bs-id="" data-bs-toggle="modal"
-                                            data-bs-target="#modalDelete">
-                                            Xóa
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>sắp hoạt động</td>
-                                    <td>
-                                        <a href="index.php?act=update_danhmuc_trangthai" class="btn btn-warning">sửa</a>
-                                        <button class="btn btn-danger" data-bs-id="" data-bs-toggle="modal"
-                                            data-bs-target="#modalDelete">
-                                            Xóa
-                                        </button>
-                                    </td>
-                                </tr>
                             </tbody>
                     </table>     
                 </div>

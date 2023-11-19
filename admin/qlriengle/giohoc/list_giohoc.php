@@ -19,39 +19,18 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php foreach($giohoc as $key => $value):?>
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>18h30p - thứ 3/5/7 hàng tuần</td>
+                                    <th scope="row"><?php echo $key+1 ?></th>
+                                    <td><?php echo $value['name_giohoc']?></td>
                                     <td>
-                                        <a href="index.php?act=update_giohoc" class="btn btn-warning">sửa</a>
-                                        <button class="btn btn-danger" data-bs-id="" data-bs-toggle="modal"
-                                            data-bs-target="#modalDelete">
+                                        <a href="index.php?act=update_giohoc&id_giohoc=<?php echo $value['id_giohoc']?>" class="btn btn-warning">sửa</a>
+                                        <a class="btn btn-danger" onclick="return confirm('Bạn có chắc xóa danh mục khóa học không?')" href="index.php?act=delete_giohoc&id_giohoc=<?php echo $value['id_giohoc']?>">
                                             Xóa
-                                        </button>
+                                        </a>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>18h30p - thứ 3/5/7 hàng tuần</td>
-                                    <td>
-                                        <a href="index.php?act=update_giohoc" class="btn btn-warning">sửa</a>
-                                        <button class="btn btn-danger" data-bs-id="" data-bs-toggle="modal"
-                                            data-bs-target="#modalDelete">
-                                            Xóa
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>18h30p - thứ 3/5/7 hàng tuần</td>
-                                    <td>
-                                        <a href="index.php?act=update_giohoc" class="btn btn-warning">sửa</a>
-                                        <button class="btn btn-danger" data-bs-id="" data-bs-toggle="modal"
-                                            data-bs-target="#modalDelete">
-                                            Xóa
-                                        </button>
-                                    </td>
-                                </tr>
+                                <?php endforeach;?>
                             </tbody>
                     </table>     
                 </div>
