@@ -5,16 +5,22 @@
         VALUES (NULL, '$photo', '$title', '$noidung', '$date')";
         pdo_execute($sql);
     }
+
+
     function list_thongbao(){
         $sql = "select * from thongbao";
         $result = pdo_query($sql);
         return $result;
     }
+
+
     function getone_thongbao($idtb){
         $sql = "select * from thongbao where id_thongbao = '$idtb'";
         $result = pdo_query_one($sql);
         return $result;
     }
+
+
     function update_thongbao($photo, $title, $noidung,$idtb){
         $thongbao = getone_thongbao($idtb);
         if($photo != null){
@@ -31,6 +37,8 @@
         
         pdo_execute($sql);
     }
+
+    
     function delete_thongbao($idtb){
         $thongbao = getone_thongbao($idtb);
         if($thongbao['img_thongbao'] != null && $thongbao['img_thongbao']!=""){

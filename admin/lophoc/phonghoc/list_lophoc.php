@@ -5,7 +5,7 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Danh sách phòng học</h5>
-                    <a href="index.php?act=add_thoigian" class="btn btn-success m-2">Thêm phòng học</a>
+                    <a href="index.php?act=add_lophoc" class="btn btn-success m-2">Thêm phòng học</a>
                     <div class="table-responsive">
                         <table id="zero_config" class="table table-striped table-bordered">
                             <thead>
@@ -19,128 +19,19 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php foreach($danhsach_phonghoc as $key => $value):?>
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>F304</td>
-                                    <td>lớp học tòa F tầng 3 phòng F304</td>
-                                    <td>lúc 7h - thứ 2/4/6 hàng tuần</td>
-                                    <td>40</td>
+                                    <th scope="row"><?php echo $key + 1?></th>
+                                    <td><?php echo $value['name_phong']?></td>
+                                    <td><?php echo $value['mota_lophoc']?></td>
+                                    <td><?php echo $value['name_giohoc']?></td>
+                                    <td><?php echo $value['slot']?></td>
                                     <td>
-                                        <a href="index.php?act=update_thoigian" class="btn btn-warning">sửa</a>
-                                        <button class="btn btn-danger">xóa</button>
+                                        <a href="index.php?act=update_lophoc&id_phonghoc=<?php echo $value['id_phonghoc']?>" class="btn btn-warning">sửa</a>
+                                        <button onclick="return confirm('bạn xác nhận xóa lớp học này chứ')" class="btn btn-danger">xóa</button>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>F304</td>
-                                    <td>lớp học tòa F tầng 3 phòng F304</td>
-                                    <td>lúc 7h - thứ 2/4/6 hàng tuần</td>
-                                    <td>30</td>
-                                    <td>
-                                        <a href="index.php?act=update_thoigian" class="btn btn-warning">sửa</a>
-                                        <button class="btn btn-danger">xóa</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>F304</td>
-                                    <td>lớp học tòa F tầng 3 phòng F304</td>
-                                    <td>lúc 7h - thứ 2/4/6 hàng tuần</td>
-                                    <td>40</td>
-                                    <td>
-                                        <a href="index.php?act=update_thoigian" class="btn btn-warning">sửa</a>
-                                        <button class="btn btn-danger">xóa</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>F306</td>
-                                    <td>lớp học tòa F tầng 3 phòng F306</td>
-                                    <td>lúc 7h - thứ 2/4/6 hàng tuần</td>
-                                    <td>40</td>
-                                    <td>
-                                        <a href="index.php?act=update_lophoc" class="btn btn-warning">sửa</a>
-                                        <button class="btn btn-danger">xóa</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>F304</td>
-                                    <td>lớp học tòa F tầng 3 phòng F304</td>
-                                    <td>lúc 7h - thứ 2/4/6 hàng tuần</td>
-                                    <td>40</td>
-                                    <td>
-                                        <a href="index.php?act=update_lophoc" class="btn btn-warning">sửa</a>
-                                        <button class="btn btn-danger">xóa</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>F304</td>
-                                    <td>lớp học tòa F tầng 3 phòng F304</td>
-                                    <td>lúc 8h - thứ 3/5/7 hàng tuần</td>
-                                    <td>40</td>
-                                    <td>
-                                        <a href="index.php?act=update_lophoc" class="btn btn-warning">sửa</a>
-                                        <button class="btn btn-danger">xóa</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>F304</td>
-                                    <td>lớp học tòa F tầng 3 phòng F304</td>
-                                    <td>lúc 7h - thứ 2/4/6 hàng tuần</td>
-                                    <td>40</td>
-                                    <td>
-                                        <a href="index.php?act=update_lophoc" class="btn btn-warning">sửa</a>
-                                        <button class="btn btn-danger">xóa</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>F304</td>
-                                    <td>lớp học tòa F tầng 3 phòng F304</td>
-                                    <td>lúc 7h - thứ 2/4/6 hàng tuần</td>
-                                    <td>40</td>
-                                    <td>
-                                        <a href="index.php?act=update_lophoc" class="btn btn-warning">sửa</a>
-                                        <button class="btn btn-danger">xóa</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>F304</td>
-                                    <td>lớp học tòa F tầng 3 phòng F304</td>
-                                    <td>lúc 7h - thứ 2/4/6 hàng tuần</td>
-                                    <td>40</td>
-                                    <td>
-                                        <a href="index.php?act=update_lophoc" class="btn btn-warning">sửa</a>
-                                        <button class="btn btn-danger">xóa</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>F304</td>
-                                    <td>lớp học tòa F tầng 3 phòng F304</td>
-                                    <td>lúc 7h - thứ 2/4/6 hàng tuần</td>
-                                    <td>40</td>
-                                    <td>
-                                        <a href="index.php?act=update_lophoc" class="btn btn-warning">sửa</a>
-                                        <button class="btn btn-danger">xóa</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>F304</td>
-                                    <td>lớp học tòa F tầng 3 phòng F304</td>
-                                    <td>lúc 7h - thứ 2/4/6 hàng tuần</td>
-                                    <td>40</td>
-                                    <td>
-                                        <a href="index.php?act=update_lophoc" class="btn btn-warning">sửa</a>
-                                        <button class="btn btn-danger">xóa</button>
-                                    </td>
-                                </tr>
-
+                                    <?php endforeach;?>
                             </tbody>
                             <tfoot>
                                 <tr>

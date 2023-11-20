@@ -4,6 +4,10 @@
   include '../model/khoahoc/danhmuc_khoahoc.php';
   include '../model/lop/giohoc.php';
   include '../model/thongbao.php';
+  include '../model/taikhoan/taikhoan.php';
+  include '../model/trangthai/danhmuc_trangthai.php';
+  include '../model/trangthai/trangthai.php';
+  include '../model/phonghoc.php';
   session_start();
 ?>
 
@@ -11,12 +15,12 @@
 <html dir="ltr" lang="en">
     <?php include 'view/head.php'?>
   <body>
-    <div class="preloader">
+    <!-- <div class="preloader">
       <div class="lds-ripple">
         <div class="lds-pos"></div>
         <div class="lds-pos"></div>
       </div>
-    </div>
+    </div> -->
     <div id="main-wrapper">
     <?php include 'view/header.php';?>
     <?php include 'view/aside_menudoc.php';?>
@@ -26,6 +30,9 @@
           $danhmuc_khoahoc = danhsach_danhmuc_khoahoc();
           $giohoc = danhsach_giohoc();
           $list_thongbao = list_thongbao();
+          $list_dm_trangthai = danhsach_danhmuc_trangthai();
+          $danhsach_trangthai = danhsach_trangthai();
+          $danhsach_phonghoc = danhsach_phonghoc();
 
           if(isset($_GET['act']) && $_GET['act']!= ""){
             $act = $_GET['act'];
@@ -110,23 +117,6 @@
                 include 'giangvien/update_giangvien.php';
                 break;
               }
-              //  -------------------- banner marketing ----------------------------
-              case 'list_banner':{
-                include 'banner/list_banner.php';
-                break;
-              }
-              case 'update_banner':{
-                include 'banner/update_banner.php';
-                break;
-              }
-              case 'add_banner':{
-                include 'banner/add_banner.php';
-                break;
-              }
-              case 'delete_banner':{
-                include 'banner/delete_banner.php';
-                break;
-              }
               // -------------------- binh luan -------------------------------------
               case 'list_binhluan':{
                 include 'binhluan/list_binhluan.php';
@@ -143,39 +133,50 @@
               }
               // ------------------------ lop hoc < thời gian >---------------------------------
               case 'list_lophoc':{
-                include 'lophoc/lophoc/list_thoigian.php';
+
+                include 'lophoc/phonghoc/list_lophoc.php';
+                
                 break;
               }
 
               case 'add_lophoc':{
-                include 'lophoc/lophoc/add_thoigian.php';
+                if(isset($_POST['btn_save'])){
+                  add_phonghoc($_POST['phong'],$_POST['mota'],$_POST['slot'],$_POST['id_gio']);
+                  header('location: index.php?act=list_lophoc');
+                }
+                include 'lophoc/phonghoc/add_lophoc.php';
                 break;
               }
 
               case 'update_lophoc':{
-                include 'lophoc/lophoc/update_thoigian.php';
+                if(isset($_GET['id_phonghoc']) && $_GET['id_phonghoc'] > 0){
+                  $phonghoc = getone_phonghoc($_GET['id_phonghoc']);
+                }
+                if(isset($_POST['update'])){
+                  update_phonghoc($_POST['phong'],$_POST['mota'],$_POST['id_giohoc'],$_POST['slot'],$_POST['id_phong']);
+                  header("location: ?act=add_lophoc");
+                }
+                include 'lophoc/phonghoc/update_lophoc.php';
                 break;
               }
               case 'delete_lophoc':{
-                include 'lophoc/lophoc/delete_thoigian.php';
                 break;
               }
               // --------------------------phòng học lớp---------------
               case 'list_thoigian':{
-                include 'lophoc/phonghoc/list_lophoc.php';
+                include 'lophoc/lophoc/list_thoigian.php';
                 break;
               }
 
               case 'add_thoigian':{
-                include 'lophoc/phonghoc/add_lophoc.php';
+                include 'lophoc/lophoc/add_thoigian.php';
                 break;
               }
               case 'update_thoigian':{
-                include 'lophoc/phonghoc/update_lophoc.php';
+                include 'lophoc/lophoc/update_thoigian.php';
                 break;
               }
-              case 'add_thoigian':{
-                include 'lophoc/phonghoc/delete_lophoc.php';
+              case 'delete_thoigian':{
                 break;
               }
 //            ------------------------------- feedback ---------------------------------
@@ -266,15 +267,31 @@
                 break;
               }
               case 'add_danhmuc_trangthai':{
+                if(isset($_POST['save'])){
+                  add_danhmuc_trangthai($_POST['name_danhmuc_trangthai']);
+                  header('location: index.php?act=list_danhmuc_trangthai');
+                }
                 include 'qlriengle/trangthai/danhmuc_trangthai/add_trangthai.php';
                 break;
               }
               case 'update_danhmuc_trangthai':{
+                if(isset($_GET['iddm_trangthai']) && $_GET['iddm_trangthai'] > 0){
+                  $dm_trangthai = getone_danhmuc_trangthai($_GET['iddm_trangthai']);
+                }
+                if(isset($_POST['update_dm_trangthai'])){
+                  $iddm_trangthai_ = $_POST['id_dm_tt'];
+                  $ten_dm_trangthai_ = $_POST['name_dm_tt'];
+                  update_danhmuc_trangthai($iddm_trangthai_ , $ten_dm_trangthai_);
+                  header("location: index.php?act=list_danhmuc_trangthai");
+                }
                 include 'qlriengle/trangthai/danhmuc_trangthai/update_trangthai.php';
                 break;
               }
               case 'delete_danhmuc_trangthai':{
-                include 'qlriengle/trangthai/danhmuc_trangthai/delete_trangthai.php';
+                if(isset($_GET['iddm']) && $_GET['iddm'] > 0){
+                  delete_danhmuc_trangthai($_GET['iddm']);
+                  header("location:index.php?act=list_danhmuc_trangthai");
+                }
                 break;
               }
 //              --------------------------trạng thái --------------------------------
@@ -283,10 +300,24 @@
                 break;
               }
               case 'add_trangthai':{
+                if(isset($_POST['btn_save'])){
+                  add_trangthai($_POST['trangthai'], $_POST['iddm_trangthai']);
+                  header('location: index.php?act=list_trangthai');
+                }
                 include 'qlriengle/trangthai/trangthai/add_trangthai.php';
                 break;
               }
               case 'update_trangthai':{
+                if(isset($_GET['id_trangthai']) && $_GET['id_trangthai'] > 0){
+                  $trangthai = getone_trangthai($_GET['id_trangthai']);
+                }
+                if(isset($_POST['update_trangthai'])){
+                  $iddm_trangthai_ = $_POST['iddm_trangthai'];
+                  $ten_dm_trangthai_ = $_POST['name_dm_tt'];
+                  $id = $_POST['id_trangthai'];
+                  update_trangthai($ten_dm_trangthai_,$iddm_trangthai_,$id);
+                  header("location: index.php?act=list_trangthai");
+                }
                 include 'qlriengle/trangthai/trangthai/update_trangthai.php';
                 break;
               }
@@ -356,6 +387,10 @@
               }
               case 'delete_taikhoan':{
                 include 'taikhoan/delete_taikhoan.php';
+                break;
+              }
+              case 'logout':{
+                dangxuat_admin();
                 break;
               }
               default:

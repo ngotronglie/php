@@ -55,6 +55,11 @@
               include 'view/login/dangki.php';
               break;
             }
+            case 'logout':{
+              dangxuat_user();
+              include 'view/main.php';
+              break;
+            }
             // thông báo  ______________________________-___
             case 'chitiet_thongbao':{
               include 'view/chitiet_thongbao.php';

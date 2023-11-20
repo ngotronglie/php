@@ -96,7 +96,7 @@
               <!-- Messages -->
               <!-- ============================================================== -->
               <li class="nav-item">
-                  <div class="h3 dis">hello, Giảng viên Trọng Liêm</div>
+                  <div class="h3 dis">hello, <?php echo $_SESSION['user']?></div>
               </li>
               <!-- ============================================================== -->
               <!-- End Messages -->
@@ -128,7 +128,7 @@
                   <a class="dropdown-item" href="javascript:void(0)"
                     ><i class="ti-settings m-r-5 m-l-5"></i> Account Setting</a
                   >
-                  <a class="dropdown-item" href="javascript:void(0)"
+                  <a class="dropdown-item" href="index.php?act=logout"
                     ><i class="fa fa-power-off m-r-5 m-l-5"></i>Logout</a
                   >
 

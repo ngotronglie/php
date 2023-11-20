@@ -18,17 +18,18 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php foreach($list_dm_trangthai as $key => $value):?>
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>đang hoạt động</td>
+                                    <th scope="row"><?php echo $key + 1?></th>
+                                    <td><?php echo $value['namedm_trangthai']?></td>
                                     <td>
-                                        <a href="index.php?act=update_danhmuc_trangthai" class="btn btn-warning">sửa</a>
-                                        <button class="btn btn-danger" data-bs-id="" data-bs-toggle="modal"
-                                            data-bs-target="#modalDelete">
+                                    <a href="index.php?act=update_danhmuc_trangthai&iddm_trangthai=<?php echo $value['iddm_trangthai']?>" class="btn btn-warning">sửa</a>
+                                        <a  onclick="return confirm('Bạn có chắc xóa danh mục khóa học không?')" href="index.php?act=delete_danhmuc_trangthai&iddm=<?php echo $value['iddm_trangthai']?>" class="btn btn-danger">
                                             Xóa
-                                        </button>
+                                        </a>
                                     </td>
                                 </tr>
+                                <?php endforeach;?>
                             </tbody>
                     </table>     
                 </div>

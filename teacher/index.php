@@ -1,3 +1,11 @@
+<?php
+  session_start();
+  include '../model/pdo.php';
+  include '../model/lop/giohoc.php';
+  include '../model/lop/lop.php';
+  include '../model/feedback.php';
+?>
+
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
     <?php include 'view/head.php'?>
@@ -48,7 +56,10 @@
                 include 'qlsinhvien/update_sinhvien.php';
                 break;
               }
-
+              case 'logout':{
+                dangxuat_giangvien();
+                break;
+              }
               
               default:
               //  include 'footer.php';

@@ -87,7 +87,7 @@
         <!-- Messages -->
         <!-- ============================================================== -->
         <li class="nav-item">
-            <div class="h3">hello, Admin Trọng Liêm</div>
+            <div class="h3">hello, <?php echo $_SESSION['user']?></div>
         </li>
         <!-- ============================================================== -->
         <!-- End Messages -->
@@ -119,7 +119,7 @@
             <a class="dropdown-item" href=""
               ><i class="ti-settings m-r-5 m-l-5"></i> Account Setting</a
             >
-            <a class="dropdown-item" href=""
+            <a class="dropdown-item" href="index.php?act=logout"
               ><i class="fa fa-power-off m-r-5 m-l-5"></i>Logout</a
             >
 

@@ -10,11 +10,12 @@
         </div>
         <div>
             <?php 
-            if($_SESSION['user']){
-                echo  '<span class="h5">Xin chào, ' .$_SESSION['user'].'</span>';
-                echo '<a style="margin-left: 5px;" href="index.php?act=login" class="btn btn-danger">đăng xuất</a>';
-            }else{
+            if(!$_SESSION){
                 echo '<a href="index.php?act=login" class="btn btn-dark">đăng nhập</a>';
+            }else{
+                
+                echo  '<span class="h5">Xin chào, ' .$_SESSION['user'].'</span>';
+                echo '<a style="margin-left: 5px;" href="index.php?act=logout" class="btn btn-danger">đăng xuất</a>';
             }
             ?>
             

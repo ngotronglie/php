@@ -83,4 +83,23 @@
         }
         
     }
+    // đăng xuất
+    function dangxuat_user(){
+        if(isset($_SESSION['user'])){
+            unset($_SESSION['user']);
+            header('Location: index.php');
+        }
+    }
+    function dangxuat_admin(){
+        if(isset($_SESSION['user'])){
+            unset($_SESSION['user']);
+            header('Location: ../index.php');
+        }
+    }
+    function dangxuat_giangvien(){
+        if(isset($_SESSION['user'])){
+            unset($_SESSION['user']);
+            header('Location: ../index.php');
+        }
+    }
 ?>
