@@ -36,4 +36,9 @@
     //     $result = pdo_query_one($sql);
     //     return $result;
     // }
+    function timkiem_danhmuc_khoahoc($iddm){
+        $sql = "SELECT * from danhmuc_khoahoc where iddm_khoahoc  = $iddm";
+        $result = pdo_query($sql);
+        return $result;
+    }
 ?>

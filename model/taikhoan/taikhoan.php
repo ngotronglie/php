@@ -1,12 +1,45 @@
 <?php
 //  đăng kí 
 
-    function insert_taikhoan($name,$pass,$email,$adress,$phone)
-    {
-        $sql = "INSERT into `taikhoan` (`user` , `pass`, `email`, `address`, `tel` ) 
-        values ('$name' ,'$pass', '$email','$adress', '$phone')";
+    function add_user($user, $pass, $email, $address,$phone, $mota){
+        $sql ="INSERT INTO `taikhoan` (`id_taikhoan`, `user`, `pass`, `email`, `address`, `tel`, `mota`) 
+        VALUES (NULL, '$user', '$pass', '$email', '$address', '$phone', '$mota')";
         pdo_execute($sql);
+    }
+    function checkuser($user, $pass){
+        $sql = "SELECT * FROM taikhoan where user = '$user' and pass = '$pass'";
+        $taikhoan = pdo_query_one($sql);
+        if($taikhoan != false){
+            $_SESSION['user'] = $user;
+            if($taikhoan['role'] == 0){
+                header('location:index.php');
+            }
+            if($taikhoan['role'] == 1){
+                header('location: admin/index.php');
+            }
+            if($taikhoan['role'] == 2){
+                header('location: staff/index.php');
+            }
+            if($taikhoan['role'] == 3){
+                header('location: teacher/index.php');
 
+            }
+            return "
+                <div class='container'>
+                    <div class='alert alert-success mt-3' role='alert'>
+                        Thông tin tài khoản đúng!
+                    </div>
+                </div>
+            ";
+        }else{
+            return "
+                <div class='container'>
+                    <div class='alert alert-danger mt-3' role='alert'>
+                        Thông tin tài khoản sai!
+                    </div>
+                </div>
+            ";
+        }
     }
 
 //  đăng nhập 
@@ -50,15 +83,4 @@
         }
         
     }
-
-//  đăng xuất
-    function dangxuat(){
-        if(isset($_SESSION['email'])){
-            unset($_SESSION['email']);
-            header('location:index.php');
-        }
-    }
-
-
-
 ?>

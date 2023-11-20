@@ -3,6 +3,7 @@
   include '../model/pdo.php';
   include '../model/khoahoc/danhmuc_khoahoc.php';
   include '../model/lop/giohoc.php';
+  include '../model/thongbao.php';
   session_start();
 ?>
 
@@ -24,6 +25,7 @@
 
           $danhmuc_khoahoc = danhsach_danhmuc_khoahoc();
           $giohoc = danhsach_giohoc();
+          $list_thongbao = list_thongbao();
 
           if(isset($_GET['act']) && $_GET['act']!= ""){
             $act = $_GET['act'];
@@ -49,17 +51,45 @@
               }
 
               case 'add_thongbao':{
+                if(isset($_POST['thongbao'])){
+                  $photo =null;
+                  $tieude = $_POST['tieude'];
+                  $noidung = $_POST['noidung'];
+                  if($_FILES['img_thongbao']['name']!=""){
+                    $photo = time() .'__'.$_FILES['img_thongbao']['name'];
+                    move_uploaded_file($_FILES['img_thongbao']['tmp_name'], "../upload/thongbao/$photo");
+                  }
+                  add_thongbao($photo,$tieude,$noidung);
+                  header('location: index.php?act=list_thongbao');
+                }
                 include 'thongbao/add_thongbao.php';
                 break;
               }
 
               case 'update_thongbao':{
+                if(isset($_GET['id_tb']) && $_GET['id_tb'] >0){
+                  $thongbao_up = getone_thongbao($_GET['id_tb']);
+                }
+                if(isset($_POST['up_tb']) && $_POST['up_tb'] >0) {
+                  $photo = null;
+                  $title = $_POST['title'];
+                  $noidung = $_POST['noidung'];
+                  if($_FILES['img_tbud']['name'] != ""){
+                    $photo = time().'__'.$_FILES['img_tbud']['name'];
+                    move_uploaded_file($_FILES['img_tbud']['tmp_name'], "../upload/thongbao/$photo");
+                  }
+                  $idtb =$_POST['idtb'];
+                  update_thongbao($photo, $title, $image, $idtb);
+                }
                 include 'thongbao/update_thongbao.php';
                 break;
               }
 
               case 'delete_thongbao':{
-                include 'thongbao/delete_tb.php';
+                if(isset($_GET['id_thongbao']) && $_GET['id_thongbao'] > 0){
+                  delete_thongbao($_GET['id_thongbao']);
+                  header('location: ?act=list_thongbao');
+                }
                 break;
               }
 // ----------------------- giảng viên --------------------------------
