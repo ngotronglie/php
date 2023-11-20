@@ -22,21 +22,28 @@
               <div class="carousel-item active">
                 <img
                   class="d-block w-100"
-                  src="./assets/images/background/img4.jpg"
+                  src="./assets/images/banner/banner1.jpg"
                   alt="First slide"
                 />
               </div>
               <div class="carousel-item">
                 <img
                   class="d-block w-100"
-                  src="./assets/images/background/img5.jpg"
+                  src="./assets/images/banner/banner2.jpg"
                   alt="Second slide"
                 />
               </div>
               <div class="carousel-item">
                 <img
                   class="d-block w-100"
-                  src="./assets/images/background/img6.jpg"
+                  src="./assets/images/banner/banner3.jpg"
+                  alt="Third slide"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  class="d-block w-100"
+                  src="./assets/images/banner/banner4.jpg"
                   alt="Third slide"
                 />
               </div>

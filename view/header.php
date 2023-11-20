@@ -9,7 +9,15 @@
         <!-- <a href="#" class="h5 m-3">feedback riêng tư</a> -->
         </div>
         <div>
-        <a href="index.php?act=login" class="btn btn-dark">đăng nhập</a>
+            <?php 
+            if($_SESSION['user']){
+                echo  '<span class="h5">Xin chào, ' .$_SESSION['user'].'</span>';
+                echo '<a style="margin-left: 5px;" href="index.php?act=login" class="btn btn-danger">đăng xuất</a>';
+            }else{
+                echo '<a href="index.php?act=login" class="btn btn-dark">đăng nhập</a>';
+            }
+            ?>
+            
         </div>
     </nav>
 </header>

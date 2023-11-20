@@ -4,7 +4,6 @@
   include './model/khoahoc/danhmuc_khoahoc.php';
   include './model/khoahoc/khoahoc.php';
   include './model/taikhoan/taikhoan.php';
-
 ?>
 
 
