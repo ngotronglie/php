@@ -3,42 +3,18 @@
         <div class="col-md-3">
           <div class="card mt-5" style="width: 18rem">
             <div class="card-header">Xem thêm khóa học cùng loại khác</div>
+            <?php foreach($khoahoc_cungloai as $value):?>
             <div class="list-group">
               <a
-                href=""
+                href="index.php?act=chitiet_khoahoc&id__khoahoc=<?php echo $value['id_khoahoc']?>"
                 class="list-group-item list-group-item-action list-item-link"
               >
-                <img src="" alt="" />
-                C# cho người mới bắt đầu
+                <img style="width: 50px" src="./upload/khoahoc/<?php echo $value['img_khoahoc']?>" alt="" />
+                <?php echo $value['name_khoahoc']?>
               </a>
             </div>
-            <div class="list-group">
-              <a
-                href=""
-                class="list-group-item list-group-item-action list-item-link"
-              >
-                <img src="" alt="" />
-                C# cho người mới bắt đầu
-              </a>
-            </div>
-            <div class="list-group">
-              <a
-                href=""
-                class="list-group-item list-group-item-action list-item-link"
-              >
-                <img src="" alt="" />
-                C# cho người mới bắt đầu
-              </a>
-            </div>
-            <div class="list-group">
-              <a
-                href=""
-                class="list-group-item list-group-item-action list-item-link"
-              >
-                <img src="" alt="" />
-                C# cho người mới bắt đầu
-              </a>
-            </div>
+            <?php endforeach;?>
+
           </div>
         </div>
         <div class="col-md-8 offset-md-1">
@@ -48,7 +24,7 @@
                 <img
                   style="width: 400px"
                   class="img-detail"
-                  src="./assets/images/background/img4.jpg"
+                  src="./upload/khoahoc/<?php echo $khoahoc['img_khoahoc']?>"
                   alt=""
                 />
               </div>
@@ -57,40 +33,40 @@
                   <li>
                     Danh mục khóa học:
                     <span class="badge bg-success text-light"
-                      >Công Nghệ thông tin</span
+                      ><?php echo $khoahoc['namedm_khoahoc']?></span
                     >
                   </li>
                   <li>
-                    Tên khóa học
+                    Tên khóa học:
                     <span class="badge bg-info text-light"
-                      >C# cho người mới bắt đầu</span
+                      ><?php echo $khoahoc['name_khoahoc']?></span
                     >
                   </li>
                   <li>
                     Giảng viên:
                     <span class="badge bg-primary text-light"
-                      >Ngô Trọng Liêm</span
+                      ><?php echo $khoahoc['user']?></span
                     >
                   </li>
                   <li>
                     Đơn giá:
-                    <span><del class="text-danger">4.000.000vnđ</del></span>
+                    <span><del class="text-danger"><?php echo $khoahoc['price_khoahoc']?> vnd</del></span>
                   </li>
                   <li>
                     Giảm giá:
-                    <span class="badge bg-warning">25%</span>
+                    <span class="badge bg-warning"><?php echo $khoahoc['giamgia']?>%</span>
                   </li>
                   <li>
                     Chỉ còn:
-                    <span class="badge bg-danger">3.000.000 vnđ</span>
+                    <span class="badge bg-danger text-light"><?php echo $khoahoc['price_khoahoc'] - ($khoahoc['price_khoahoc'] * $khoahoc['giamgia'] /100)?> vnd</span>
                   </li>
                   <li>
                     Lượt xem:
-                    <span class="badge bg-secondary text-light">6</span>
+                    <span class="badge bg-secondary text-light"><?php echo $khoahoc['luot_xem']?></span>
                   </li>
                   <li>
                     Lượt đăng kí:
-                    <span class="badge bg-secondary text-light">10</span>
+                    <span class="badge bg-secondary text-light"><?php echo $khoahoc['luot_dangki']?></span>
                   </li>
                 </ul>
                 <a href="index.php?act=list_lophoc" class="btn btn-success">Đặt lớp</a>
@@ -101,26 +77,7 @@
                 <h4 class="mt-5">nội dung khóa học</h4>
                 <hr />
                 <span>
-                  mô tả Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Nobis blanditiis dolorem molestiae accusamus beatae quae
-                  numquam eaque commodi optio incidunt cum pariatur
-                  reprehenderit voluptate qui velit nisi, tenetur aliquid animi!
-                  Veniam beatae, mollitia, assumenda ipsum labore rerum sed
-                  eligendi hic minus quibusdam consectetur. Odit reprehenderit,
-                  suscipit modi explicabo dolores consequuntur tenetur quidem
-                  esse minus id dolorum debitis fugiat aut error? Voluptatibus
-                  hic fugit possimus saepe iure doloremque id veniam dolor
-                  quibusdam quos culpa, odio magni dignissimos ducimus alias?
-                  Sequi eos voluptatem corporis cumque dolores libero laudantium
-                  doloribus nisi magnam minima? Obcaecati a nisi soluta dolores
-                  neque nulla nihil consectetur est placeat, voluptate commodi,
-                  sed odio dicta molestias repellendus quasi error? Excepturi,
-                  eaque expedita? Quaerat qui placeat dolorem obcaecati porro
-                  inventore. Deleniti perspiciatis earum culpa nostrum
-                  molestiae? Sunt doloremque facilis mollitia deserunt ab nihil
-                  magnam adipisci, non, a modi porro quia accusantium? Nostrum
-                  perspiciatis ea aliquam placeat. Obcaecati porro explicabo
-                  ipsa!
+                  <?php echo $khoahoc['noidung_khoahoc'] ?>
                 </span>
               </div>
             </div>
@@ -149,25 +106,19 @@
           <form
             action=""
             method="POST"
-            class="d-flex justify-content-around m-3"
+            class="d-flex justify-content-around "
           >
             <input type="hidden" class="form-control" name="idpro" value="" />
 
             <input
               type="text"
-              class="form-control"
+              class="form-control m-3"
               placeholder="Gửi bình luận"
               name="noidung"
+
             />
             <input
-              style="
-                border: none;
-                outline: none;
-                margin-left: 10px;
-                background-color: aquamarine;
-                padding: 10px;
-                border-radius: 8px;
-              "
+              class="btn btn-success m-3 "
               type="submit"
               name="guibinhluan"
               value="Gửi bình luận"

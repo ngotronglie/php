@@ -2,19 +2,19 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <form class="form-horizontal" action="">
+                <form class="form-horizontal" action="index.php?act=update_khoahoc">
                     <div class="card-body">
                         <h4 class="card-title">Sửa khóa học</h4>
                         <div class="form-group row">
                             <label for="fname" class="col-sm-3 text-right control-label col-form-label">Tên khóa học</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="fname" value="Tên khóa học">
+                                <input type="text" class="form-control" id="fname" value="">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="fname" class="col-sm-3 text-right control-label col-form-label">ảnh</label>
                             <div class="col-sm-9">
-                                <img src="" alt="ảnh">
+                                <img src="../upload/khoahoc" alt="ảnh">
                                 <input type="file" class="form-control" id="fname">
                             </div>
                         </div>

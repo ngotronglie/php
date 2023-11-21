@@ -4,6 +4,8 @@
   include './model/khoahoc/danhmuc_khoahoc.php';
   include './model/khoahoc/khoahoc.php';
   include './model/taikhoan/taikhoan.php';
+  include './model/thongbao.php';
+  // include '';
 ?>
 
 
@@ -11,17 +13,21 @@
 <html dir="ltr" lang="en">
   <?php include 'view/head.php'?>
   <body>
-    <div class="preloader">
+    <!-- <div class="preloader">
       <div class="lds-ripple">
         <div class="lds-pos"></div>
         <div class="lds-pos"></div>
       </div>
-    </div>
+    </div> -->
     <div class="container-fluid">
       <?php include 'view/header.php'?>
       
       <?php
         $danhsach_danhmuc_khoahoc = danhsach_danhmuc_khoahoc();
+        $danhsach_khoahoc = danhsach_khoahoc();
+        $danhsach_thongbao = list_thongbao();
+        $top10_view = top10_view();
+       
 
 
         if(isset($_GET['act']) && $_GET['act'] != ""){
@@ -62,16 +68,25 @@
             }
             // thông báo  ______________________________-___
             case 'chitiet_thongbao':{
+              if(isset($_GET['iddm']) && $_GET['iddm']!= ""){
+                $thongbao_le = getone_thongbao($_GET['iddm']);
+              }
               include 'view/chitiet_thongbao.php';
               break;
             }
+
             // danh mục khóa học
-            case 'show_danhmuc_khoahoc':{
+
+            case 'search_danhmuc_khoahoc':{
+              if(isset($_GET['iddm_kh']) && $_GET['iddm_kh'] >0){
+                $danhsach_khoahoc = search_danhmuc_kh($_GET['iddm_kh']);
+              }
+              include 'view/main.php';
               break;
             }
-            case 'search_danhmuc_khoahoc':{
-              if(isset($_GET['iddm']) && $_GET['iddm'] >0){
-                $khoahoc = timkiem_danhmuc_khoahoc($_GET['iddm']);
+            case 'search_khoahoc':{
+              if(isset($_POST['timkiem']) && $_POST['timkiem'] !=""){
+                $danhsach_khoahoc = timkiem_khoahoc($_POST['keyword']);
               }
               include 'view/main.php';
               break;
@@ -79,6 +94,12 @@
             
             //  khóa học ++++++++++++++++++++++++++++++++++
             case 'chitiet_khoahoc':{
+              if(isset($_GET['id__khoahoc']) && $_GET['id__khoahoc']){
+                $khoahoc = getone_chitiet_khoahoc($_GET['id__khoahoc']);
+
+                tangluotxem($_GET['id__khoahoc']);
+                $khoahoc_cungloai = khoahoc_cungloai($_GET['id__khoahoc']);
+              }
               include 'view/chitiet_khoahoc.php';
               break;
             }
@@ -94,6 +115,8 @@
               include 'view/chitiet_lopdangki.php';
               break;
             }
+            // chi tiết khóa học
+           
             
             default:
               

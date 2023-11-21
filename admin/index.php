@@ -8,6 +8,7 @@
   include '../model/trangthai/danhmuc_trangthai.php';
   include '../model/trangthai/trangthai.php';
   include '../model/phonghoc.php';
+  include '../model/khoahoc/khoahoc.php';
   session_start();
 ?>
 
@@ -33,6 +34,8 @@
           $list_dm_trangthai = danhsach_danhmuc_trangthai();
           $danhsach_trangthai = danhsach_trangthai();
           $danhsach_phonghoc = danhsach_phonghoc();
+          $danhsach_khoahoc = danhsach_khoahoc();
+          $danhsach_taikhoan_giangvien = danhsach_taikhoan_giangvien();
 
           if(isset($_GET['act']) && $_GET['act']!= ""){
             $act = $_GET['act'];
@@ -160,6 +163,10 @@
                 break;
               }
               case 'delete_lophoc':{
+                if(isset($_GET['iddm']) && $_GET['iddm'] > 0){
+                  delete_phonghoc($_GET['iddm']);
+                  header("location:index.php?act=list_lophoc");
+                }
                 break;
               }
               // --------------------------phòng học lớp---------------
@@ -216,6 +223,22 @@
                 break;
               }
               case 'add_khoahoc':{
+                if(isset($_POST['add'])){
+                  $ten_kh = $_POST['name_kh'];
+                  $dmkh = $_POST['dmkh'];
+                  $noidung = $_POST['noidung'];
+                  $gia = $_POST['gia'];
+                  $giamgia = $_POST['giamgia'];
+                  $idgv = $_POST['idgv'];
+                  if($_FILES['img']['name']!= null){
+                    $photo = time() .'__'.$_FILES['img']['name'];
+                    move_uploaded_file($_FILES['img']['tmp_name'], "../upload/khoahoc/$photo");
+                  }
+                  // $iddmkh, $photo, $name_kh, $noidung_kh, $gia,$idtk,$giamgia
+                  add_khoahoc($dmkh, $photo,$ten_kh ,$noidung ,$gia,$idgv, $giamgia );
+                  header('location: index.php?act=list_khoahoc');
+                 
+                }
                 include 'khoahoc/khoahoc/add_khoahoc.php';
                 break;
               }

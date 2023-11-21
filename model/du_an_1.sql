@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 19, 2023 lúc 01:47 PM
+-- Thời gian đã tạo: Th10 21, 2023 lúc 01:26 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -20,18 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `du_an_1`
 --
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `banner`
---
-
-CREATE TABLE `banner` (
-  `id_banner` int(11) NOT NULL,
-  `banner_ngaydang` varchar(255) NOT NULL,
-  `image` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -98,11 +86,10 @@ CREATE TABLE `danhmuc_khoahoc` (
 --
 
 INSERT INTO `danhmuc_khoahoc` (`iddm_khoahoc`, `namedm_khoahoc`) VALUES
-(1, 'Công nghệ thông tin'),
-(2, 'thiết kế đồ họa'),
-(3, 'marketing'),
-(4, 'Tự động hóa'),
-(5, 'Tiếng anh');
+(10, 'Quan hệ công chúng'),
+(12, 'Tự động hóa'),
+(31, 'thiết kế đồ họa'),
+(33, 'phát triển cá nhân');
 
 -- --------------------------------------------------------
 
@@ -121,7 +108,7 @@ CREATE TABLE `danhmuc_trangthai` (
 
 INSERT INTO `danhmuc_trangthai` (`iddm_trangthai`, `namedm_trangthai`) VALUES
 (1, 'sinh viên'),
-(2, 'lớp');
+(2, 'lớp học  ');
 
 -- --------------------------------------------------------
 
@@ -168,12 +155,9 @@ CREATE TABLE `gio_hoc` (
 --
 
 INSERT INTO `gio_hoc` (`id_giohoc`, `name_giohoc`) VALUES
-(1, '7h15p -> 9h15p - Thứ 2/4/6 hàng tuần'),
-(2, '9h25p -> 11h25p - thứ 2/4/6 hàng tuần'),
-(3, '12h -> 14h - thứ 2/4/6 hàng tuần'),
-(4, '14h10p -> 16h10p - Thứ 2/4/6 hàng tuần'),
-(5, '16h20p -> 18h20p - Thứ 2/4/6 hàng tuần'),
-(8, '18h30p -> 20h30p - Thứ 2/4/6 hàng tuần');
+(1, '14h10p -> 16h10p - Thứ 2/4/6 hàng tuần'),
+(2, '16h20p -> 18h20p - Thứ 2/4/6 hàng tuần'),
+(3, '18h30p -> 20h30p - Thứ 2/4/6 hàng tuần');
 
 -- --------------------------------------------------------
 
@@ -215,9 +199,7 @@ CREATE TABLE `khoahoc` (
 
 CREATE TABLE `khuyenmai` (
   `id_khuyenmai` int(11) NOT NULL COMMENT 'id khuyến mãi',
-  `percent` int(10) NOT NULL COMMENT 'phần trăm ',
-  `code` varchar(255) NOT NULL COMMENT 'code',
-  `ghichu` varchar(255) NOT NULL COMMENT 'ghi chú'
+  `percent` int(10) NOT NULL COMMENT 'phần trăm '
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -270,6 +252,33 @@ CREATE TABLE `phonghoc` (
   `id_giohoc` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `phonghoc`
+--
+
+INSERT INTO `phonghoc` (`id_phonghoc`, `name_phong`, `mota_lophoc`, `slot`, `id_giohoc`) VALUES
+(1, 'F304', 'tòa f tầng 3 phòng 04', 40, 1),
+(2, 'F506', 'tòa f tầng 5 phòng 06', 38, 2),
+(3, 'F106', 'tòa f tầng 1 phòng 06', 38, 3),
+(4, 'F206', 'tòa f tầng 2 phòng 06', 41, 3),
+(5, 'P506', 'tòa P tầng 5 phòng 06', 35, 1),
+(6, 'P206', 'tòa P tầng 2 phòng 06', 38, 2),
+(7, 'F101', 'tòa F tầng 101', 12, 2),
+(8, 'F102', 'tòa F tầng 1 phòng 02', 36, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `riengtu`
+--
+
+CREATE TABLE `riengtu` (
+  `id_riengtu` int(11) NOT NULL,
+  `email_riengtu` varchar(255) NOT NULL,
+  `sdt_riengtu` varchar(255) NOT NULL,
+  `noidung` varchar(225) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 -- --------------------------------------------------------
 
 --
@@ -284,9 +293,23 @@ CREATE TABLE `taikhoan` (
   `address` varchar(255) NOT NULL,
   `tel` varchar(255) NOT NULL,
   `mota` text NOT NULL,
-  `role` int(10) NOT NULL DEFAULT 0,
-  `img` varchar(255) DEFAULT NULL
+  `role` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `taikhoan`
+--
+
+INSERT INTO `taikhoan` (`id_taikhoan`, `user`, `pass`, `email`, `address`, `tel`, `mota`, `role`) VALUES
+(1, 'user1', '123', 'user1@gmail.com', 'Thái Bình', '0376278382', 'đẹp trai', 0),
+(2, 'admin', '123', 'admin@gmail.com', 'Thai Binh', '0376278382', 'tôi rất thích chơi bóng bàn', 1),
+(3, 'nhanvien', '123', 'nhanvien@gmail.com.com', 'Hà Nội ', '0376278382', '3:26 tôi đẩy cái này lên', 2),
+(6, 'gv1', '123', 'gv1@gmail.com', 'hà nội', '0345345345', 'Tôi là người mới', 3),
+(7, 'user2', '123', 'user2@gmail.com', 'hà nội', '123123123', 'Tôi là người mới', 0),
+(16, 'gv3', '123', 'gv3@gmail.com', 'Hà nội', '123123123', '21313sdgdgdgdg dsfgsdgfdgd g gfgfdgdgdfgg dgdf dfgggsd gsdfg sfgsfgsdgs gsdgs gsdfgsdg sdgdsg dsgggdgsg fsfgsgsdg sdgsfg sdg sfgsfdg sfgsdg sdfg sdfg s', 3),
+(17, 'gv4', '123', 'gv4@gmail.com', 'Thái Bình', '123123123', '21313sdgdgdgdg dsfgsdgfdgd g gfgfdgdgdfgg dgdf dfgggsd gsdfg sfgsfgsdgs gsdgs gsdfgsdg sdgdsg dsgggdgsg fsfgsgsdg sdgsfg sdg sfgsfdg sfgsdg sdfg sdfg s', 3),
+(18, 'gv5', '123', 'gv5@gmail.com', 'Ninh Bình', '123123123', '21313sdgdgdgdg dsfgsdgfdgd g gfgfdgdgdfgg dgdf dfgggsd gsdfg sfgsfgsdgs gsdgs gsdfgsdg sdgdsg dsgggdgsg fsfgsgsdg sdgsfg sdg sfgsfdg sfgsdg sdfg sdfg s', 3),
+(19, 'gv6', '123', 'gv6@gmail.com', 'Phú Thọ', '123123123', '21313sdgdgdgdg dsfgsdgfdgd g gfgfdgdgdfgg dgdf dfgggsd gsdfg sfgsfgsdgs gsdgs gsdfgsdg sdgdsg dsgggdgsg fsfgsgsdg sdgsfg sdg sfgsfdg sfgsdg sdfg sdfg s', 3);
 
 -- --------------------------------------------------------
 
@@ -298,9 +321,16 @@ CREATE TABLE `thongbao` (
   `id_thongbao` int(11) NOT NULL COMMENT 'id thông báo',
   `img_thongbao` varchar(255) NOT NULL COMMENT 'ảnh thông báo',
   `title` varchar(255) NOT NULL COMMENT 'tiêu đề thông báo',
-  `noidung_thongbao` varchar(255) NOT NULL COMMENT 'nội dung thông báo',
+  `noidung_thongbao` text NOT NULL COMMENT 'nội dung thông báo',
   `ngaythongbao` varchar(255) NOT NULL COMMENT 'ngày đăng'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `thongbao`
+--
+
+INSERT INTO `thongbao` (`id_thongbao`, `img_thongbao`, `title`, `noidung_thongbao`, `ngaythongbao`) VALUES
+(2, '1700472922__hihi.jpg', 'Chào tháng 12 đầy năng lượng', 'Chào tháng 12 đầy năng lượng Chào tháng 12 đầy năng lượng Chào tháng 12 đầy năng lượng Chào tháng 12 đầy năng lượngChào tháng 12 đầy năng lượng Chào tháng 12 đầy năng lượngChào tháng 12 đầy năng lượng', '20/11/2023');
 
 -- --------------------------------------------------------
 
@@ -315,14 +345,21 @@ CREATE TABLE `trangthai` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Đang đổ dữ liệu cho bảng `trangthai`
 --
 
+INSERT INTO `trangthai` (`id_trangthai`, `name_trangthai`, `iddm_trangthai`) VALUES
+(1, 'sql là nhất', 1),
+(2, 'bỏ học', 1),
+(3, 'đang hoạt động', 2),
+(4, 'sắp Hoạt động', 2),
+(5, 'dừng hoạt động', 2),
+(6, 'hello', 1),
+(7, 'hello 123', 1);
+
 --
--- Chỉ mục cho bảng `banner`
+-- Chỉ mục cho các bảng đã đổ
 --
-ALTER TABLE `banner`
-  ADD PRIMARY KEY (`id_banner`);
 
 --
 -- Chỉ mục cho bảng `binhluan`
@@ -409,6 +446,12 @@ ALTER TABLE `phonghoc`
   ADD PRIMARY KEY (`id_phonghoc`);
 
 --
+-- Chỉ mục cho bảng `riengtu`
+--
+ALTER TABLE `riengtu`
+  ADD PRIMARY KEY (`id_riengtu`);
+
+--
 -- Chỉ mục cho bảng `taikhoan`
 --
 ALTER TABLE `taikhoan`
@@ -429,12 +472,6 @@ ALTER TABLE `trangthai`
 --
 -- AUTO_INCREMENT cho các bảng đã đổ
 --
-
---
--- AUTO_INCREMENT cho bảng `banner`
---
-ALTER TABLE `banner`
-  MODIFY `id_banner` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `binhluan`
@@ -458,13 +495,13 @@ ALTER TABLE `danhgia`
 -- AUTO_INCREMENT cho bảng `danhmuc_khoahoc`
 --
 ALTER TABLE `danhmuc_khoahoc`
-  MODIFY `iddm_khoahoc` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id danh mục khóa hoc', AUTO_INCREMENT=6;
+  MODIFY `iddm_khoahoc` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id danh mục khóa hoc', AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT cho bảng `danhmuc_trangthai`
 --
 ALTER TABLE `danhmuc_trangthai`
-  MODIFY `iddm_trangthai` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id danh mục trạng thái', AUTO_INCREMENT=3;
+  MODIFY `iddm_trangthai` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id danh mục trạng thái', AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `diemtongket`
@@ -482,7 +519,7 @@ ALTER TABLE `feedback`
 -- AUTO_INCREMENT cho bảng `gio_hoc`
 --
 ALTER TABLE `gio_hoc`
-  MODIFY `id_giohoc` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id giờ học', AUTO_INCREMENT=9;
+  MODIFY `id_giohoc` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id giờ học', AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT cho bảng `hoadon`
@@ -518,25 +555,31 @@ ALTER TABLE `name_question`
 -- AUTO_INCREMENT cho bảng `phonghoc`
 --
 ALTER TABLE `phonghoc`
-  MODIFY `id_phonghoc` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_phonghoc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT cho bảng `riengtu`
+--
+ALTER TABLE `riengtu`
+  MODIFY `id_riengtu` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `taikhoan`
 --
 ALTER TABLE `taikhoan`
-  MODIFY `id_taikhoan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_taikhoan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT cho bảng `thongbao`
 --
 ALTER TABLE `thongbao`
-  MODIFY `id_thongbao` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id thông báo';
+  MODIFY `id_thongbao` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id thông báo', AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `trangthai`
 --
 ALTER TABLE `trangthai`
-  MODIFY `id_trangthai` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_trangthai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

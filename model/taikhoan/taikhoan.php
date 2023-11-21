@@ -102,4 +102,10 @@
             header('Location: ../index.php');
         }
     }
+
+    function danhsach_taikhoan_giangvien(){
+        $sql ="SELECT * FROM taikhoan WHERE role = '3'";
+        $result = pdo_query($sql);
+        return $result;
+    }
 ?>

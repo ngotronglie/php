@@ -27,7 +27,7 @@
     }
 
     function delete_phonghoc($iddm){
-        $sql = "delete from danhmuc_trangthai where iddm_trangthai = $iddm";
+        $sql = "delete from phonghoc where id_phonghoc = $iddm";
         pdo_execute($sql);
     }
 

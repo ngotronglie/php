@@ -28,7 +28,7 @@
                                     <td><?php echo $value['slot']?></td>
                                     <td>
                                         <a href="index.php?act=update_lophoc&id_phonghoc=<?php echo $value['id_phonghoc']?>" class="btn btn-warning">sửa</a>
-                                        <button onclick="return confirm('bạn xác nhận xóa lớp học này chứ')" class="btn btn-danger">xóa</button>
+                                        <a href="index.php?act=delete_lophoc&iddm=<?php echo $value['id_phonghoc']?>" onclick="return confirm('bạn xác nhận xóa lớp học này chứ')" class="btn btn-danger">xóa</a>
                                     </td>
                                 </tr>
                                     <?php endforeach;?>

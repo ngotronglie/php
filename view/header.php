@@ -15,7 +15,7 @@
             }else{
                 
                 echo  '<span class="h5">Xin chào, ' .$_SESSION['user'].'</span>';
-                echo '<a style="margin-left: 5px;" href="index.php?act=logout" class="btn btn-danger">đăng xuất</a>';
+                echo "<a onclick=\"return confirm('Bạn chắc chắn đăng xuất chứ?')\" style='margin-left: 5px;' href='index.php?act=logout' class='btn btn-danger'>Đăng xuất</a>";
             }
             ?>
             

@@ -7,15 +7,6 @@
         <li class="sidebar-item">
           <a
             class="sidebar-link waves-effect waves-dark sidebar-link"
-            href="index.php?act=khuyenmai"
-            aria-expanded="false"
-            ><i class="far fa-money-bill-alt"></i
-            ><span class="hide-menu">Khuyến mãi</span></a
-          >
-        </li>
-        <li class="sidebar-item">
-          <a
-            class="sidebar-link waves-effect waves-dark sidebar-link"
             href="index.php?act=list_thongbao"
             aria-expanded="false"
             ><i class="fas fa-bell"></i
@@ -29,15 +20,6 @@
             aria-expanded="false"
             ><i class="fas fa-address-card"></i
             ><span class="hide-menu">Giảng viên</span></a
-          >
-        </li>
-        <li class="sidebar-item">
-          <a
-            class="sidebar-link waves-effect waves-dark sidebar-link"
-            href="index.php?act=list_banner"
-            aria-expanded="false"
-            ><i class=" far fa-window-restore"></i
-            ><span class="hide-menu">Banner marketing</span></a
           >
         </li>
         <li class="sidebar-item">

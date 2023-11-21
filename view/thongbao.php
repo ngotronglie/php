@@ -4,31 +4,13 @@
             </div>
             <div class="container-fluild mb-4">
             <div class="row">
-                <div class="col-md-4 pl-3 pr-3 mt-3 border-right">
-                <a href="index.php?act=chitiet_thongbao">
-                    <h4>Khóa học trong tháng 4</h4>
-                </a>
-                </div>
-                <div class="col-md-4 pl-3 pr-3 mt-3 border-right">
-                <a href="index.php?act=chitiet_thongbao">
-                    <h4>Khóa học trong tháng 4</h4>
-                </a>
-                </div>
-                <div class="col-md-4 pl-3 pr-3 mt-3 border-right">
-                <a href="index.php?act=chitiet_thongbao">
-                    <h4>Khóa học trong tháng 4</h4>
-                </a>
-                </div>
-                <div class="col-md-4 pl-3 pr-3 mt-3 border-right">
-                <a href="index.php?act=chitiet_thongbao">
-                    <h4>Khóa học trong tháng 4</h4>
-                </a>
-                </div>
-                <div class="col-md-4 pl-3 pr-3 mt-3 border-right">
-                <a href="index.php?act=chitiet_thongbao">
-                    <h4>Khóa học trong tháng 4</h4>
-                </a>
-                </div>
+                <?php foreach($danhsach_thongbao as $key => $value):?>
+                    <div class="col-md-4 pl-3 pr-3 mt-3 border-right">
+                        <a href="index.php?act=chitiet_thongbao&iddm=<?php echo $value['id_thongbao']?>">
+                            <h4><?php echo ($value['title'])?></h4>
+                        </a>
+                    </div>
+                <?php endforeach;?>
             </div>
             </div>
         </div>
