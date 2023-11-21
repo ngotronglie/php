@@ -108,4 +108,11 @@
         $result = pdo_query($sql);
         return $result;
     }
+
+    function search_id_taikhoan($user){
+        $sql = "SELECT id FROM taikhoan where user = '$user'";
+        $result = pdo_query_one($sql);
+        extract($result);
+        return $id_taikhoan;
+    }
 ?>

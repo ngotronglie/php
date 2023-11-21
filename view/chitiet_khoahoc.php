@@ -104,7 +104,7 @@
         </table>
         <div class="container">
           <form
-            action=""
+            action="index.php?act=chitiet_khoahoc"
             method="POST"
             class="d-flex justify-content-around "
           >

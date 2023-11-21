@@ -5,6 +5,7 @@
   include './model/khoahoc/khoahoc.php';
   include './model/taikhoan/taikhoan.php';
   include './model/thongbao.php';
+  include './model/binhluan.php';
   // include '';
 ?>
 
@@ -100,6 +101,15 @@
                 tangluotxem($_GET['id__khoahoc']);
                 $khoahoc_cungloai = khoahoc_cungloai($_GET['id__khoahoc']);
               }
+              $binhluan = load_binhluan($_GET['id__khoahoc']);
+              if(isset($_GET['guibinhluan']) && $_GET['guibinhluan'] != ""){
+                if($_SESSION){
+                  $user = $_SESSION['user'];
+                  $id__taikhoan = search_id_taikhoan($user);
+                }
+                insert_binhluan($POST['id_khoahoc'], $POST['noidung'], $id__taikhoan);
+                header('location:index.php?act=chitiet_khoahoc');
+              } 
               include 'view/chitiet_khoahoc.php';
               break;
             }

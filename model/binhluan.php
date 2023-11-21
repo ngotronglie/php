@@ -1,35 +1,32 @@
 <?php
 
 
-    function load_binhluan($idsp)
+    function load_binhluan($idkh)
     {
         $sql ="
-            SELECT binhluan.noidung, binhluan.ngaybinhluan,taikhoan.user from `binhluan`
-            left join taikhoan on binhluan.iduser = taikhoan.id
-            left join sanpham on binhluan.idpro = sanpham.id
-            where sanpham.id = $idsp
+        SELECT binhluan.noidung_binhluan , binhluan.ngaybinhluan, taikhoan.user FROM binhluan
+        LEFT JOIN taikhoan ON binhluan.id_taikhoan = taikhoan.id_taikhoan
+        LEFT JOIN khoahoc on binhluan.id_khoahoc = khoahoc.id_khoahoc
+        WHERE khoahoc.id_khoahoc = $idkh
         ";
         $result = pdo_query($sql);
         return $result;
     }
 
-    
-
-    function insert_binhluan($idpro, $noidung,$iduser)
+    function insert_binhluan($idkh, $noidung,$iduser)
     {   
         $date = date('Y-m-d');
-        $sql = "INSERT INTO `binhluan`(`noidung`, `iduser`, `idpro`, `ngaybinhluan`)
-        values('$noidung','$iduser','$idpro','$date')
+        $sql = "INSERT into `binhluan`(`id_taikhoan`,`id_khoahoc`,`noidung_binhluan`,`ngaybinhluan` ) VALUES('$iduser','$idkh','$noidung', '$date')
         ";
         pdo_execute($sql);
     }
 
     function list_binhluan(){
         $sql = "
-            SELECT binhluan.id , binhluan.noidung, taikhoan.user, sanpham.name, binhluan.ngaybinhluan 
-            from binhluan 
-            INNER JOIN taikhoan on binhluan.iduser = taikhoan.id
-            INNER JOIN sanpham on binhluan.idpro = sanpham.id
+            SELECT binhluan.id_binhluan, binhluan.noidung_binhluan, taikhoan.user , khoahoc.name_khoahoc, binhluan.ngaybinhluan
+            FROM binhluan 
+            INNER JOIN taikhoan on binhluan.id_taikhoan = taikhoan.id_taikhoan
+            INNER JOIN khoahoc on binhluan.id_khoahoc = khoahoc.id_khoahoc
         ";
         $result = pdo_query($sql);
         return $result;
@@ -38,11 +35,4 @@
         $sql = "DELETE FROM binhluan WHERE id = $id_bl";
         pdo_execute($sql);
     }
-
-    function thong_ke_binh_luan(){
-        $sql ="SELECT COUNT(id) FROM binhluan";
-        $result = pdo_query_one($sql);
-        return $result;
-    }
 ?>
-<!-- chua lam -->
