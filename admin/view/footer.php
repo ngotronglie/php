@@ -1,4 +1,5 @@
 <footer class="footer text-center">
     All Rights Reserved by KAKA . Designed and Developed by
-    <a href="https://www.facebook.com/profile.php?id=100042901690743">Trọng Liêm</a>.
+    <a href="https://zalo.me/g/xkddzi068">Nhóm dự án 1</a>.
+
 </footer>

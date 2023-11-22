@@ -11,7 +11,6 @@
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">Tên Giảng viên</th>
-                                    <th scope="col">ảnh</th>
                                     <th scope="col">email</th>
                                     <th scope="col">số điện thoại</th>
                                     <th scope="col">địa chỉ</th>
@@ -20,156 +19,25 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php foreach($danhsach_taikhoan_giangvien as $key => $value):?>
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>Phạm Thị Thùy Trang</td>
-                                    <td><img src="../upload/img.jpg" alt="ảnh"></td>
-                                    <td>trangpttph33087@fpt.edu.vn</td>
-                                    <td>chưa biết =))</td>
-                                    <td>Ninh bình</td>
-                                    <td>rấc là xênh gái</td>
+                                    <th scope="row"><?php echo $key + 1?></th>
+                                    <td><?php echo $value['user']?></td>
+                                    <td><?php echo $value['email']?></td>
+                                    <td><?php echo $value['tel']?></td>
+                                    <td><?php echo $value['address']?></td>
+                                    <td><?php echo $value['mota']?></td>
                                     <td>
-                                        <a style="margin-right:5px" href="index.php?act=update_giangvien" class="btn btn-warning">Sửa</a>
+                                        <a style="margin-right:5px" href="index.php?act=update_giangvien&id_giangvien=<?php echo $value['id_taikhoan']?>" class="btn btn-warning">Sửa</a>
                                         <button class="btn btn-danger">xóa</button>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Hà Thị Thùy Linh</td>
-                                    <td><img src="../upload/img.jpg" alt="ảnh"></td>
-                                    <td>linhhttph41422@fpt.edu.vn</td>
-                                    <td>chưa biết =))</td>
-                                    <td>Phú Thọ</td>
-                                    <td>rấc là xênh gái</td>
-                                    <td>
-                                        <a style="margin-right:5px" href="index.php?act=update_giangvien" class="btn btn-warning">Sửa</a>
-                                        <button class="btn btn-danger">xóa</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Hà Thị Thùy Linh</td>
-                                    <td><img src="" alt="ảnh"></td>
-                                    <td>linhhttph41422@fpt.edu.vn</td>
-                                    <td>chưa biết =))</td>
-                                    <td>Phú Thọ</td>
-                                    <td>rấc là xênh gái</td>
-                                    <td>
-                                        <a style="margin-right:5px" href="index.php?act=update_giangvien" class="btn btn-warning">Sửa</a>
-                                        <button class="btn btn-danger">xóa</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Hà Thị Thùy Linh</td>
-                                    <td><img src="" alt="ảnh"></td>
-                                    <td>linhhttph41422@fpt.edu.vn</td>
-                                    <td>chưa biết =))</td>
-                                    <td>Phú Thọ</td>
-                                    <td>rấc là xênh gái</td>
-                                    <td>
-                                        <a style="margin-right:5px" href="index.php?act=update_giangvien" class="btn btn-warning">Sửa</a>
-                                        <button class="btn btn-danger">xóa</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Hà Thị Thùy Linh</td>
-                                    <td><img src="" alt="ảnh"></td>
-                                    <td>linhhttph41422@fpt.edu.vn</td>
-                                    <td>chưa biết =))</td>
-                                    <td>Phú Thọ</td>
-                                    <td>rấc là xênh gái</td>
-                                    <td>
-                                        <a style="margin-right:5px" href="index.php?act=update_giangvien" class="btn btn-warning">Sửa</a>
-                                        <button class="btn btn-danger">xóa</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Hà Thị Thùy Linh</td>
-                                    <td><img src="" alt="ảnh"></td>
-                                    <td>linhhttph41422@fpt.edu.vn</td>
-                                    <td>chưa biết =))</td>
-                                    <td>Phú Thọ</td>
-                                    <td>rấc là xênh gái</td>
-                                    <td>
-                                        <a style="margin-right:5px" href="index.php?act=update_giangvien" class="btn btn-warning">Sửa</a>
-                                        <button class="btn btn-danger">xóa</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Hà Thị Thùy Linh</td>
-                                    <td><img src="" alt="ảnh"></td>
-                                    <td>linhhttph41422@fpt.edu.vn</td>
-                                    <td>chưa biết =))</td>
-                                    <td>Phú Thọ</td>
-                                    <td>rấc là xênh gái</td>
-                                    <td>
-                                        <a style="margin-right:5px" href="index.php?act=update_giangvien" class="btn btn-warning">Sửa</a>
-                                        <button class="btn btn-danger">xóa</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Hà Thị Thùy Linh</td>
-                                    <td><img src="" alt="ảnh"></td>
-                                    <td>linhhttph41422@fpt.edu.vn</td>
-                                    <td>chưa biết =))</td>
-                                    <td>Phú Thọ</td>
-                                    <td>rấc là xênh gái</td>
-                                    <td>
-                                        <a style="margin-right:5px" href="index.php?act=update_giangvien" class="btn btn-warning">Sửa</a>
-                                        <button class="btn btn-danger">xóa</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Hà Thị Thùy Linh</td>
-                                    <td><img src="" alt="ảnh"></td>
-                                    <td>linhhttph41422@fpt.edu.vn</td>
-                                    <td>chưa biết =))</td>
-                                    <td>Phú Thọ</td>
-                                    <td>rấc là xênh gái</td>
-                                    <td>
-                                        <a style="margin-right:5px" href="index.php?act=update_giangvien" class="btn btn-warning">Sửa</a>
-                                        <button class="btn btn-danger">xóa</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Hà Thị Thùy Linh</td>
-                                    <td><img src="" alt="ảnh"></td>
-                                    <td>linhhttph41422@fpt.edu.vn</td>
-                                    <td>chưa biết =))</td>
-                                    <td>Phú Thọ</td>
-                                    <td>rấc là xênh gái</td>
-                                    <td>
-                                        <a style="margin-right:5px" href="index.php?act=update_giangvien" class="btn btn-warning">Sửa</a>
-                                        <button class="btn btn-danger">xóa</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Hà Thị Thùy Linh</td>
-                                    <td><img src="" alt="ảnh"></td>
-                                    <td>linhhttph41422@fpt.edu.vn</td>
-                                    <td>chưa biết =))</td>
-                                    <td>Phú Thọ</td>
-                                    <td>rấc là xênh gái</td>
-                                    <td>
-                                        <a style="margin-right:5px" href="index.php?act=update_giangvien" class="btn btn-warning">Sửa</a>
-                                        <button class="btn btn-danger">xóa</button>
-                                    </td>
-                                </tr>
-
+                                <?php endforeach;?>
                             </tbody>
                             <tfoot>
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">Tên Giảng viên</th>
-                                    <th scope="col">ảnh</th>
                                     <th scope="col">email</th>
                                     <th scope="col">số điện thoại</th>
                                     <th scope="col">địa chỉ</th>

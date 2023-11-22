@@ -77,5 +77,17 @@
         $result = pdo_query($sql);
         return $result;
     }
-
+    function list_lophoc_cung_name($namekh){
+        $sql = "SELECT phonghoc.name_phong, lophoc.ngaykhaigiang, lophoc.ngaybegiang, gio_hoc.name_giohoc, taikhoan.user, trangthai.name_trangthai, phonghoc.slot
+            FROM lophoc
+            INNER JOIN khoahoc ON lophoc.id_khoahoc = khoahoc.iddm_khoahoc
+            INNER JOIN phonghoc ON lophoc.id_phonghoc = phonghoc.id_phonghoc
+            INNER JOIN trangthai ON lophoc.id_trangthai = trangthai.id_trangthai
+            INNER JOIN gio_hoc ON phonghoc.id_giohoc = gio_hoc.id_giohoc
+            INNER JOIN taikhoan ON khoahoc.id_taikhoan = taikhoan.id_taikhoan
+            WHERE khoahoc.name_khoahoc = '$namekh';
+        ";
+        $result = pdo_query($sql);
+        return $result;
+    }
 ?>

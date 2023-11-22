@@ -102,11 +102,27 @@
             header('Location: ../index.php');
         }
     }
-
-    function danhsach_taikhoan_giangvien(){
-        $sql ="SELECT * FROM taikhoan WHERE role = '3'";
+    function danhsach_taikhoan(){
+        $sql ="SELECT * FROM taikhoan ORDER BY id_taikhoan;
+        ";
         $result = pdo_query($sql);
         return $result;
+    }
+    function danhsach_taikhoan_giangvien(){
+        $sql ="SELECT * FROM taikhoan WHERE role = '3' ORDER BY id_taikhoan DESC;
+        ";
+        $result = pdo_query($sql);
+        return $result;
+    }
+    function add_giangvien($user, $pass, $email, $address,$phone, $mota,){
+        $role = 3;
+        $sql ="INSERT INTO `taikhoan` (`id_taikhoan`, `user`, `pass`, `email`, `address`, `tel`, `mota`,`role`) 
+        VALUES (NULL, '$user', '$pass', '$email', '$address', '$phone', '$mota', '$role')";
+        pdo_execute($sql);
+    }
+    function update_giangvien($user, $pass, $email, $phone, $address, $mota, $id){
+        $sql = "update taikhoan set user = '$user', pass = '$pass', address='$address', email = '$email', tel = '$phone', mota = '$mota' where id_taikhoan = '$id'";
+        pdo_execute($sql);
     }
 
     function search_id_taikhoan($user){
@@ -114,5 +130,10 @@
         $result = pdo_query_one($sql);
         extract($result);
         return $id_taikhoan;
+    }
+    function getone_taikhoan($id){
+        $sql ="SELECT * FROM taikhoan where id_taikhoan = '$id'";
+        $result = pdo_query_one($sql);
+        return $result;
     }
 ?>

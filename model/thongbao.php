@@ -21,31 +21,27 @@
     }
 
 
-    function update_thongbao($photo, $title, $noidung,$idtb){
+    function update_thongbao($photo,$title,$noidung,$idtb){
         $thongbao = getone_thongbao($idtb);
         if($photo != null){
             if($thongbao['img_thongbao'] != null && $thongbao['img_thongbao'] != ""){
                 $imglink = "../upload/thongbao/".$thongbao['img_thongbao'];
                 unlink($imglink);
             }
-            $date = date("d/m/Y");
-            $sql = "update thongbao set img_thongbao='$photo', title = '$title', noidung_thongbao = '$noidung', ngaythongbao = '$date' where id_thongbao = $idtb";
+            $sql = "update thongbao set img_thongbao='$photo', title = '$title', noidung_thongbao = '$noidung' where id_thongbao = $idtb";
         }else{
-            $date = date("d/m/Y");
-            $sql = "update thongbao set title = '$title', noidung_thongbao = '$noidung', ngaythongbao = '$date' where id_thongbao = $idtb";
+            $sql = "update thongbao set title = '$title', noidung_thongbao = '$noidung', where id_thongbao = $idtb";
         }
         
         pdo_execute($sql);
     }
-
-    
     function delete_thongbao($idtb){
         $thongbao = getone_thongbao($idtb);
-        if($thongbao['img_thongbao'] != null && $thongbao['img_thongbao']!=""){
+        if($thongbao['img_thongbao'] != null && $thongbao['img_thongbao'] != ""){
             $imglink = "../upload/thongbao/".$thongbao['img_thongbao'];
             unlink($imglink);
         }
-        $sql = "delete from thongbao where id_thongbao = '$idtb'";
+        $sql = "delete from thongbao where id_thongbao = $idtb";
         pdo_execute($sql);
     }
 ?>

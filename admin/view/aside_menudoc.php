@@ -6,97 +6,6 @@
       <ul id="sidebarnav" class="p-t-30">
         <li class="sidebar-item">
           <a
-            class="sidebar-link waves-effect waves-dark sidebar-link"
-            href="index.php?act=list_thongbao"
-            aria-expanded="false"
-            ><i class="fas fa-bell"></i
-            ><span class="hide-menu">Thông báo</span></a
-          >
-        </li>
-        <li class="sidebar-item">
-          <a
-            class="sidebar-link waves-effect waves-dark sidebar-link"
-            href="index.php?act=list_giangvien"
-            aria-expanded="false"
-            ><i class="fas fa-address-card"></i
-            ><span class="hide-menu">Giảng viên</span></a
-          >
-        </li>
-        <li class="sidebar-item">
-          <a
-            class="sidebar-link waves-effect waves-dark sidebar-link"
-            href="index.php?act=list_binhluan"
-            aria-expanded="false"
-            ><i class="far fa-comment-alt"></i
-            ><span class="hide-menu">bình luận</span></a
-          >
-        </li>
-        <li class="sidebar-item">
-          <a
-            class="sidebar-link waves-effect waves-dark sidebar-link"
-            href="index.php?act=list_hoadon"
-            aria-expanded="false"
-            ><i class="mdi mdi-receipt"></i
-            ><span class="hide-menu">Hóa đơn</span></a
-          >
-        </li>
-        <li class="sidebar-item">
-          <a
-            class="sidebar-link waves-effect waves-dark sidebar-link"
-            href="index.php?act=list_danhgia"
-            aria-expanded="false"
-            ><i class="fas fa-list-alt"></i
-            ><span class="hide-menu">Đánh giá</span></a
-          >
-        </li>
-        <li class="sidebar-item">
-          <a
-            class="sidebar-link has-arrow waves-effect waves-dark"
-            href="javascript:void(0)"
-            aria-expanded="false"
-            ><i class="fas fa-envelope"></i
-            ><span class="hide-menu">feedback</span></a
-          >
-          <ul aria-expanded="false" class="collapse first-level">
-            <li class="sidebar-item">
-              <a href="index.php?act=list_feedback" class="sidebar-link"
-                ><i class="far fa-edit"></i
-                ><span class="hide-menu">feedback</span></a
-              >
-            </li>
-            <li class="sidebar-item">
-              <a href="index.php?act=list_question_feedback" class="sidebar-link"
-                ><i class="far fa-edit"></i
-                ><span class="hide-menu">câu hỏi feedback</span></a
-              >
-            </li>
-          </ul>
-        </li>
-        <li class="sidebar-item">
-          <a
-            class="sidebar-link has-arrow waves-effect waves-dark"
-            href="javascript:void(0)"
-            aria-expanded="false"
-            ><i class="fas fa-folder-open"></i
-            ><span class="hide-menu">khóa học</span></a
-          >
-          <ul aria-expanded="false" class="collapse first-level">
-            <li class="sidebar-item">
-              <a href="index.php?act=list_khoahoc" class="sidebar-link"
-                ><i class="far fa-edit"></i
-                ><span class="hide-menu">khóa học</span></a
-              >
-            </li>
-            <li class="sidebar-item">
-              <a href="index.php?act=list_danhmuc_khoahoc" class="sidebar-link"
-                ><i class="far fa-edit"></i
-                ><span class="hide-menu">danh mục khóa học</span></a
-              >
-            </li>
-          </ul>
-        </li>
-        <li class="sidebar-item">
-          <a
             class="sidebar-link has-arrow waves-effect waves-dark"
             href="javascript:void(0)"
             aria-expanded="false"
@@ -146,6 +55,97 @@
               >
             </li>
           </ul>
+        </li>
+        <li class="sidebar-item">
+          <a
+            class="sidebar-link waves-effect waves-dark sidebar-link"
+            href="index.php?act=list_giangvien"
+            aria-expanded="false"
+            ><i class="fas fa-address-card"></i
+            ><span class="hide-menu">Giảng viên</span></a
+          >
+        </li>
+        <li class="sidebar-item">
+          <a
+            class="sidebar-link has-arrow waves-effect waves-dark"
+            href="javascript:void(0)"
+            aria-expanded="false"
+            ><i class="fas fa-folder-open"></i
+            ><span class="hide-menu">khóa học</span></a
+          >
+          <ul aria-expanded="false" class="collapse first-level">
+            <li class="sidebar-item">
+              <a href="index.php?act=list_khoahoc" class="sidebar-link"
+                ><i class="far fa-edit"></i
+                ><span class="hide-menu">khóa học</span></a
+              >
+            </li>
+            <li class="sidebar-item">
+              <a href="index.php?act=list_danhmuc_khoahoc" class="sidebar-link"
+                ><i class="far fa-edit"></i
+                ><span class="hide-menu">danh mục khóa học</span></a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="sidebar-item">
+          <a
+            class="sidebar-link waves-effect waves-dark sidebar-link"
+            href="index.php?act=list_danhgia"
+            aria-expanded="false"
+            ><i class="fas fa-list-alt"></i
+            ><span class="hide-menu">Đánh giá</span></a
+          >
+        </li>
+        <li class="sidebar-item">
+          <a
+            class="sidebar-link has-arrow waves-effect waves-dark"
+            href="javascript:void(0)"
+            aria-expanded="false"
+            ><i class="fas fa-envelope"></i
+            ><span class="hide-menu">feedback</span></a
+          >
+          <ul aria-expanded="false" class="collapse first-level">
+            <li class="sidebar-item">
+              <a href="index.php?act=list_feedback" class="sidebar-link"
+                ><i class="far fa-edit"></i
+                ><span class="hide-menu">feedback</span></a
+              >
+            </li>
+            <li class="sidebar-item">
+              <a href="index.php?act=list_question_feedback" class="sidebar-link"
+                ><i class="far fa-edit"></i
+                ><span class="hide-menu">câu hỏi feedback</span></a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="sidebar-item">
+          <a
+            class="sidebar-link waves-effect waves-dark sidebar-link"
+            href="index.php?act=list_thongbao"
+            aria-expanded="false"
+            ><i class="fas fa-bell"></i
+            ><span class="hide-menu">Thông báo</span></a
+          >
+        </li>
+        <li class="sidebar-item">
+          <a
+            class="sidebar-link waves-effect waves-dark sidebar-link"
+            href="index.php?act=list_binhluan"
+            aria-expanded="false"
+            ><i class="far fa-comment-alt"></i
+            ><span class="hide-menu">bình luận</span></a
+          >
+        </li>
+        <li class="sidebar-item">
+          <a
+            class="sidebar-link waves-effect waves-dark sidebar-link"
+            href="index.php?act=list_hoadon"
+            aria-expanded="false"
+            ><i class="mdi mdi-receipt"></i
+            ><span class="hide-menu">Hóa đơn</span></a
+          >
         </li>
         <li class="sidebar-item">
           <a

@@ -36,8 +36,6 @@
                                         onclick="return confirm('Bạn có chắc xóa chứ ?')"
                                         href="index.php?act=delete_thongbao&id_thongbao=<?php echo $value['id_thongbao']?>"
                                         class="btn btn-danger margin-5 text-white"
-                                        data-toggle="modal"
-                                        data-target="#Modal2"
                                     >
                                         xóa
                                     </a>

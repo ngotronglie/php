@@ -7,7 +7,7 @@
                 <input
                 type="text"
                 class="form-control"
-                placeholder="Nhập tên sản phẩm"
+                placeholder="Tìm kiếm khóa học"
                 name="keyword"
                 />
                 <input

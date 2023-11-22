@@ -36,29 +36,17 @@
           $danhsach_phonghoc = danhsach_phonghoc();
           $danhsach_khoahoc = danhsach_khoahoc();
           $danhsach_taikhoan_giangvien = danhsach_taikhoan_giangvien();
+          $danhsach_taikhoan = danhsach_taikhoan();
 
           if(isset($_GET['act']) && $_GET['act']!= ""){
             $act = $_GET['act'];
             switch ($act) {
-              // ----------------------- khuyen mai --------------------------------
-              case 'khuyenmai':
-                include 'khuyenmai/list_khuyenmai.php';
-                break;
-              case 'add_khuyenmai':
-                include 'khuyenmai/add_khuyenmai.php';
-                break;
-              case 'sua_khuyenmai':
-                include 'khuyenmai/update_khuyenmai.php';
-                break;
-              case 'delete_khuyenmai':{
-                // code ...
-                break;
-              }
               // ------------------------ thong bao ---------------------------------
               case 'list_thongbao':{
                 include 'thongbao/list_thongbao.php';
                 break;
               }
+
 
               case 'add_thongbao':{
                 if(isset($_POST['thongbao'])){
@@ -76,11 +64,12 @@
                 break;
               }
 
+
               case 'update_thongbao':{
-                if(isset($_GET['id_tb']) && $_GET['id_tb'] >0){
+                if(isset($_GET['id_tb']) && $_GET['id_tb'] > 0){
                   $thongbao_up = getone_thongbao($_GET['id_tb']);
                 }
-                if(isset($_POST['up_tb']) && $_POST['up_tb'] >0) {
+                if(isset($_POST['up_tb'])) {
                   $photo = null;
                   $title = $_POST['title'];
                   $noidung = $_POST['noidung'];
@@ -89,8 +78,10 @@
                     move_uploaded_file($_FILES['img_tbud']['tmp_name'], "../upload/thongbao/$photo");
                   }
                   $idtb =$_POST['idtb'];
-                  update_thongbao($photo, $title, $image, $idtb);
+                  update_thongbao($photo, $title, $noidung, $idtb);
+                  header('location: index.php?act=list_thongbao');
                 }
+                
                 include 'thongbao/update_thongbao.php';
                 break;
               }
@@ -104,7 +95,39 @@
               }
 // ----------------------- giảng viên --------------------------------
               case 'add_giangvien':{
+                if(isset($_POST['save'])){
+                  $user = $_POST['user'];
+                  $pass = $_POST['pass'];
+                  $email = $_POST['email'];
+                  $address = $_POST['address'];
+                  $tel = $_POST['tel'];
+                  $mota = $_POST['mota'];
+                  $role = 3;
+                  add_giangvien($user ,$pass ,$email ,$address ,$tel ,$mota,$role);
+                  header('location: index.php?act=list_giangvien');
+
+                }
+                
                 include 'giangvien/add_giangvien.php';
+                break;
+              }
+              case 'update_giangvien':{
+                if(isset($_GET['id_giangvien']) && $_GET['id_giangvien'] >0){
+                  $giangvien_one = getone_taikhoan($_GET['id_giangvien']);
+                }
+                
+                if(isset($_POST['update']) && $_POST['update'] > 0){
+                  $user = $_POST['user'];
+                  $pass = $_POST['pass'];
+                  $email = $_POST['email'];
+                  $phone = $_POST['phone'];
+                  $address = $_POST['address'];
+                  $mota = $_POST['mota'];
+                  $id = $_POST['id'];
+                  update_giangvien($user, $pass, $email, $phone, $address, $mota,$id);
+                  header('location: index.php?act=list_giangvien');
+                }
+                include 'giangvien/update_giangvien.php';
                 break;
               }
               case 'delete_giangvien':{
@@ -113,11 +136,6 @@
               }
               case 'list_giangvien':{
                 include 'giangvien/list_giangvien.php';
-                break;
-              }
-
-              case 'update_giangvien':{
-                include 'giangvien/update_giangvien.php';
                 break;
               }
               // -------------------- binh luan -------------------------------------

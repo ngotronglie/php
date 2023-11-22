@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <form action="index.php?act=update_thongbao" class="form-horizontal" method="POST" enctype="multipart/form-data">
+                <form method="POST" action="index.php?act=update_thongbao" class="form-horizontal" enctype="multipart/form-data">
                     <input type="hidden" name="idtb" value="<?php echo $thongbao_up['id_thongbao']?>">
                     <div class="card-body">
                         <h4 class="card-title">sửa thông báo</h4>
@@ -16,13 +16,13 @@
                         <div class="form-group row">
                             <label for="lname" class="col-sm-3 text-right control-label col-form-label">title</label>
                             <div class="col-sm-9">
-                                <input type="text" value="<?php echo $thongbao_up['title']?>" name="title" class="form-control" id="lname">
+                                <input name="title" type="text" value="<?php echo $thongbao_up['title']?>"  class="form-control" id="lname">
                             </div>
                         </div>        
                         <div class="form-group row">
                             <label for="lname" class="col-sm-3 text-right control-label col-form-label">nội dung</label>
                             <div class="col-sm-9">
-                                <input type="text" value="<?php echo $thongbao_up['noidung_thongbao']?>" name="noidung" class="form-control" id="lname">
+                                <input name="noidung" type="text" value="<?php echo $thongbao_up['noidung_thongbao']?>"  class="form-control" id="lname">
                             </div>
                         </div>           
                     </div>

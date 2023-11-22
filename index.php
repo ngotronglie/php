@@ -28,9 +28,7 @@
         $danhsach_khoahoc = danhsach_khoahoc();
         $danhsach_thongbao = list_thongbao();
         $top10_view = top10_view();
-       
-
-
+        $danhsach_giangvien = danhsach_taikhoan_giangvien();
         if(isset($_GET['act']) && $_GET['act'] != ""){
           $act = $_GET['act'];
           switch ($act) {
@@ -101,7 +99,8 @@
                 tangluotxem($_GET['id__khoahoc']);
                 $khoahoc_cungloai = khoahoc_cungloai($_GET['id__khoahoc']);
               }
-              $binhluan = load_binhluan($_GET['id__khoahoc']);
+              $list_lophoc_cung_name = list_lophoc_cung_name($khoahoc['name_khoahoc']);
+              // $binhluan = load_binhluan($_GET['id__khoahoc']);
               if(isset($_GET['guibinhluan']) && $_GET['guibinhluan'] != ""){
                 if($_SESSION){
                   $user = $_SESSION['user'];
@@ -113,10 +112,7 @@
               include 'view/chitiet_khoahoc.php';
               break;
             }
-            case 'list_lophoc':{
-              include 'view/list_lophoc.php';
-              break;
-            }
+
             case 'lop_dadangki':{
               include 'view/lop_dadangki.php';
               break;
