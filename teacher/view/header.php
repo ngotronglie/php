@@ -128,7 +128,7 @@
                   <a class="dropdown-item" href="javascript:void(0)"
                     ><i class="ti-settings m-r-5 m-l-5"></i> Account Setting</a
                   >
-                  <a class="dropdown-item" href="index.php?act=logout"
+                  <a onclick="return confirm('bạn muốn đăng xuất ??')" class="dropdown-item" href="index.php?act=logout"
                     ><i class="fa fa-power-off m-r-5 m-l-5"></i>Logout</a
                   >
 

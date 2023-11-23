@@ -16,14 +16,14 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach($danhsach_taikhoan as $key => $value):?>
+                                <?php foreach($danhsach_giangvien as $key => $value):?>
                                     <?php if($value['role']== 3):?>
                                         <tr>
                                             <th scope="row"><?php echo $key + 1?></th>
-                                            <td> </td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td><?php echo $value['user']?></td>
+                                            <td><?php echo $value['email']?></td>
+                                            <td><?php echo $value['tel']?></td>
+                                            <td><?php echo $value['address']?></td>
 
                                         </tr>
                                     <?php endif;?>
@@ -36,7 +36,6 @@
                                     <th scope="col">email</th>
                                     <th scope="col">số điện thoại</th>
                                     <th scope="col">địa chỉ</th>
-                                    <th scope="col">quyền</th>
                                 </tr>
                             </tfoot>
                         </table>

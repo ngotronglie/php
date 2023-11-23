@@ -6,6 +6,24 @@
         VALUES (NULL, '$user', '$pass', '$email', '$address', '$phone', '$mota')";
         pdo_execute($sql);
     }
+    function check_quantri($user){
+        $sql = "SELECT * FROM taikhoan where user = '$user'";
+        $taikhoan = pdo_query_one($sql);
+        if($taikhoan!= false){
+            if($taikhoan['role'] == 1){
+                echo '<a style="margin-left: 5px" class="btn btn-orange" href="./admin/index.php">quay lại quản trị</a>';
+            }
+            if($taikhoan['role'] == 3){
+                echo '<a style="margin-left: 5px" class="btn btn-orange" href="./teacher/index.php">quay lại quản trị</a>';
+
+            }
+        }
+    }
+    function search_id_taikhoan($user){
+        $sql = "SELECT id_taikhoan FROM taikhoan where user = '$user'";
+        $result = pdo_query_one($sql);
+        return $result['id_taikhoan'];
+    }
     function checkuser($user, $pass){
         $sql = "SELECT * FROM taikhoan where user = '$user' and pass = '$pass'";
         $taikhoan = pdo_query_one($sql);
@@ -16,9 +34,6 @@
             }
             if($taikhoan['role'] == 1){
                 header('location: admin/index.php');
-            }
-            if($taikhoan['role'] == 2){
-                header('location: staff/index.php');
             }
             if($taikhoan['role'] == 3){
                 header('location: teacher/index.php');
@@ -124,16 +139,13 @@
         $sql = "update taikhoan set user = '$user', pass = '$pass', address='$address', email = '$email', tel = '$phone', mota = '$mota' where id_taikhoan = '$id'";
         pdo_execute($sql);
     }
-
-    function search_id_taikhoan($user){
-        $sql = "SELECT id FROM taikhoan where user = '$user'";
-        $result = pdo_query_one($sql);
-        extract($result);
-        return $id_taikhoan;
-    }
     function getone_taikhoan($id){
         $sql ="SELECT * FROM taikhoan where id_taikhoan = '$id'";
         $result = pdo_query_one($sql);
         return $result;
+    }
+    function delete_giangvien($id){
+        $sql = "delete from taikhoan where id_taikhoan = '$id'";
+        pdo_execute($sql);
     }
 ?>

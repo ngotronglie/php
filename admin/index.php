@@ -9,6 +9,8 @@
   include '../model/trangthai/trangthai.php';
   include '../model/phonghoc.php';
   include '../model/khoahoc/khoahoc.php';
+  include '../model/lop/lop.php';
+  include '../model/binhluan.php';
   session_start();
 ?>
 
@@ -37,6 +39,8 @@
           $danhsach_khoahoc = danhsach_khoahoc();
           $danhsach_taikhoan_giangvien = danhsach_taikhoan_giangvien();
           $danhsach_taikhoan = danhsach_taikhoan();
+          $danhsach_lophoc =danhsach_lophoc();
+          $danhsach_binhluan =danhsach_binhluan();
 
           if(isset($_GET['act']) && $_GET['act']!= ""){
             $act = $_GET['act'];
@@ -116,7 +120,7 @@
                   $giangvien_one = getone_taikhoan($_GET['id_giangvien']);
                 }
                 
-                if(isset($_POST['update']) && $_POST['update'] > 0){
+                if(isset($_POST['update'])){
                   $user = $_POST['user'];
                   $pass = $_POST['pass'];
                   $email = $_POST['email'];
@@ -131,6 +135,10 @@
                 break;
               }
               case 'delete_giangvien':{
+                if(isset($_GET['iddt_gv']) && $_GET['iddt_gv'] != ""){
+                  delete_giangvien($_GET['iddt_gv']);
+                  header('location: index.php?act=list_giangvien');
+                }
                 include 'giangvien/delete_giangvien.php';
                 break;
               }
@@ -144,7 +152,10 @@
                 break;
               }
               case 'delete_binhluan':{
-                include 'binhluan/delete_binhluan.php';
+                if(isset($_GET['id_binhluan']) && $_GET['id_binhluan'] > 0){
+                  delete_binhluan($_GET['id_binhluan']);
+                  header('location: index.php?act=list_binhluan');
+                }
                 break;
               }
               // ------------------- hóa đơn -----------------------------------------
@@ -194,6 +205,17 @@
               }
 
               case 'add_thoigian':{
+                if(isset($_POST['save'])){
+                  $phong = $_POST['phong'];
+                  $khoahoc = $_POST['name_khoahoc'];
+                  $ngaykhaigiang = $_POST['ngaykhaigiang'];
+                  $ngaybegiang = $_POST['ngaybegiang'];
+                  $nhomzalo = $_POST['zalo'];
+                  $trangthai = $_POST['trangthai'];
+
+                  add_lophoc($phong,$khoahoc, $ngaykhaigiang,$ngaybegiang,$nhomzalo,$trangthai);
+                  header('location: index.php?act=list_thoigian');
+                }
                 include 'lophoc/lophoc/add_thoigian.php';
                 break;
               }
@@ -261,10 +283,33 @@
                 break;
               }
               case 'update_khoahoc':{
+                if(isset($_GET['id__khoahoc']) && $_GET['id__khoahoc']!= ""){
+                  $khoahoc_ud = getone_khoahoc_($_GET['id__khoahoc']);
+                }
+                if(isset($_POST['update_khoahoc'])){
+                  $tenkhoahoc = $_POST['tenkhoahoc'];
+                  $photo = null;
+                  $noidung =$_POST['noidung'];
+                  $price = $_POST['price'];
+                  $giangvien = $_POST['giangvien'];
+                  $id = $_POST['id'];
+                  $danhmuckhoahoc = $_POST['danhmuckhoahoc'];
+                  if($_FILES['name_img']['name'] != ""){
+                    $photo = time().'__'.$_FILES['name_img']['name'];
+                    move_uploaded_file($_FILES['name_img']['tmp_name'], "../upload/khoahoc/$photo");
+                  }
+                  update_khoahoc_($tenkhoahoc, $noidung, $price, $giangvien,$danhmuckhoahoc,$photo, $id);
+                  header('location: index.php?act=list_khoahoc');
+                  
+                }
                 include 'khoahoc/khoahoc/update_khoahoc.php';
                 break;
               }
               case 'delete_khoahoc':{
+                if(isset($_GET['id__khoahoc']) && $_GET['id__khoahoc'] > 0){
+                  delete_khoahoc_($_GET['id__khoahoc']);
+                  header('location: ?act=list_khoahoc');
+                }
                 include 'khoahoc/khoahoc/delete_khoahoc.php';
                 break;
               }

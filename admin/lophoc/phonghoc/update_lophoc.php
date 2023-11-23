@@ -9,7 +9,7 @@
                         <div class="form-group row">
                             <label for="fname" class="col-sm-3 text-right control-label col-form-label">Phòng</label>
                             <div class="col-sm-9">
-                                <input name="phong" type="text" class="form-control" id="fname" value="<?php echo $phonghoc['id_phonghoc']?>">
+                                <input name="phong" type="text" class="form-control" id="fname" value="<?php echo $phonghoc['name_phong']?>">
                             </div>
                         </div>
                         <div class="form-group row">

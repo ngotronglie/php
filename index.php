@@ -74,6 +74,10 @@
               break;
             }
 
+            case 'list_giangvien':{
+              include 'view/list_giangvien.php';
+              break;
+            }
             // danh mục khóa học
 
             case 'search_danhmuc_khoahoc':{
@@ -93,22 +97,26 @@
             
             //  khóa học ++++++++++++++++++++++++++++++++++
             case 'chitiet_khoahoc':{
-              if(isset($_GET['id__khoahoc']) && $_GET['id__khoahoc']){
+              if(isset($_POST['guibinhluan']) && $_POST['guibinhluan'] != ""){
+                if($_SESSION){
+                  $user = $_SESSION['user'];
+                  $id_taikhoan = search_id_taikhoan($user);
+                }else{
+                  $id_taikhoan = 999999;
+                }
+                $id_khoahoc = $_POST['id_khoahoc'];
+                $noidung = $_POST['noidung'];
+                insert_binhluan($id_khoahoc, $noidung, $id_taikhoan);
+              } 
+              if(isset($_GET['id__khoahoc']) && $_GET['id__khoahoc']!=""){
                 $khoahoc = getone_chitiet_khoahoc($_GET['id__khoahoc']);
-
                 tangluotxem($_GET['id__khoahoc']);
                 $khoahoc_cungloai = khoahoc_cungloai($_GET['id__khoahoc']);
+                $binhluan = load_binhluan($_GET['id__khoahoc']);
               }
               $list_lophoc_cung_name = list_lophoc_cung_name($khoahoc['name_khoahoc']);
               // $binhluan = load_binhluan($_GET['id__khoahoc']);
-              if(isset($_GET['guibinhluan']) && $_GET['guibinhluan'] != ""){
-                if($_SESSION){
-                  $user = $_SESSION['user'];
-                  $id__taikhoan = search_id_taikhoan($user);
-                }
-                insert_binhluan($POST['id_khoahoc'], $POST['noidung'], $id__taikhoan);
-                header('location:index.php?act=chitiet_khoahoc');
-              } 
+             
               include 'view/chitiet_khoahoc.php';
               break;
             }

@@ -32,8 +32,8 @@
                                     <td scope="col"><?php echo $value['luot_xem']?></td>
                                     <td scope="col"><?php echo $value['user']?></td>
                                     <td>
-                                        <a style="margin-right:5px" href="index.php?act=update_khoahoc" class="btn btn-warning">Sửa</a>
-                                        <button class="btn btn-danger">xóa</button>
+                                        <a style="margin-right:5px" href="index.php?act=update_khoahoc&id__khoahoc=<?php echo $value['id_khoahoc']?>" class="btn btn-warning">Sửa</a>
+                                        <a onclick="return confirm('bạn chắc chắn xóa khóa học này chứ?')" href="index.php?act=delete_khoahoc&id__khoahoc=<?php echo $value['id_khoahoc']?>" class="btn btn-danger">xóa</a>
                                     </td>
                                 </tr>
                                 <?php endforeach;?>

@@ -1,9 +1,11 @@
 <?php
+  ob_start(); 
   session_start();
   include '../model/pdo.php';
   include '../model/lop/giohoc.php';
   include '../model/lop/lop.php';
   include '../model/feedback.php';
+  include '../model/taikhoan/taikhoan.php';
 ?>
 
 <!DOCTYPE html>
@@ -11,12 +13,12 @@
     <?php include 'view/head.php'?>
 
   <body>
-    <div class="preloader">
+    <!-- <div class="preloader">
       <div class="lds-ripple">
         <div class="lds-pos"></div>
         <div class="lds-pos"></div>
       </div>
-    </div>
+    </div> -->
     
     <div id="main-wrapper">
     <?php include 'view/header.php'?>

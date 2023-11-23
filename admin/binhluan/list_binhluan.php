@@ -17,126 +17,18 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php foreach($danhsach_binhluan as $key => $value):?>
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>trang pth </td>
-                                    <td>java cho người mới </td>
-                                    <td>khóa học này giúp tôi nắm vững kiến thức về java</td>
-                                    <td>18/11/2023</td>
+                                    <th scope="row"><?php echo $key + 1?></th>
+                                    <td><?php echo $value['user']?></td>
+                                    <td><?php echo $value['name_khoahoc']?></td>
+                                    <td><?php echo $value['noidung_binhluan']?></td>
+                                    <td><?php echo $value['ngaybinhluan']?></td>
                                     <td>
-                                        <a href="index.php?act=delete_binhluan" class="btn btn-danger">xóa</a>
+                                        <a onclick="return confirm('Bạn chắc xóa bình luận này chứ?')" href="index.php?act=delete_binhluan&id_binhluan=<?php echo $value['id_binhluan']?>" class="btn btn-danger">xóa</a>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>trang pth </td>
-                                    <td>java cho người mới </td>
-                                    <td>khóa học này giúp tôi nắm vững kiến thức về java</td>
-                                    <td>18/11/2023</td>
-                                    <td>
-                                        <a href="index.php?act=delete_binhluan" class="btn btn-danger">xóa</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>trang pth </td>
-                                    <td>java cho người mới </td>
-                                    <td>khóa học này giúp tôi nắm vững kiến thức về java</td>
-                                    <td>18/11/2023</td>
-                                    <td>
-                                        <a href="index.php?act=delete_binhluan" class="btn btn-danger">xóa</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>trang pth </td>
-                                    <td>java cho người mới </td>
-                                    <td>khóa học này giúp tôi nắm vững kiến thức về java</td>
-                                    <td>18/11/2023</td>
-                                    <td>
-                                        <a href="index.php?act=delete_binhluan" class="btn btn-danger">xóa</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>trang pth </td>
-                                    <td>java cho người mới </td>
-                                    <td>khóa học này giúp tôi nắm vững kiến thức về java</td>
-                                    <td>18/11/2023</td>
-                                    <td>
-                                        <a href="index.php?act=delete_binhluan" class="btn btn-danger">xóa</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>trang pth </td>
-                                    <td>java cho người mới </td>
-                                    <td>khóa học này giúp tôi nắm vững kiến thức về java</td>
-                                    <td>18/11/2023</td>
-                                    <td>
-                                        <a href="index.php?act=delete_binhluan" class="btn btn-danger">xóa</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>trang pth </td>
-                                    <td>java cho người mới </td>
-                                    <td>khóa học này giúp tôi nắm vững kiến thức về java</td>
-                                    <td>18/11/2023</td>
-                                    <td>
-                                        <a href="index.php?act=delete_binhluan" class="btn btn-danger">xóa</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>trang pth </td>
-                                    <td>java cho người mới </td>
-                                    <td>khóa học này giúp tôi nắm vững kiến thức về java</td>
-                                    <td>18/11/2023</td>
-                                    <td>
-                                        <a href="index.php?act=delete_binhluan" class="btn btn-danger">xóa</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>trang pth </td>
-                                    <td>java cho người mới </td>
-                                    <td>khóa học này giúp tôi nắm vững kiến thức về java</td>
-                                    <td>18/11/2023</td>
-                                    <td>
-                                        <a href="index.php?act=delete_binhluan" class="btn btn-danger">xóa</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>trang pth </td>
-                                    <td>java cho người mới </td>
-                                    <td>khóa học này giúp tôi nắm vững kiến thức về java</td>
-                                    <td>18/11/2023</td>
-                                    <td>
-                                        <a href="index.php?act=delete_binhluan" class="btn btn-danger">xóa</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>trang pth </td>
-                                    <td>java cho người mới </td>
-                                    <td>khóa học này giúp tôi nắm vững kiến thức về java</td>
-                                    <td>18/11/2023</td>
-                                    <td>
-                                        <a href="index.php?act=delete_binhluan" class="btn btn-danger">xóa</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>trang pth </td>
-                                    <td>java cho người mới </td>
-                                    <td>khóa học này giúp tôi nắm vững kiến thức về java</td>
-                                    <td>18/11/2023</td>
-                                    <td>
-                                        <a href="index.php?act=delete_binhluan" class="btn btn-danger">xóa</a>
-                                    </td>
-                                </tr>
+                                <?php endforeach;?>
                             </tbody>
                             <tfoot>
                                 <tr>

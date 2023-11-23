@@ -39,13 +39,13 @@
             <li class="sidebar-item">
               <a href="index.php?act=list_lophoc" class="sidebar-link"
                 ><i class="far fa-edit"></i
-                ><span class="hide-menu">lớp học</span></a
+                ><span class="hide-menu">phòng học</span></a
               >
             </li>
             <li class="sidebar-item">
               <a href="index.php?act=list_thoigian" class="sidebar-link"
                 ><i class="far fa-edit"></i
-                ><span class="hide-menu">phòng học</span></a
+                ><span class="hide-menu">lớp học</span></a
               >
             </li>
             <li class="sidebar-item">

@@ -1,7 +1,7 @@
 <?php 
     function danhsach_khoahoc(){
         $sql = "SELECT * FROM khoahoc INNER JOIN taikhoan on khoahoc.id_taikhoan = taikhoan.id_taikhoan 
-                                      INNER JOIN danhmuc_khoahoc on khoahoc.iddm_khoahoc = danhmuc_khoahoc.iddm_khoahoc";
+                                      INNER JOIN danhmuc_khoahoc on khoahoc.iddm_khoahoc = danhmuc_khoahoc.iddm_khoahoc order by id_khoahoc desc";
         $result = pdo_query($sql);
         return $result;
     }
@@ -12,7 +12,11 @@
         VALUES ('$iddmkh', '$photo', '$name_kh', '$noidung_kh', '$gia', '$idtk', '$giamgia');";
         pdo_execute($sql);
     }
-
+    function getone_khoahoc_($id){
+        $sql = "select * from khoahoc where id_khoahoc = '$id'";
+        $result = pdo_query_one($sql);
+        return $result;
+    }
 
     function getone_khoahoc($iddm){
         $sql = "select * from danhmuc_khoahoc where iddm_khoahoc = '$iddm'";
@@ -26,7 +30,7 @@
     }
     function getone_chitiet_khoahoc($id){
         $sql = "SELECT * from khoahoc INNER JOIN danhmuc_khoahoc on khoahoc.iddm_khoahoc = danhmuc_khoahoc.iddm_khoahoc
-                                                INNER JOIN taikhoan on khoahoc.id_taikhoan = taikhoan.id_taikhoan where id_khoahoc = '$id'";
+                                    INNER JOIN taikhoan on khoahoc.id_taikhoan = taikhoan.id_taikhoan where id_khoahoc = '$id'";
         $result = pdo_query_one($sql);
         return $result;
     }
@@ -34,6 +38,20 @@
 
     function update_khoahoc($iddm, $tendm){
         $sql = "update danhmuc_khoahoc SET namedm_khoahoc='$tendm' WHERE iddm_khoahoc = '$iddm'";
+        pdo_execute($sql);
+    }
+    function update_khoahoc_($tenkhoahoc, $noidung, $price, $giangvien,$danhmuckhoahoc,$photo, $id){
+        $khoahoc = getone_khoahoc_($id);
+        if($photo != null){
+            if($khoahoc['img_khoahoc'] != null && $khoahoc['img_khoahoc'] != ""){
+                $imglink = "../upload/khoahoc/".$khoahoc['img_khoahoc'];
+                unlink($imglink);
+            }
+            $sql = "update khoahoc set img_khoahoc ='$photo', name_khoahoc = '$tenkhoahoc', noidung_khoahoc = '$noidung', price_khoahoc = '$price',id_taikhoan = '$giangvien',iddm_khoahoc = '$danhmuckhoahoc'  where id_khoahoc = $id";
+        }else{
+            $sql = "update khoahoc set name_khoahoc = '$tenkhoahoc', noidung_khoahoc = '$noidung', price_khoahoc = '$price',id_taikhoan = '$giangvien',iddm_khoahoc = '$danhmuckhoahoc'  where id_khoahoc = $id";
+        }
+        
         pdo_execute($sql);
     }
 
@@ -50,12 +68,12 @@
     //     return $result;
     // }
     function search_danhmuc_kh($id){
-        $sql = "SELECT * FROM khoahoc WHERE iddm_khoahoc = $id";
+        $sql = "SELECT * FROM khoahoc inner join taikhoan on khoahoc.id_taikhoan = taikhoan.id_taikhoan WHERE iddm_khoahoc = $id";
         $result = pdo_query($sql);
         return $result;
     }
     function timkiem_khoahoc($keyword){
-        $sql = "SELECT * from khoahoc where name_khoahoc like '%$keyword%'";
+        $sql = "SELECT * from khoahoc inner join taikhoan on taikhoan.id_taikhoan = khoahoc.id_taikhoan where name_khoahoc like '%$keyword%'";
         $result = pdo_query($sql);
         return $result;
     }
@@ -80,14 +98,24 @@
     function list_lophoc_cung_name($namekh){
         $sql = "SELECT phonghoc.name_phong, lophoc.ngaykhaigiang, lophoc.ngaybegiang, gio_hoc.name_giohoc, taikhoan.user, trangthai.name_trangthai, phonghoc.slot
             FROM lophoc
-            INNER JOIN khoahoc ON lophoc.id_khoahoc = khoahoc.iddm_khoahoc
+            INNER JOIN khoahoc ON lophoc.id_khoahoc = khoahoc.id_khoahoc
             INNER JOIN phonghoc ON lophoc.id_phonghoc = phonghoc.id_phonghoc
             INNER JOIN trangthai ON lophoc.id_trangthai = trangthai.id_trangthai
             INNER JOIN gio_hoc ON phonghoc.id_giohoc = gio_hoc.id_giohoc
             INNER JOIN taikhoan ON khoahoc.id_taikhoan = taikhoan.id_taikhoan
-            WHERE khoahoc.name_khoahoc = '$namekh';
+            WHERE name_khoahoc = '$namekh';
         ";
         $result = pdo_query($sql);
         return $result;
+    }
+
+    function delete_khoahoc_($id_khoahoc){
+        $thongbao = getone_khoahoc_($id_khoahoc);
+        if($thongbao['img_khoahoc'] != null && $thongbao['img_khoahoc'] != ""){
+            $imglink = "../upload/khoahoc/".$thongbao['img_khoahoc'];
+            unlink($imglink);
+        }
+        $sql = "delete from khoahoc where id_khoahoc = $id_khoahoc";
+        pdo_execute($sql);
     }
 ?>

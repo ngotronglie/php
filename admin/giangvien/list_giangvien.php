@@ -29,7 +29,7 @@
                                     <td><?php echo $value['mota']?></td>
                                     <td>
                                         <a style="margin-right:5px" href="index.php?act=update_giangvien&id_giangvien=<?php echo $value['id_taikhoan']?>" class="btn btn-warning">Sửa</a>
-                                        <button class="btn btn-danger">xóa</button>
+                                        <a onclick="return confirm('bạn chắc xóa chứ?')" href="index.php?act=delete_giangvien&iddt_gv=<?php echo $value['id_taikhoan']?>" class="btn btn-danger">xóa</a>
                                     </td>
                                 </tr>
                                 <?php endforeach;?>

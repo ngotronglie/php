@@ -44,7 +44,7 @@
                   </li>
                   <li>
                     Đơn giá:
-                    <span><del class="text-danger"><?php echo $khoahoc['price_khoahoc']?> vnd</del></span>
+                    <span><del class="text-danger"><?php echo number_format($khoahoc['price_khoahoc'])?> vnđ</del></span>
                   </li>
                   <li>
                     Giảm giá:
@@ -52,7 +52,7 @@
                   </li>
                   <li>
                     Chỉ còn:
-                    <span class="badge bg-danger text-light"><?php echo $khoahoc['price_khoahoc'] - ($khoahoc['price_khoahoc'] * $khoahoc['giamgia'] /100)?> vnd</span>
+                    <span class="badge bg-danger text-light"><?php echo number_format($khoahoc['price_khoahoc'] - ($khoahoc['price_khoahoc'] * $khoahoc['giamgia'] /100))?> vnđ</span>
                   </li>
                   <li>
                     Lượt xem:
@@ -73,7 +73,9 @@
           </div>
         </div>
       </div>
+      <h3 class="h3">Lớp học</h3>
       <div class="container-fluid">
+        
       <div class="row">
         <div class="col-12">
           <div class="card">
@@ -101,8 +103,8 @@
                       <tr>
                         <th scope="row"><?php echo $key + 1?></th>
                         <td scope="col"><?php echo $value['name_phong']?></td>
-                        <td scope="col"><?php echo $value['ngaykhaigiang']?></td>
-                        <td scope="col"><?php echo $value['ngaybegiang']?></td>
+                        <td scope="col"><?php echo date('d/m/Y', strtotime($value['ngaykhaigiang']))?></td>
+                        <td scope="col"><?php echo date('d/m/Y', strtotime($value['ngaybegiang']))?></td>
                         <td scope="col"><?php echo $value['name_giohoc']?></td>
                         <td scope="col"><?php echo $value['user']?></td>
                         <td scope="col"><?php echo $value['name_trangthai']?></td>
@@ -144,20 +146,22 @@
             </tr>
           </thead>
           <tbody>
+            <?php foreach($binhluan as $value):?>
             <tr>
-              <td class="text-danger">Tên user</td>
-              <td>20/11/2023</td>
-              <td>rất chi là tuyệt vời</td>
+              <td class="text-danger"><?php echo $value['user']?></td>
+              <td ><span class="badge badge-orange text-light"><?php echo $value['ngaybinhluan']?></span></td>
+              <td><?php echo $value['noidung_binhluan']?></td>
             </tr>
+            <?php endforeach;?>
           </tbody>
         </table>
         <div class="container">
           <form
-            action="index.php?act=chitiet_khoahoc&id__khoahoc="
+            action="index.php?act=chitiet_khoahoc&id__khoahoc=<?php echo $khoahoc['id_khoahoc']?>"
             method="POST"
             class="d-flex justify-content-around "
           >
-            <input type="hidden" class="form-control" name="id_khoahoc" value="" />
+            <input type="hidden" class="form-control" name="id_khoahoc" value="<?php echo $khoahoc['id_khoahoc']?>" />
 
             <input
               type="text"

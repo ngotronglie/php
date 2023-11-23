@@ -6,7 +6,7 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Danh sách lớp học</h5>
-                    <a href="index.php?act=add_lophoc" class="btn btn-success m-2">Thêm lớp học</a>
+                    <a href="index.php?act=add_thoigian" class="btn btn-success m-2">Thêm lớp học</a>
                     <div class="table-responsive">
                         <table id="zero_config" class="table table-striped table-bordered">
                             <thead>
@@ -26,193 +26,25 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php foreach($danhsach_lophoc as $key => $value):?>
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>F304</td>
-                                    <td>18/11/2023</td>
-                                    <td>18/12/2023</td>
-                                    <td>c# cho người mới bắt đầu</td>
-                                    <td>lúc 7h - thứ 2/4/6 hàng tuần</td>
-                                    <td>20</td>
-                                    <td>40</td>
-                                    <td>Ngô trọng Liêm</td>
-                                    <td>https://zalo.me/g/xkddzi068</td>
-                                    <td><span style="color:#fff !important" class=" badge bg-success">đang hoạt động</span></td>
+                                    <th scope="row"><?php echo $key + 1?></th>
+                                    <td><?php echo $value['name_phong']?></td>
+                                    <td><?php echo $value['ngaykhaigiang']?></td>
+                                    <td><?php echo $value['ngaybegiang']?></td>
+                                    <td><?php echo $value['name_khoahoc']?></td>
+                                    <td><?php echo $value['name_giohoc']?></td>
+                                    <td><?php echo $value['luot_dangki']?></td>
+                                    <td><?php echo $value['slot']?></td>
+                                    <td><?php echo $value['user']?></td>
+                                    <td><?php echo $value['nhomzalo']?></td>
+                                    <td><span class=" badge badge-success"><?php echo $value['name_trangthai']?></span></td>
                                     <td>
                                         <a href="index.php?act=update_lophoc" class="btn btn-warning">sửa</a>
                                         <button class="btn btn-danger">xóa</button>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>F304</td>
-                                    <td>18/11/2023</td>
-                                    <td>18/12/2023</td>
-                                    <td>c# cho người mới bắt đầu</td>
-                                    <td>lúc 7h - thứ 2/4/6 hàng tuần</td>
-                                    <td>20</td>
-                                    <td>40</td>
-                                    <td>Ngô trọng Liêm</td>
-                                    <td>https://zalo.me/g/xkddzi068</td>
-                                    <td><span style="color:#fff !important" class="badge bg-danger">Dừng hoạt động</span></td>
-                                    <td>
-                                        <a href="index.php?act=update_lophoc" class="btn btn-warning">sửa</a>
-                                        <button class="btn btn-danger">xóa</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>F304</td>
-                                    <td>18/11/2023</td>
-                                    <td>18/12/2023</td>
-                                    <td>c# cho người mới bắt đầu</td>
-                                    <td>lúc 7h - thứ 2/4/6 hàng tuần</td>
-                                    <td>20</td>
-                                    <td>40</td>
-                                    <td>Ngô trọng Liêm</td>
-                                    <td>https://zalo.me/g/xkddzi068</td>
-                                    <td><span style="color:#fff !important" class="badge bg-danger">Dừng hoạt động</span></td>
-                                    <td>
-                                        <a href="index.php?act=update_lophoc" class="btn btn-warning">sửa</a>
-                                        <button class="btn btn-danger">xóa</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>F306</td>
-                                    <td>18/11/2023</td>
-                                    <td>18/12/2023</td>
-                                    <td>c# cho người mới bắt đầu</td>
-                                    <td>lúc 7h - thứ 2/4/6 hàng tuần</td>
-                                    <td>20</td>
-                                    <td>40</td>
-                                    <td>Ngô trọng Liêm</td>
-                                    <td>https://zalo.me/g/xkddzi068</td>
-                                    <td><span style="color:#fff !important" class="badge bg-secondary">Đã kết thúc</span></td>
-                                    <td>
-                                        <a href="index.php?act=update_lophoc" class="btn btn-warning">sửa</a>
-                                        <button class="btn btn-danger">xóa</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>F304</td>
-                                    <td>18/11/2023</td>
-                                    <td>18/12/2023</td>
-                                    <td>java cho người mới bắt đầu</td>
-                                    <td>lúc 7h - thứ 2/4/6 hàng tuần</td>
-                                    <td>20</td>
-                                    <td>40</td>
-                                    <td>Ngô trọng Liêm</td>
-                                    <td>https://zalo.me/g/xkddzi068</td>
-                                    <td><span style="color:#fff !important" class="badge bg-danger">Dừng hoạt động</span></td>
-                                    <td>
-                                        <a href="index.php?act=update_lophoc" class="btn btn-warning">sửa</a>
-                                        <button class="btn btn-danger">xóa</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>F304</td>
-                                    <td>18/11/2023</td>
-                                    <td>18/12/2023</td>
-                                    <td>c# cho người mới bắt đầu</td>
-                                    <td>lúc 8h - thứ 3/5/7 hàng tuần</td>
-                                    <td>20</td>
-                                    <td>40</td>
-                                    <td>Ngô trọng Liêm</td>
-                                    <td>https://zalo.me/g/xkddzi068</td>
-                                    <td><span style="color:#fff !important" class="badge bg-danger">Dừng hoạt động</span></td>
-                                    <td>
-                                        <a href="index.php?act=update_lophoc" class="btn btn-warning">sửa</a>
-                                        <button class="btn btn-danger">xóa</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>F304</td>
-                                    <td>18/11/2023</td>
-                                    <td>18/12/2023</td>
-                                    <td>c# cho người mới bắt đầu</td>
-                                    <td>lúc 7h - thứ 2/4/6 hàng tuần</td>
-                                    <td>20</td>
-                                    <td>40</td>
-                                    <td>Ngô trọng Liêm</td>
-                                    <td>https://zalo.me/g/xkddzi068</td>
-                                    <td><span style="color:#fff !important" class="badge bg-danger">Dừng hoạt động</span></td>
-                                    <td>
-                                        <a href="index.php?act=update_lophoc" class="btn btn-warning">sửa</a>
-                                        <button class="btn btn-danger">xóa</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>F304</td>
-                                    <td>18/11/2023</td>
-                                    <td>18/12/2023</td>
-                                    <td>c# cho người mới bắt đầu</td>
-                                    <td>lúc 7h - thứ 2/4/6 hàng tuần</td>
-                                    <td>20</td>
-                                    <td>40</td>
-                                    <td>Ngô trọng Liêm</td>
-                                    <td>https://zalo.me/g/xkddzi068</td>
-                                    <td><span style="color:#fff !important" class="badge bg-danger">Dừng hoạt động</span></td>
-                                    <td>
-                                        <a href="index.php?act=update_lophoc" class="btn btn-warning">sửa</a>
-                                        <button class="btn btn-danger">xóa</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>F304</td>
-                                    <td>18/11/2023</td>
-                                    <td>18/12/2023</td>
-                                    <td>c# cho người mới bắt đầu</td>
-                                    <td>lúc 7h - thứ 2/4/6 hàng tuần</td>
-                                    <td>20</td>
-                                    <td>40</td>
-                                    <td>Ngô trọng Liêm</td>
-                                    <td>https://zalo.me/g/xkddzi068</td>
-                                    <td><span style="color:#fff !important" class="badge bg-danger">Dừng hoạt động</span></td>
-                                    <td>
-                                        <a href="index.php?act=update_lophoc" class="btn btn-warning">sửa</a>
-                                        <button class="btn btn-danger">xóa</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>F304</td>
-                                    <td>18/11/2023</td>
-                                    <td>18/12/2023</td>
-                                    <td>c# cho người mới bắt đầu</td>
-                                    <td>lúc 7h - thứ 2/4/6 hàng tuần</td>
-                                    <td>20</td>
-                                    <td>40</td>
-                                    <td>Ngô trọng Liêm</td>
-                                    <td>https://zalo.me/g/xkddzi068</td>
-                                    <td><span style="color:#fff !important" class="badge bg-danger">Dừng hoạt động</span></td>
-                                    <td>
-                                        <a href="index.php?act=update_lophoc" class="btn btn-warning">sửa</a>
-                                        <button class="btn btn-danger">xóa</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>F304</td>
-                                    <td>18/11/2023</td>
-                                    <td>18/12/2023</td>
-                                    <td>c# cho người mới bắt đầu</td>
-                                    <td>lúc 7h - thứ 2/4/6 hàng tuần</td>
-                                    <td>20</td>
-                                    <td>40</td>
-                                    <td>Ngô trọng Liêm</td>
-                                    <td>https://zalo.me/g/xkddzi068</td>
-                                    <td><span style="color:#fff !important" class="badge bg-danger">Dừng hoạt động</span></td>
-                                    <td>
-                                        <a href="index.php?act=update_lophoc" class="btn btn-warning">sửa</a>
-                                        <button class="btn btn-danger">xóa</button>
-                                    </td>
-                                </tr>
+                                <?php endforeach;?>
 
                             </tbody>
                             <tfoot>

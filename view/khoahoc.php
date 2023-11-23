@@ -21,12 +21,16 @@
                             <h3 class="h3"><?php echo $value['name_khoahoc']?></h3>
                         </h5>
                         <p class="card-price">
-                            <span class="text-danger"><del><?php echo $value['price_khoahoc']?></del> vnđ</span>  <br>
-                            <span class="font-bold"><?php echo (float)$value['price_khoahoc'] - ((float)$value['price_khoahoc'] * (float)$value['giamgia'] / 100)?> vnđ</span>
+                            <span class="text-danger"><del><?php echo number_format($value['price_khoahoc'])?></del> vnđ</span>  
+                            <span class="font-bold badge badge-primary"><?php echo number_format((float)$value['price_khoahoc'] - ((float)$value['price_khoahoc'] * (float)$value['giamgia'] / 100))?> vnđ</span>
                         </p>
                         <p class="card-price">
                             <span class="font-bold">lượt xem: <?php echo $value['luot_xem']?> </span> <br>
                             <span class="font-bold">lượt đăng kí: <?php echo $value['luot_dangki']?></span>
+                        </p>
+                        <p>
+                        giảng viên: 
+                            <span class="badge badge-orange text-light"><?php echo $value['user']?></span>
                         </p>
 
                         <a href="index.php?act=chitiet_khoahoc&id__khoahoc=<?php echo $value['id_khoahoc']?>" class="btn btn-success">Chi tiết khóa học</a>
