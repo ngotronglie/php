@@ -147,5 +147,10 @@
     function delete_giangvien($id){
         $sql = "delete from taikhoan where id_taikhoan = '$id'";
         pdo_execute($sql);
+    } 
+
+    function update_role($id_taikhoan){
+        $sql ="update taikhoan set role = '5' where id_taikhoan = '$id_taikhoan'";
+        pdo_execute($sql);
     }
 ?>

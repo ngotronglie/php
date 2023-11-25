@@ -40,7 +40,7 @@
                                     <td><?php echo $value['nhomzalo']?></td>
                                     <td><span class=" badge badge-success"><?php echo $value['name_trangthai']?></span></td>
                                     <td>
-                                        <a href="index.php?act=update_lophoc" class="btn btn-warning">sửa</a>
+                                        <a href="index.php?act=update_thoigian&id_lophoc=<?php echo $value['id_lophoc']?>" class="btn btn-warning">sửa</a>
                                         <button class="btn btn-danger">xóa</button>
                                     </td>
                                 </tr>

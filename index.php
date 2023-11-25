@@ -6,6 +6,11 @@
   include './model/taikhoan/taikhoan.php';
   include './model/thongbao.php';
   include './model/binhluan.php';
+  include './model/dangki_khoahoc.php';
+  include './model/lop/lop.php';
+  include './model/hoadon.php';
+  include './model/phonghoc.php';
+  include './model/diem.php';
   // include '';
 ?>
 
@@ -102,7 +107,7 @@
                   $user = $_SESSION['user'];
                   $id_taikhoan = search_id_taikhoan($user);
                 }else{
-                  $id_taikhoan = 999999;
+                  header('location:index.php?act=login');
                 }
                 $id_khoahoc = $_POST['id_khoahoc'];
                 $noidung = $_POST['noidung'];
@@ -120,13 +125,52 @@
               include 'view/chitiet_khoahoc.php';
               break;
             }
+            case 'dangki_lophoc':{
+              if(isset($_GET['id_lophoc']) && $_GET['id_lophoc'] > 0){
+                if(!$_SESSION){
+                  header('Location: index.php?act=login');
+                }else{
+                  $id_taikhoan = search_id_taikhoan($_SESSION['user']);
+                  if($id_taikhoan == 0){
+                    header('Location: index.php?act=login');
+                  }
+                  $id__lophoc = $_GET['id_lophoc'];
+                  tangluotdangki($_GET['id_lophoc']);
+                  insert_dangki($id_taikhoan, $_GET['id_lophoc']);
+                  insert_hoadon($id_taikhoan, $_GET['id_lophoc']);
+                  insert_diem($id_taikhoan, $_GET['id_lophoc']);
+                  update_slot($_GET['id_lophoc']);
+                  header('location: index.php?act=lop_dadangki');
+                }
+              }
+              break;
+            }
 
             case 'lop_dadangki':{
+              if($_SESSION){
+                $id_taikhoan = search_id_taikhoan($_SESSION['user']);
+                $lopda_dangki = list_lopda_dangki($id_taikhoan);
+              }else{
+                header('location: index.php?act=login');
+              }
+              
               include 'view/lop_dadangki.php';
               break;
             }
             case 'chitiet_lopdadangki':{
               include 'view/chitiet_lopdangki.php';
+              break;
+            }
+            case 'tuyendung':{
+              if(isset($_GET['id_taikhoan']) && $_GET['id_taikhoan'] > 0){
+                update_role($_GET['id_taikhoan']);
+                header('location: index.php');
+              }
+              include 'view/tuyendung.php';
+              break; 
+            }
+            case 'hoadon':{
+              include 'view/hoadon.php';
               break;
             }
             // chi tiết khóa học

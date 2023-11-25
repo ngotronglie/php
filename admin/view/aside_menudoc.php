@@ -67,6 +67,15 @@
         </li>
         <li class="sidebar-item">
           <a
+            class="sidebar-link waves-effect waves-dark sidebar-link"
+            href="index.php?act=tuyendung"
+            aria-expanded="false"
+            ><i class="fas fa-users"></i
+            ><span class="hide-menu">Ứng tuyển giảng viên</span></a
+          >
+        </li>
+        <li class="sidebar-item">
+          <a
             class="sidebar-link has-arrow waves-effect waves-dark"
             href="javascript:void(0)"
             aria-expanded="false"

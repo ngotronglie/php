@@ -11,6 +11,7 @@
   include '../model/khoahoc/khoahoc.php';
   include '../model/lop/lop.php';
   include '../model/binhluan.php';
+  include '../model/tuyendung.php';
   session_start();
 ?>
 
@@ -29,7 +30,7 @@
     <?php include 'view/aside_menudoc.php';?>
     <div class="page-wrapper">
         <?php 
-
+          $danhsach_tuyendung = list_tuyendung();
           $danhmuc_khoahoc = danhsach_danhmuc_khoahoc();
           $giohoc = danhsach_giohoc();
           $list_thongbao = list_thongbao();
@@ -45,6 +46,18 @@
           if(isset($_GET['act']) && $_GET['act']!= ""){
             $act = $_GET['act'];
             switch ($act) {
+              case 'tuyendung':{
+                if(isset($_GET['id_taikhoan_chapnhan']) && $_GET['id_taikhoan_chapnhan'] !=""){
+                  update_role_chapnhan($_GET['id_taikhoan_chapnhan']);
+                  header('location: index.php?act=tuyendung');
+                }
+                if(isset($_GET['id_taikhoan_kochapnhan']) && $_GET['id_taikhoan_kochapnhan'] !=""){
+                  update_role_kochapnhan($_GET['id_taikhoan_kochapnhan']);
+                  header('location: index.php?act=tuyendung');
+                }
+                include 'tuyendung/list_tuyendung.php';
+                break;
+              }
               // ------------------------ thong bao ---------------------------------
               case 'list_thongbao':{
                 include 'thongbao/list_thongbao.php';
@@ -186,7 +199,7 @@
                 }
                 if(isset($_POST['update'])){
                   update_phonghoc($_POST['phong'],$_POST['mota'],$_POST['id_giohoc'],$_POST['slot'],$_POST['id_phong']);
-                  header("location: ?act=add_lophoc");
+                  header("location: ?act=list_lophoc");
                 }
                 include 'lophoc/phonghoc/update_lophoc.php';
                 break;
@@ -220,6 +233,13 @@
                 break;
               }
               case 'update_thoigian':{
+                if(isset($_GET['id_lophoc']) && $_GET['id_lophoc'] > 0){
+                  $lophoc = getone_lophoc($_GET['id_lophoc']);
+                }
+                if(isset($_POST['save'])){
+                  update_lophoc($_POST['id_lophoc'], $_POST['phong'], $_POST['ngaykhaigiang'],$_POST['ngaybegiang'], $_POST['name_khoahoc'], $_POST['zalo'], $_POST['trangthai']);
+                  header('location: index.php?act=list_thoigian');
+                }
                 include 'lophoc/lophoc/update_thoigian.php';
                 break;
               }

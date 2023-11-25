@@ -29,6 +29,7 @@
                     </tr>
                   </thead>
                   <tbody>
+
                     <tr>
                       <th scope="col">#</th>
                       <td scope="col">F302</td>
@@ -37,7 +38,7 @@
                       <td scope="col">Ngô TRọng Liêm</td>
                       <td scope="col">https://zalo.me/g/xkddzi068</td>
                       <td scope="col">9.5</td>
-                      <td scope="col">giỏi</td>
+                      <td scope="col"><?php diem(9.5)?></td>
                       <td scope="col">đi học</td>
                       <td scope="col">đang hoạt động</td>
                     </tr>

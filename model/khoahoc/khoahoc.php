@@ -83,6 +83,16 @@
         $sql = "update khoahoc set luot_xem = $luotxem where id_khoahoc = $id";
         pdo_query($sql);
     }
+    function tangluotdangki($id_lop){
+        $id_phong = "SELECT khoahoc.id_khoahoc FROM khoahoc INNER JOIN lophoc on khoahoc.id_khoahoc = lophoc.id_khoahoc where  id_lophoc = $id_lop";
+        $id_khoahoc = pdo_query_one($id_phong);
+        $id_khoahoc_ = $id_khoahoc['id_khoahoc'];
+        $luotdangki = "SELECT khoahoc.luot_dangki from khoahoc WHERE id_khoahoc = $id_khoahoc_";
+        $luotdangki_ = pdo_query_one($luotdangki);
+        $luotdangki__ = $luotdangki_['luot_dangki'] + 1;
+        $sql = "UPDATE khoahoc SET khoahoc.luot_dangki = '$luotdangki__' WHERE id_khoahoc = $id_khoahoc_";
+        pdo_query($sql);
+    }
     function top10_view(){
         $sql = "select * from khoahoc order by luot_xem desc limit 0,10";
         $result = pdo_query($sql);
@@ -96,7 +106,7 @@
         return $result;
     }
     function list_lophoc_cung_name($namekh){
-        $sql = "SELECT phonghoc.name_phong, lophoc.ngaykhaigiang, lophoc.ngaybegiang, gio_hoc.name_giohoc, taikhoan.user, trangthai.name_trangthai, phonghoc.slot
+        $sql = "SELECT *
             FROM lophoc
             INNER JOIN khoahoc ON lophoc.id_khoahoc = khoahoc.id_khoahoc
             INNER JOIN phonghoc ON lophoc.id_phonghoc = phonghoc.id_phonghoc

@@ -3,82 +3,63 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <form class="form-horizontal" action="index.php?act=list_lophoc">
+                <form method="POST" class="form-horizontal" action="index.php?act=update_thoigian">
                     <div class="card-body">
                         <h4 class="card-title">sửa lớp học</h4>
+                        <input name="id_lophoc" type="hidden" value="<?php echo $lophoc['id_lophoc']?>">
                         <div class="form-group row">
                             <label for="role" class="col-sm-3 text-right control-label col-form-label">phòng học</label>
                             <div class="col-sm-9">
-                                <select class="form-control" id="role" name="role" value="đang hoạt động">
-                                    <option value="2">F304</option>
-                                    <option value="1">L302</option>
-                                    <option value="0">P306</option>
+                                <select name="phong" class="form-control" id="role">
+                                    <?php foreach($danhsach_phonghoc as $value):?>
+                                    <option value="<?php echo $value['id_phonghoc']?>" <?php if($lophoc['id_phonghoc'] == $value['id_phonghoc']):?> selected<?php endif;?>>Phòng: <?php echo $value['name_phong']?> -- Thời gian:  <?php echo $value['name_giohoc']?></option>
+                                    <?php endforeach;?>
                                 </select>
                             </div>
                         </div>   
                         <div class="form-group row">
                             <label for="fname" class="col-sm-3 text-right control-label col-form-label">ngày khai giảng</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="fname" value="19/11/2023">
+                                <input name="ngaykhaigiang" type="text" value="<?php echo date('d/m/Y', strtotime($lophoc['ngaykhaigiang']))?>" class="form-control" id="fname">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="fname" class="col-sm-3 text-right control-label col-form-label">ngày bế gảng</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="fname" value="19/12/2023">
+                            <input name="ngaybegiang" type="text" value="<?php echo date('d/m/Y', strtotime($lophoc['ngaybegiang']))?>" class="form-control" id="fname">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="role" class="col-sm-3 text-right control-label col-form-label">Tên khóa học</label>
                             <div class="col-sm-9">
-                                <select class="form-control" id="role" name="role" value="đang hoạt động">
-                                    <option value="1">Java cho người mới bắt đầu</option>
-                                    <option value="0">C# cho người mới bắt đầu</option>
-                                    <option value="2">PHP cho người mới bắt đầu</option>
+                            
+                                <select class="form-control" id="role" name="name_khoahoc">
+                                    <?php foreach($danhsach_khoahoc as $value):?>
+                                    <option value="<?php echo $value['id_khoahoc']?>" <?php if($lophoc['id_khoahoc']== $value['id_khoahoc']):?> selected<?php endif;?>>Tên Khóa học: <?php echo $value['name_khoahoc']?> -- Giảng viên: <?php echo $value['user']?></option>
+                                    <?php endforeach;?>
                                 </select>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="fname" class="col-sm-3 text-right control-label col-form-label">nhóm zalo</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="fname" value="https://zalo.me/132456">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="role" class="col-sm-3 text-right control-label col-form-label">Giảng viên</label>
-                            <div class="col-sm-9">
-                                <select class="form-control" id="role" name="role" value="đang hoạt động">
-                                    <option value="2">Ngô Trọng Liêm</option>
-                                    <option value="1">Hà Thị Thùy Linh</option>
-                                    <option value="0">Phạm thị Thùy Trang</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="role" class="col-sm-3 text-right control-label col-form-label">chi tiết thời gian</label>
-                            <div class="col-sm-9">
-                                <select class="form-control" id="role" name="role" value="đang hoạt động">
-                                    <option value="2">8h - thứ 3/5/7 </option>
-                                    <option value="1">10h - thứ 3/5/7</option>
-                                    <option value="0">14h - thứ 3/5/7</option>
-                                </select>
+                                <input name="zalo" value="<?php echo $lophoc['nhomzalo']?>" type="text" class="form-control" id="fname">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="role" class="col-sm-3 text-right control-label col-form-label">Trạng thái</label>
                             <div class="col-sm-9">
-                                <select class="form-control" id="role" name="role" value="đang hoạt động">
-                                    <option value="2">Dừng hoạt động</option>
-                                    <option value="1">đã kết thúc</option>
-                                    <option value="0">Đang hoạt động</option>
-                                    <option value="3">Sắp hoạt động</option>
+                                <select class="form-control"  name="trangthai">
+                                    <?php foreach($danhsach_trangthai as $value):?>
+                                    <option value="<?php echo $value['id_trangthai']?>" <?php if($lophoc['id_trangthai'] == $value['id_trangthai']):?> selected<?php endif;?>>Trạng thái: <?php echo $value['name_trangthai']?> -  danh mục: <?php echo $value['namedm_trangthai']?></option>
+                                    <?php endforeach;?>
                                 </select>
                             </div>
                         </div>
                     </div>
                     <div class="border-top">
                         <div class="card-body">
-                            <button class="btn btn-success">Save</button>
+                            <button name="save" class="btn btn-success">Save</button>
                         </div>
                     </div>
                 </form>

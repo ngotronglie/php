@@ -32,13 +32,13 @@
                         <div class="form-group row">
                             <label for="lname" class="col-sm-3 text-right control-label col-form-label">tổng slot</label>
                             <div class="col-sm-9">
-                                <input name="slot" type="text" value="<?php echo $phonghoc['slot']?>" class="form-control" id="lname" disabled>
+                                <input name="slot" type="value" value="<?php echo $phonghoc['slot']?>" class="form-control" id="lname" >
                             </div>
                         </div> 
                     </div>
                     <div class="border-top">
                         <div class="card-body">
-                            <a name="update" href="#" class="btn btn-success">update</a>
+                            <button name="update" class="btn btn-success">update</button>
                         </div>
                     </div>
                 </form>
