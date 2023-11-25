@@ -22,6 +22,10 @@
         VALUES ('$phong', '$khoahoc', '$ngaykhaigiang', '$ngaybegiang', '$nhomzalo', '$trangthai')";
         pdo_execute($sql);
     }
+    function delete_lophoc($id){
+        $sql = "DELETE FROM `lophoc` WHERE `id_lophoc` = '$id'";
+        pdo_execute($sql);
+    }
 
     function getone_lophoc($id){
         $sql = "select * from lophoc INNER JOIN khoahoc on khoahoc.id_khoahoc = lophoc.id_khoahoc where lophoc.id_lophoc = '$id'";

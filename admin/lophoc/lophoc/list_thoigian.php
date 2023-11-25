@@ -41,7 +41,7 @@
                                     <td><span class=" badge badge-success"><?php echo $value['name_trangthai']?></span></td>
                                     <td>
                                         <a href="index.php?act=update_thoigian&id_lophoc=<?php echo $value['id_lophoc']?>" class="btn btn-warning">sửa</a>
-                                        <button class="btn btn-danger">xóa</button>
+                                        <a onclick="return confirm('Xác nhận xóa lớp học?')" href="index.php?act=delete_thoigian&dtid_lophoc=<?php echo $value['id_lophoc']?>" class="btn btn-danger">xóa</a>
                                     </td>
                                 </tr>
                                 <?php endforeach;?>

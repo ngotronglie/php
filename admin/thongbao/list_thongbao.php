@@ -19,6 +19,7 @@
                                 <th scope="col">image</th>
                                 <th scope="col">tiêu đề</th>
                                 <th scope="col">nội dung</th>
+                                <th scope="col">ngày đăng</th>
                                 <th scope="col">action</th>
                             </tr>
                         </thead>
@@ -26,7 +27,7 @@
                             <?php foreach($list_thongbao as $key => $value):?>
                             <tr>
                                 <th scope="row"><?php echo $key + 1?></th>
-                                <td><img src="../upload/thongbao/<?php echo $value['img_thongbao']?>" alt='ảnh'></td>
+                                <td><img style="width: 125px" src="../upload/thongbao/<?php echo $value['img_thongbao']?>" alt='ảnh'></td>
                                 <td><?php echo $value['title']?></td>
                                 <td><?php echo $value['noidung_thongbao']?></td>
                                 <td><?php echo $value['ngaythongbao']?></td>

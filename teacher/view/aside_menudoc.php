@@ -65,7 +65,7 @@
             class="sidebar-link waves-effect waves-dark sidebar-link"
             href="../index.php"
             aria-expanded="false"
-            ><i class="fas fa-home"></i
+            ><i class="fas fa-eye"></i
             ><span class="hide-menu">view user</span></a
           >
         </li>

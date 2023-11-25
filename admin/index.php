@@ -244,6 +244,10 @@
                 break;
               }
               case 'delete_thoigian':{
+                if(isset($_GET['dtid_lophoc']) && $_GET['dtid_lophoc'] > 0){
+                  delete_lophoc($_GET['dtid_lophoc']);
+                  header('location: index.php?act=list_thoigian');
+                }
                 break;
               }
 //            ------------------------------- feedback ---------------------------------

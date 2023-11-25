@@ -29,7 +29,7 @@
         $taikhoan = pdo_query_one($sql);
         if($taikhoan != false){
             $_SESSION['user'] = $user;
-            if($taikhoan['role'] == 0){
+            if($taikhoan['role'] == 0 || $taikhoan['role'] == 5){
                 header('location:index.php');
             }
             if($taikhoan['role'] == 1){
