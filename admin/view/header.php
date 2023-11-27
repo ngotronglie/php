@@ -110,14 +110,8 @@
               width="31"
           /></a>
           <div class="dropdown-menu dropdown-menu-right user-dd animated">
-            <a class="dropdown-item" href=""
-              ><i class="ti-user m-r-5 m-l-5"></i> My Profile</a
-            >
-            <a class="dropdown-item" href=""
-              ><i class="ti-wallet m-r-5 m-l-5"></i> My Balance</a
-            >
-            <a class="dropdown-item" href=""
-              ><i class="ti-settings m-r-5 m-l-5"></i> Account Setting</a
+            <a class="dropdown-item" href="index.php?act=capnhattaikhoan"
+              ><i class="ti-user m-r-5 m-l-5"></i>Cập nhật tài khoản</a
             >
             <a onclick="return confirm('bạn muốn đăng xuất ??')" class="dropdown-item" href="index.php?act=logout"
               ><i class="fa fa-power-off m-r-5 m-l-5"></i>Logout</a

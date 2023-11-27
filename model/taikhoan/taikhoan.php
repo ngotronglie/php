@@ -19,6 +19,24 @@
             }
         }
     }
+        // cập nhật mật khẩu 
+    function dulieu_taikhoan($user){
+        $sql = "SELECT * FROM taikhoan WHERE user = '$user'";
+        $taikhoan = pdo_query_one($sql);
+        return $taikhoan;
+    }
+    function update_taikhoan($user,$password,$email,$address,$phone,$mota,$id_taikhoan){
+        $sql = "UPDATE `taikhoan` 
+        SET `user` = '$user', 
+            `pass` = '$password', 
+            `email` = '$email', 
+            `address` = '$address', 
+            `tel` = '$phone', 
+            `mota` = '$mota' 
+        WHERE `taikhoan`.`id_taikhoan` = $id_taikhoan;
+        ";
+        pdo_execute($sql);
+    }
     function sendMail($email){
         $sql = "SELECT * FROM taikhoan WHERE email = '$email'";
         $taikhoan = pdo_query_one($sql);
@@ -147,6 +165,7 @@
         }
         
     }
+
     // đăng xuất
     function dangxuat_user(){
         if(isset($_SESSION['user'])){

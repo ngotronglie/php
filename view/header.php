@@ -17,6 +17,7 @@
             }else{
                 echo  '<span class="h5">Xin chào, ' .$_SESSION['user'].'</span>';
                 echo "<a onclick=\"return confirm('Bạn chắc chắn đăng xuất chứ?')\" style='margin-left: 5px;' href='index.php?act=logout' class='btn btn-danger'>Đăng xuất</a>";
+                echo "<a style='margin-left: 5px;' href='index.php?act=capnhattaikhoan' class='btn btn-warning'>cập nhật tài khoản</a>";
                 $quantri =check_quantri($_SESSION['user']);
                 if(isset($quantri) && $quantri!=""){
                     echo $quantri;

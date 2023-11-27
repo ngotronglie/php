@@ -62,7 +62,23 @@
                 dangxuat_giangvien();
                 break;
               }
-              
+              case 'capnhattaikhoan':{
+                $taikhoan = dulieu_taikhoan($_SESSION['user']);
+                if(isset($_POST['capnhat'])){
+                  $user = $_POST['user'];
+                  $password = $_POST['password'];
+                  $email = $_POST['email'];
+                  $address = $_POST['address'];
+                  $phone = $_POST['phone'];
+                  $mota = $_POST['mota'];
+                  $id_taikhoan = $_POST['id_taikhoan'];
+                  $mess = update_taikhoan($user,$password,$email,$address,$phone,$mota,$id_taikhoan);
+
+                  header('location: index.php?act=logout');
+                }
+                include 'view/capnhattaikhoan.php';
+                break;
+              }
               default:
               //  include 'footer.php';
               
