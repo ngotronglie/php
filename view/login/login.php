@@ -21,6 +21,7 @@
     />
   </div>
   <h6>Bạn chưa đăng kí? <a href="index.php?act=dangki">Đăng kí ngay</a></h6>
+  <h6>Bạn quên mật khẩu? <a href="index.php?act=quenmk">Quên mật khẩu</a></h6>
   <button name="login" type="submit" class="btn btn-success">Đăng nhập</button>
 </form>
 <?php

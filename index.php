@@ -47,6 +47,14 @@
               include 'view/login/login.php';
               break;
             }
+            case 'quenmk':{
+              if(isset($_POST['submit'])){
+                $email = $_POST['email'];
+                $sendMailMess = sendMail($email);
+              }
+              include 'view/login/quenmatkhau.php';
+              break;
+            } 
             case 'dangki':{
               if(isset($_POST['signup'])){
                 $user = $_POST['user'];

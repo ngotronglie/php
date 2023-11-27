@@ -11,7 +11,7 @@
             <div class="row">
             <?php foreach($lopda_dangki as $value):?>
               <?php $name = getone_giangvien($value['id_taikhoan'])?>
-              <div class="col-md-4 pl-3 pr-3 mt-3">
+              <div class="col-md-3 pl-3 pr-3 mt-3">
                 <div class="card border" style="width: 18rem">
                   <img src="./upload/khoahoc/<?php echo $value['img_khoahoc']?>" class="card-img-top" id="_img_" alt="" />
                   <div class="card-body">
