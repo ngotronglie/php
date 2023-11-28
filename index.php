@@ -160,11 +160,11 @@
                     header('Location: index.php?act=login');
                   }
                   $id__lophoc = $_GET['id_lophoc'];
-                  tangluotdangki($_GET['id_lophoc']);
-                  insert_dangki($id_taikhoan, $_GET['id_lophoc']);
-                  insert_hoadon($id_taikhoan, $_GET['id_lophoc']);
-                  insert_diem($id_taikhoan, $_GET['id_lophoc']);
-                  update_slot($_GET['id_lophoc']);
+                  // tangluotdangki($_GET['id_lophoc']);
+                  // insert_hoadon($id_taikhoan, $_GET['id_lophoc']); 
+                  insert_dangkikhoahoc($id_taikhoan, $_GET['id_lophoc']);
+                  // insert_diem($id_taikhoan, $_GET['id_lophoc']);
+                  // update_slot($_GET['id_lophoc']);
                   header('location: index.php?act=lop_dadangki');
                 }
               }
@@ -175,6 +175,7 @@
               if($_SESSION){
                 $id_taikhoan = search_id_taikhoan($_SESSION['user']);
                 $lopda_dangki = list_lopda_dangki($id_taikhoan);
+                $lopda_dangki_duyet = list_lopda_dangki_duyet($id_taikhoan);
               }else{
                 header('location: index.php?act=login');
               }

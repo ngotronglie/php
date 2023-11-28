@@ -119,9 +119,6 @@
                     width="31"
                 /></a>
                 <div class="dropdown-menu dropdown-menu-right user-dd animated">
-                  <a class="dropdown-item" href="javascript:void(0)"
-                    ><i class="ti-user m-r-5 m-l-5"></i> My Profile</a
-                  >
                   <a class="dropdown-item" href="index.php?act=capnhattaikhoan"
                     ><i class="ti-wallet m-r-5 m-l-5"></i>Cập nhật tài khoản</a
                   >

@@ -4,7 +4,6 @@
         <a href="index.php" class="h3 text-active">Kaka</a>
         <a href="index.php?act=lop_dadangki" class="h5 m-3">Lớp học đã đăng kí</a>
         <a href="index.php#khoahoc" class="h5 m-3">Khóa học</a>
-        <a href="index.php#thongbao" class="h5 m-3">thông báo</a>
         <a href="index.php?act=hoadon" class="h5 m-3">Hóa đơn</a>
         <a href="index.php?act=list_giangvien" class="h5 m-3">Thông tin giảng viên</a>
         <a href="index.php?act=tuyendung" class="h5 m-3">Tuyển dụng giảng viên</a>

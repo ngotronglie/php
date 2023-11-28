@@ -30,15 +30,15 @@
                                 <tr>
                                     <th scope="row"><?php echo $key + 1?></th>
                                     <td><?php echo $value['name_phong']?></td>
-                                    <td><?php echo $value['ngaykhaigiang']?></td>
-                                    <td><?php echo $value['ngaybegiang']?></td>
+                                    <td><?php echo date('d/m/Y', strtotime($value['ngaykhaigiang']));?></td>
+                                    <td><?php echo date('d/m/Y', strtotime($value['ngaybegiang']));?></td>
                                     <td><?php echo $value['name_khoahoc']?></td>
                                     <td><?php echo $value['name_giohoc']?></td>
                                     <td><?php echo $value['luot_dangki']?></td>
                                     <td><?php echo $value['slot']?></td>
                                     <td><?php echo $value['user']?></td>
                                     <td><?php echo $value['nhomzalo']?></td>
-                                    <td><span class=" badge badge-success"><?php echo $value['name_trangthai']?></span></td>
+                                    <td><span><?php echo $value['name_trangthai']?></span></td>
                                     <td>
                                         <a href="index.php?act=update_thoigian&id_lophoc=<?php echo $value['id_lophoc']?>" class="btn btn-warning">sửa</a>
                                         <a onclick="return confirm('Xác nhận xóa lớp học?')" href="index.php?act=delete_thoigian&dtid_lophoc=<?php echo $value['id_lophoc']?>" class="btn btn-danger">xóa</a>

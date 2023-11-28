@@ -94,6 +94,7 @@
                     <th scope="col">giảng viên</th>
                     <th scope="col">trạng thái</th>
                     <th scope="col">slot</th>
+                    <th scope="col">Lượt đăng kí</th>
                     <th scope="col">action</th>
                   </tr>
                 </thead>
@@ -108,6 +109,7 @@
                       <td scope="col"><?php echo $value['user']?></td>
                       <td scope="col"><?php echo $value['name_trangthai']?></td>
                       <td scope="col"><?php echo $value['slot']?></td>
+                      <td scope="col"><?php echo $value['luot_dangki']?></td>
                       <td scope="col">
                         <a  onclick="return confirm('Bạn đăng kí khóa này??')" class="btn btn-success" href="index.php?act=dangki_lophoc&id_lophoc=<?php echo $value['id_lophoc']?>">Đăng kí</a>
                       </td>
@@ -124,6 +126,7 @@
                     <th scope="col">giảng viên</th>
                     <th scope="col">trạng thái</th>
                     <th scope="col">slot</th>
+                    <th scope="col">Lượt đăng kí</th>
                     <th scope="col">action</th>
                   </tr>
                 </tfoot>

@@ -42,6 +42,8 @@
           $danhsach_taikhoan = danhsach_taikhoan();
           $danhsach_lophoc =danhsach_lophoc();
           $danhsach_binhluan =danhsach_binhluan();
+          $danhsach_duyetlop = danhsach_duyetlop();
+          $danhsach_duyetlop_daduyet = danhsach_duyetlop_daduyet();
 
           if(isset($_GET['act']) && $_GET['act']!= ""){
             $act = $_GET['act'];
@@ -289,15 +291,23 @@
                 include 'qlriengle/feedback/question/delete_question_feedback.php';
                 break;
               }
-              //  -------------------- banner marketing ----------------------------
-              case 'list_sinhvien':{
-                include 'qlsinhvien/list_sinhvien.php';
+              // list duyệt --------------------------------
+              case 'list_chuaduyet':{
+                if(isset($_GET['id_dangki']) && $_GET['id_dangki'] != ""){
+                  update_role_lopdangki($_GET['id_dangki']);
+                  header('location: index.php?act=list_chuaduyet');
+                }
+                if(isset($_GET['id_dangki_xoa']) && $_GET['id_dangki_xoa'] != ""){
+                  delete_lopdangki($_GET['id_dangki_xoa']);
+                  header('location: index.php?act=list_chuaduyet');
+                }
+                include 'duyetlophoc/listLopchuaduyet.php';
                 break;
-              }
-              case 'update_sinhvien':{
-                include 'qlsinhvien/update_sinhvien.php';
+              } 
+              case 'list_daduyet':{
+                include 'duyetlophoc/listLopdaduyet.php';
                 break;
-              }
+              } 
               // ---------------khoa hoc------------------------
               case 'list_khoahoc':{
                 include 'khoahoc/khoahoc/list_khoahoc.php';
@@ -491,6 +501,7 @@
                 include 'qlriengle/danhgia/list_danhgia.php';
                 break;
               }
+
               case 'add_danhgia':{
                 include 'qlriengle/danhgia//add_danhgia.php';
                 break;

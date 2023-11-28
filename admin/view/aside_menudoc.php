@@ -10,6 +10,29 @@
             href="javascript:void(0)"
             aria-expanded="false"
             ><i class="fab fa-nintendo-switch"></i
+            ><span class="hide-menu">Duyệt lớp</span></a
+          >
+          <ul aria-expanded="false" class="collapse first-level">
+            <li class="sidebar-item">
+              <a href="index.php?act=list_chuaduyet" class="sidebar-link"
+                ><i class="far fa-edit"></i
+                ><span class="hide-menu">Chưa duyệt</span></a
+              >
+            </li>
+            <li class="sidebar-item">
+              <a href="index.php?act=list_daduyet" class="sidebar-link"
+                ><i class="far fa-edit"></i
+                ><span class="hide-menu">Đã duyệt</span></a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="sidebar-item">
+          <a
+            class="sidebar-link has-arrow waves-effect waves-dark"
+            href="javascript:void(0)"
+            aria-expanded="false"
+            ><i class="fab fa-nintendo-switch"></i
             ><span class="hide-menu">trạng thái</span></a
           >
           <ul aria-expanded="false" class="collapse first-level">

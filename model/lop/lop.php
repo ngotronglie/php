@@ -42,13 +42,70 @@
         INNER JOIN trangthai on trangthai.id_trangthai = lophoc.id_trangthai
         INNER JOIN danhmuc_trangthai on danhmuc_trangthai.iddm_trangthai = trangthai.iddm_trangthai
         INNER JOIN danhmuc_khoahoc on danhmuc_khoahoc.iddm_khoahoc = khoahoc.iddm_khoahoc 
-        WHERE taikhoan.id_taikhoan = '$id_taikhoan' order by id_dkkhoahoc  desc
+        WHERE taikhoan.id_taikhoan = '$id_taikhoan' and role_duyet = 0 order by id_dkkhoahoc  desc
         ";
         $result = pdo_query($sql);
         return $result;
 
     }
     
+    function list_lopda_dangki_duyet($id_taikhoan){
+        $sql = "
+        SELECT * FROM dangki_khoahoc INNER JOIN taikhoan on taikhoan.id_taikhoan = dangki_khoahoc.id_taikhoan 
+        INNER JOIN lophoc on lophoc.id_lophoc = dangki_khoahoc.id_lophoc
+        INNER JOIN khoahoc on lophoc.id_khoahoc = khoahoc.id_khoahoc
+        INNER JOIN phonghoc on phonghoc.id_phonghoc = lophoc.id_phonghoc
+        INNER JOIN gio_hoc on gio_hoc.id_giohoc = phonghoc.id_giohoc
+        INNER JOIN trangthai on trangthai.id_trangthai = lophoc.id_trangthai
+        INNER JOIN danhmuc_trangthai on danhmuc_trangthai.iddm_trangthai = trangthai.iddm_trangthai
+        INNER JOIN danhmuc_khoahoc on danhmuc_khoahoc.iddm_khoahoc = khoahoc.iddm_khoahoc 
+        WHERE taikhoan.id_taikhoan = '$id_taikhoan' and role_duyet = 1 order by id_dkkhoahoc  desc
+        ";
+        $result = pdo_query($sql);
+        return $result;
+    }
+
+    function danhsach_duyetlop(){
+        $sql = "
+        SELECT * FROM dangki_khoahoc INNER JOIN taikhoan on taikhoan.id_taikhoan = dangki_khoahoc.id_taikhoan 
+        INNER JOIN lophoc on lophoc.id_lophoc = dangki_khoahoc.id_lophoc
+        INNER JOIN khoahoc on lophoc.id_khoahoc = khoahoc.id_khoahoc
+        INNER JOIN phonghoc on phonghoc.id_phonghoc = lophoc.id_phonghoc
+        INNER JOIN gio_hoc on gio_hoc.id_giohoc = phonghoc.id_giohoc
+        INNER JOIN trangthai on trangthai.id_trangthai = lophoc.id_trangthai
+        INNER JOIN danhmuc_trangthai on danhmuc_trangthai.iddm_trangthai = trangthai.iddm_trangthai
+        INNER JOIN danhmuc_khoahoc on danhmuc_khoahoc.iddm_khoahoc = khoahoc.iddm_khoahoc 
+        where role_duyet = 0 order by id_dkkhoahoc  desc;
+        ";
+        $result = pdo_query($sql);
+        return $result;
+    }
+    function danhsach_duyetlop_daduyet(){
+        $sql = "
+        SELECT * FROM dangki_khoahoc INNER JOIN taikhoan on taikhoan.id_taikhoan = dangki_khoahoc.id_taikhoan 
+        INNER JOIN lophoc on lophoc.id_lophoc = dangki_khoahoc.id_lophoc
+        INNER JOIN khoahoc on lophoc.id_khoahoc = khoahoc.id_khoahoc
+        INNER JOIN phonghoc on phonghoc.id_phonghoc = lophoc.id_phonghoc
+        INNER JOIN gio_hoc on gio_hoc.id_giohoc = phonghoc.id_giohoc
+        INNER JOIN trangthai on trangthai.id_trangthai = lophoc.id_trangthai
+        INNER JOIN danhmuc_trangthai on danhmuc_trangthai.iddm_trangthai = trangthai.iddm_trangthai
+        INNER JOIN danhmuc_khoahoc on danhmuc_khoahoc.iddm_khoahoc = khoahoc.iddm_khoahoc 
+        where role_duyet = 1 order by id_dkkhoahoc  desc;
+        ";
+        $result = pdo_query($sql);
+        return $result;
+    }
+
+    function update_role_lopdangki($id){
+        $sql ="UPDATE `dangki_khoahoc` SET `role_duyet` = '1' WHERE `dangki_khoahoc`.`id_dkkhoahoc` = $id";
+        pdo_execute($sql);
+    }
+
+    function delete_lopdangki($id){
+        $sql = "DELETE FROM `dangki_khoahoc` WHERE `dangki_khoahoc`.`id_dkkhoahoc` = $id";
+        pdo_execute($sql);
+    }
+
     function getone_giangvien($id){
         $sql ="SELECT taikhoan.user FROM taikhoan WHERE id_taikhoan = $id ";
         $result = pdo_query_one($sql);
