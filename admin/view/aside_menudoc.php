@@ -9,7 +9,7 @@
             class="sidebar-link has-arrow waves-effect waves-dark"
             href="javascript:void(0)"
             aria-expanded="false"
-            ><i class="fab fa-nintendo-switch"></i
+            ><i class="fas fa-filter"></i
             ><span class="hide-menu">Duyệt lớp</span></a
           >
           <ul aria-expanded="false" class="collapse first-level">
@@ -119,15 +119,6 @@
               >
             </li>
           </ul>
-        </li>
-        <li class="sidebar-item">
-          <a
-            class="sidebar-link waves-effect waves-dark sidebar-link"
-            href="index.php?act=list_danhgia"
-            aria-expanded="false"
-            ><i class="fas fa-list-alt"></i
-            ><span class="hide-menu">Đánh giá</span></a
-          >
         </li>
         <li class="sidebar-item">
           <a

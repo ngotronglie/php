@@ -19,12 +19,12 @@
 <html dir="ltr" lang="en">
   <?php include 'view/head.php'?>
   <body>
-    <!-- <div class="preloader">
+    <div class="preloader">
       <div class="lds-ripple">
         <div class="lds-pos"></div>
         <div class="lds-pos"></div>
       </div>
-    </div> -->
+    </div>
     <div class="container-fluid">
       <?php include 'view/header.php'?>
       
@@ -111,7 +111,7 @@
             // danh mục khóa học
 
             case 'search_danhmuc_khoahoc':{
-              if(isset($_GET['iddm_kh']) && $_GET['iddm_kh'] >0){
+              if(isset($_GET['iddm_kh']) && $_GET['iddm_kh'] > 0){
                 $danhsach_khoahoc = search_danhmuc_kh($_GET['iddm_kh']);
               }
               include 'view/main.php';
@@ -126,6 +126,7 @@
             }
             
             //  khóa học ++++++++++++++++++++++++++++++++++
+            
             case 'chitiet_khoahoc':{
               if(isset($_POST['guibinhluan']) && $_POST['guibinhluan'] != ""){
                 if($_SESSION){
@@ -150,6 +151,22 @@
               include 'view/chitiet_khoahoc.php';
               break;
             }
+
+            case 'chitietchitiet':{
+              if(isset($_GET['id_lophoc']) && $_GET['id_lophoc'] > 0){
+                $lophoc = getone_lophoc($_GET['id_lophoc']);
+              }
+              include 'view/chitietchitietlophoc.php';
+              break;
+            }
+
+            case 'chitiet_lopdadangki':{
+              if(isset($_GET['id_dkkh']) && $_GET['id_dkkh'] > 0){
+                $lophoc = get_onelopdadangki($_GET['id_dkkh']);
+              }
+              include 'view/chitietlopdadangki.php';
+            }
+
             case 'dangki_lophoc':{
               if(isset($_GET['id_lophoc']) && $_GET['id_lophoc'] > 0){
                 if(!$_SESSION){
@@ -160,11 +177,7 @@
                     header('Location: index.php?act=login');
                   }
                   $id__lophoc = $_GET['id_lophoc'];
-                  // tangluotdangki($_GET['id_lophoc']);
-                  // insert_hoadon($id_taikhoan, $_GET['id_lophoc']); 
                   insert_dangkikhoahoc($id_taikhoan, $_GET['id_lophoc']);
-                  // insert_diem($id_taikhoan, $_GET['id_lophoc']);
-                  // update_slot($_GET['id_lophoc']);
                   header('location: index.php?act=lop_dadangki');
                 }
               }
@@ -183,7 +196,7 @@
               include 'view/lop_dadangki.php';
               break;
             }
-            case 'chitiet_lopdadangki':{
+            case 'noidung_lopdadangki':{
               include 'view/chitiet_lopdangki.php';
               break;
             }

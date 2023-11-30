@@ -12,6 +12,9 @@
   include '../model/lop/lop.php';
   include '../model/binhluan.php';
   include '../model/tuyendung.php';
+  include '../model/thongke.php';
+  include '../model/diem.php';
+  include '../model/dangki_khoahoc.php';
   session_start();
 ?>
 
@@ -44,7 +47,23 @@
           $danhsach_binhluan =danhsach_binhluan();
           $danhsach_duyetlop = danhsach_duyetlop();
           $danhsach_duyetlop_daduyet = danhsach_duyetlop_daduyet();
-
+          // thống kê
+          $tongdanhmuckhoahoc = tong_danhmuckhoahoc();
+          $tongkhoahoc = tongkhoahoc();
+          $tongphonghoc = tongphonghoc();
+          $tonggiohoc = tonggiohoc();
+          $tonglophoc = tonglophoc();
+          $tongthongbao = tongthongbao();
+          $tongbinhluan = tongbinhluan();
+          $tonghoadon = tonghoadon();
+          $tongtrangthai = tongtrangthai();
+          $tongdanhmuctrangthai = tongdanhmuctrangthai();
+          $tongadmin = tongadmin();
+          $tonggiangvien =tonggiangvien();
+          $tongnguoidung = tongnguoidung();
+          $tongluotdangkigiangvien = tongluotdangkigiangvien();
+          $taikhoanlophocchuaduyet = taikhoanlophocchuaduyet();
+          $taikhoanlophocdaduyet = taikhoanlophocdaduyet();
           if(isset($_GET['act']) && $_GET['act']!= ""){
             $act = $_GET['act'];
             switch ($act) {
@@ -274,34 +293,33 @@
                 include 'qlriengle/feedback/list_feedback.php';
                 break;
               }
-              case 'add_feedback':{
-                include 'qlriengle/feedback/add_feedback.php';
-                break;
-              }
-              // ------------------------------- question feedback ---------------------------------
-              case 'add_question_feedback':{
-                include 'qlriengle/feedback/question/add_question_feedback.php';
-                break;
-              }
-              case 'list_question_feedback':{
-                include 'qlriengle/feedback/question/list_question_feedback.php';
-                break;
-              }
-              case 'delete_question_feedback':{
-                include 'qlriengle/feedback/question/delete_question_feedback.php';
-                break;
-              }
+
               // list duyệt --------------------------------
               case 'list_chuaduyet':{
                 if(isset($_GET['id_dangki']) && $_GET['id_dangki'] != ""){
+                  
+                  
+                  
+                  $id_lophoc = getone_id_lophoc($_GET['id_dangki']);
+                  $taikhoan = getone_id_taikhoan($_GET['id_dangki']);
+                  $id_taikhoan_ = $taikhoan['id_taikhoan'];
+                  $id_lophoc_ = $id_lophoc['id_lophoc'];
+                  update_slot($id_lophoc_);
+                  
+                  tangluotdangki($id_lophoc_);
+                  insert_diem($id_taikhoan_, $id_lophoc_);
+                  insert_hoadon($id_taikhoan_, $id_lophoc_); 
                   update_role_lopdangki($_GET['id_dangki']);
                   header('location: index.php?act=list_chuaduyet');
+                  // dang lay dc id dang ki
                 }
+                
                 if(isset($_GET['id_dangki_xoa']) && $_GET['id_dangki_xoa'] != ""){
                   delete_lopdangki($_GET['id_dangki_xoa']);
-                  header('location: index.php?act=list_chuaduyet');
+                  header('location: index.php?act=list_daduyet');
                 }
                 include 'duyetlophoc/listLopchuaduyet.php';
+                
                 break;
               } 
               case 'list_daduyet':{

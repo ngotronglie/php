@@ -1,6 +1,13 @@
 
 
 <?php 
+    function getone_id_lophoc($id_dk){
+        $sql = "SELECT dangki_khoahoc.id_lophoc FROM dangki_khoahoc WHERE dangki_khoahoc.id_dkkhoahoc = $id_dk";
+        $result = pdo_query_one($sql);
+        return $result;
+    }
+
+
     function danhsach_lophoc(){
         $sql = "SELECT * FROM lophoc INNER JOIN phonghoc on lophoc.id_phonghoc = phonghoc.id_phonghoc
 						INNER JOIN khoahoc on khoahoc.id_khoahoc = lophoc.id_khoahoc
@@ -28,7 +35,27 @@
     }
 
     function getone_lophoc($id){
-        $sql = "select * from lophoc INNER JOIN khoahoc on khoahoc.id_khoahoc = lophoc.id_khoahoc where lophoc.id_lophoc = '$id'";
+        $sql = "select * from lophoc INNER JOIN khoahoc on khoahoc.id_khoahoc = lophoc.id_khoahoc 
+            INNER JOIN taikhoan on khoahoc.id_taikhoan = taikhoan.id_taikhoan
+            INNER JOIN trangthai on trangthai.id_trangthai = lophoc.id_trangthai
+            INNER JOIN phonghoc on phonghoc.id_phonghoc = lophoc.id_phonghoc
+            INNER JOIN gio_hoc on gio_hoc.id_giohoc = phonghoc.id_giohoc
+            INNER JOIN danhmuc_khoahoc on danhmuc_khoahoc.iddm_khoahoc = khoahoc.iddm_khoahoc
+            WHERE lophoc.id_lophoc = '$id'";
+        $result = pdo_query_one($sql);
+        return $result;
+    }
+    function get_onelopdadangki($id){
+        $sql = "
+            SELECT * FROM `dangki_khoahoc` INNER JOIN lophoc on lophoc.id_lophoc = dangki_khoahoc.id_lophoc
+            INNER JOIN phonghoc on phonghoc.id_phonghoc = lophoc.id_phonghoc
+            INNER JOIN khoahoc on khoahoc.id_khoahoc = lophoc.id_khoahoc
+            INNER JOIN trangthai on lophoc.id_trangthai = trangthai.id_trangthai
+            INNER JOIN gio_hoc on gio_hoc.id_giohoc = phonghoc.id_giohoc
+            INNER JOIN taikhoan on taikhoan.id_taikhoan = khoahoc.id_taikhoan
+            INNER JOIN danhmuc_khoahoc on danhmuc_khoahoc.iddm_khoahoc = khoahoc.iddm_khoahoc
+            WHERE dangki_khoahoc.id_dkkhoahoc = $id
+        ";
         $result = pdo_query_one($sql);
         return $result;
     }
@@ -111,6 +138,8 @@
         $result = pdo_query_one($sql);
         return $result;
     }
+
+
     function diem($diem){
         if($diem == 0){
             echo "<span class='badge badge-light'>Chưa đánh giá</span>";

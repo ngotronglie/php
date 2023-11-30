@@ -111,7 +111,7 @@
                       <td scope="col"><?php echo $value['slot']?></td>
                       <td scope="col"><?php echo $value['luot_dangki']?></td>
                       <td scope="col">
-                        <a  onclick="return confirm('Bạn đăng kí khóa này??')" class="btn btn-success" href="index.php?act=dangki_lophoc&id_lophoc=<?php echo $value['id_lophoc']?>">Đăng kí</a>
+                        <a class="btn btn-success" href="index.php?act=chitietchitiet&id_lophoc=<?php echo $value['id_lophoc']?>">Chi Tiết</a>
                       </td>
                     </tr>
                       <?php endforeach;?>

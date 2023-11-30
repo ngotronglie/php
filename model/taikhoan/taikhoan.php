@@ -221,4 +221,10 @@
         $sql ="update taikhoan set role = '5' where id_taikhoan = '$id_taikhoan'";
         pdo_execute($sql);
     }
+
+    function getone_id_taikhoan($id_dk){
+        $sql = "SELECT dangki_khoahoc.id_taikhoan FROM dangki_khoahoc WHERE dangki_khoahoc.id_dkkhoahoc = $id_dk";
+        $result = pdo_query_one($sql);
+        return $result;
+    }
 ?>

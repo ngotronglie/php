@@ -22,10 +22,10 @@
                           <br />
                           <h6 class="font-bold h6"><?php echo $value['name_khoahoc']?></h6>
                           <p>giảng viên: <span class="badge badge-info"><?php echo $name['user']?></span></p>
-                          <p>giá: <?php echo $value['']?></p>
+                          <p>giá: <?php echo number_format($value['price_khoahoc'] - ($value['price_khoahoc'] * $value['giamgia'] /100 ))?> vnđ</p>
                         </h5>
                         <p class="card-text">Trạng thái: <span><?php echo $value['name_trangthai']?></span></p>
-                        <a href="index.php?act=chitiet_lopdadangki&id_dangkilophoc=<?php echo $value['id_dkkhoahoc']?>" class="btn btn-warning">Chi tiết</a>
+                        <a href="index.php?act=chitiet_lopdadangki&id_dkkh=<?php echo $value['id_dkkhoahoc']?>" class="btn btn-warning">Chi tiết</a>
                       </div>
                     </div>
                   </div>
@@ -44,9 +44,11 @@
                             <br />
                             <h6 class="font-bold h6"><?php echo $value['name_khoahoc']?></h6>
                             <p>giảng viên: <span class="badge badge-info"><?php echo $name['user']?></span></p>
+                            <p>giá: <?php echo number_format($value['price_khoahoc'] - ($value['price_khoahoc'] * $value['giamgia'] /100 ))?> vnđ</p>
                           </h5>
                           <p class="card-text">Trạng thái: <span><?php echo $value['name_trangthai']?></span></p>
-                          <a href="index.php?act=chitiet_lopdadangki&id_dangkilophoc=<?php echo $value['id_dkkhoahoc']?>" class="btn btn-warning">Chi tiết</a>
+                          <a href="index.php?act=noidung_lopdadangki&id_dkkh=<?php echo $value['id_dkkhoahoc']?>" class="btn btn-primary">Hoạt động</a>
+                          <a href="index.php?act=chitiet_lopdadangki&id_dkkh=<?php echo $value['id_dkkhoahoc']?>" class="btn btn-warning">Chi tiết</a>
                         </div>
                       </div>
                     </div>
