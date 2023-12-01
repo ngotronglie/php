@@ -14,13 +14,13 @@
                         <div class="form-group row">
                             <label for="lname" class="col-sm-3 text-right control-label col-form-label">title</label>
                             <div class="col-sm-9">
-                                <input type="text" name="tieude" class="form-control" id="lname" placeholder="Enter tieu de here">
+                                <input type="text" name="tieude" class="form-control" id="lname" required placeholder="Enter tieu de here">
                             </div>
                         </div>        
                         <div class="form-group row">
                             <label for="lname" class="col-sm-3 text-right control-label col-form-label">nội dung</label>
                             <div class="col-sm-9">
-                                <input type="text" name="noidung" class="form-control" id="lname" placeholder="Enter node here">
+                                <input type="text" name="noidung" class="form-control" id="lname" required placeholder="Enter node here">
                             </div>
                         </div>           
                     </div>

@@ -9,7 +9,7 @@
                             <input type="hidden" name="id_dm_kh" value="<?php echo $dm_khoahoc['iddm_khoahoc']?>">
                             <label for="fname" class="col-sm-3 text-right control-label col-form-label">danh mục khóa học</label>
                             <div class="col-sm-9">
-                                <input type="text" name="name_dm_kh" class="form-control" id="fname" value="<?php echo $dm_khoahoc['namedm_khoahoc']?>">
+                                <input type="text" name="name_dm_kh" class="form-control" id="fname" value="<?php echo $dm_khoahoc['namedm_khoahoc']?>" required>
                             </div>
                         </div>    
                     </div>

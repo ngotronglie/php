@@ -20,12 +20,12 @@
 <html dir="ltr" lang="en">
   <?php include 'view/head.php'?>
   <body>
-    <div class="preloader">
+    <!-- <div class="preloader">
       <div class="lds-ripple">
         <div class="lds-pos"></div>
         <div class="lds-pos"></div>
       </div>
-    </div>
+    </div> -->
     <div class="container-fluid">
       <?php include 'view/header.php'?>
       
@@ -35,6 +35,7 @@
         $danhsach_thongbao = list_thongbao();
         $top10_view = top10_view();
         $danhsach_giangvien = danhsach_taikhoan_giangvien();
+        
         if(isset($_GET['act']) && $_GET['act'] != ""){
           $act = $_GET['act'];
           switch ($act) {
@@ -227,6 +228,12 @@
               break; 
             }
             case 'hoadon':{
+              if($_SESSION){
+                $id_taikhoan = search_id_taikhoan($_SESSION['user']);
+              }else{
+                header('location: index.php?act=login');
+              }
+              $list_hoadon = list_hoadon_user($id_taikhoan);
               include 'view/hoadon.php';
               break;
             }

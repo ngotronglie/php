@@ -8,6 +8,7 @@
       aria-describedby="emailHelp"
       placeholder="Enter Username here"
       name="email"
+      required
     />
   </div>
   <button name="submit" type="submit" class="btn btn-success">Send mail</button>

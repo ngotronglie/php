@@ -197,14 +197,25 @@
         $result = pdo_query($sql);
         return $result;
     }
-    function add_giangvien($user, $pass, $email, $address,$phone, $mota,){
+    function add_giangvien($user, $pass, $email, $address,$phone, $mota){
         $role = 3;
+        $sql ="INSERT INTO `taikhoan` (`id_taikhoan`, `user`, `pass`, `email`, `address`, `tel`, `mota`,`role`) 
+        VALUES (NULL, '$user', '$pass', '$email', '$address', '$phone', '$mota', '$role')";
+        pdo_execute($sql);
+    }
+
+    function add_taikhoan($user, $pass, $email, $address,$phone, $mota){
+        $role = 0;
         $sql ="INSERT INTO `taikhoan` (`id_taikhoan`, `user`, `pass`, `email`, `address`, `tel`, `mota`,`role`) 
         VALUES (NULL, '$user', '$pass', '$email', '$address', '$phone', '$mota', '$role')";
         pdo_execute($sql);
     }
     function update_giangvien($user, $pass, $email, $phone, $address, $mota, $id){
         $sql = "update taikhoan set user = '$user', pass = '$pass', address='$address', email = '$email', tel = '$phone', mota = '$mota' where id_taikhoan = '$id'";
+        pdo_execute($sql);
+    }
+    function update_taikhoan__($user, $pass, $email, $phone, $address, $mota,$role, $id){
+        $sql = "update taikhoan set user = '$user', pass = '$pass', address='$address', email = '$email', tel = '$phone', mota = '$mota', role = '$role' where id_taikhoan = '$id'";
         pdo_execute($sql);
     }
     function getone_taikhoan($id){

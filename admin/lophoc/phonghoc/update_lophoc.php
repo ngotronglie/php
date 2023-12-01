@@ -9,13 +9,13 @@
                         <div class="form-group row">
                             <label for="fname" class="col-sm-3 text-right control-label col-form-label">Phòng</label>
                             <div class="col-sm-9">
-                                <input name="phong" type="text" class="form-control" id="fname" value="<?php echo $phonghoc['name_phong']?>">
+                                <input name="phong" type="text" class="form-control" id="fname" required value="<?php echo $phonghoc['name_phong']?>">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="lname" class="col-sm-3 text-right control-label col-form-label">mô tả lớp học</label>
                             <div class="col-sm-9">
-                                <input name="mota" type="text" class="form-control" id="lname" value="<?php echo $phonghoc['mota_lophoc']?>">
+                                <input name="mota" type="text" class="form-control" id="lname" required value="<?php echo $phonghoc['mota_lophoc']?>">
                             </div>
                         </div>       
                         <div class="form-group row">
@@ -32,7 +32,7 @@
                         <div class="form-group row">
                             <label for="lname" class="col-sm-3 text-right control-label col-form-label">tổng slot</label>
                             <div class="col-sm-9">
-                                <input name="slot" type="value" value="<?php echo $phonghoc['slot']?>" class="form-control" id="lname" >
+                                <input name="slot" type="value" value="<?php echo $phonghoc['slot']?>" class="form-control" id="lname"  required>
                             </div>
                         </div> 
                     </div>

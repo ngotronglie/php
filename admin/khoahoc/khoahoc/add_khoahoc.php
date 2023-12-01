@@ -8,7 +8,7 @@
                         <div class="form-group row">
                             <label for="fname" class="col-sm-3 text-right control-label col-form-label">Tên khóa học</label>
                             <div class="col-sm-9">
-                                <input name="name_kh" type="text" class="form-control" id="fname" placeholder="Tên khóa học">
+                                <input name="name_kh" type="text" class="form-control" id="fname" placeholder="Tên khóa học" required>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -30,19 +30,19 @@
                         <div class="form-group row">
                             <label for="lname" class="col-sm-3 text-right control-label col-form-label">nội dung khóa học</label>
                             <div class="col-sm-9">
-                                <input name="noidung" type="text" class="form-control" id="lname" placeholder="nội dung khóa học">
+                                <input name="noidung" type="text" class="form-control" id="lname" required placeholder="nội dung khóa học">
                             </div>
                         </div>    
                         <div class="form-group row">
                             <label for="lname" class="col-sm-3 text-right control-label col-form-label">giá khóa học</label>
                             <div class="col-sm-9">
-                                <input name="gia" type="number" class="form-control" id="lname" placeholder="giá khóa học">
+                                <input name="gia" type="number" class="form-control" id="lname" required placeholder="giá khóa học">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="lname" class="col-sm-3 text-right control-label col-form-label">giảm giá khóa học</label>
                             <div class="col-sm-9">
-                                <input name="giamgia" type="number" class="form-control" id="lname" placeholder=" giảm giá khóa học">
+                                <input name="giamgia" type="number" class="form-control" id="lname" required placeholder=" giảm giá khóa học">
                             </div>
                         </div>
                         <div class="form-group row">

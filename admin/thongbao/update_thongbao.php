@@ -16,13 +16,13 @@
                         <div class="form-group row">
                             <label for="lname" class="col-sm-3 text-right control-label col-form-label">title</label>
                             <div class="col-sm-9">
-                                <input name="title" type="text" value="<?php echo $thongbao_up['title']?>"  class="form-control" id="lname">
+                                <input name="title" type="text" value="<?php echo $thongbao_up['title']?>"  required class="form-control" id="lname">
                             </div>
                         </div>        
                         <div class="form-group row">
                             <label for="lname" class="col-sm-3 text-right control-label col-form-label">nội dung</label>
                             <div class="col-sm-9">
-                                <input name="noidung" type="text" value="<?php echo $thongbao_up['noidung_thongbao']?>"  class="form-control" id="lname">
+                                <input name="noidung" type="text" required value="<?php echo $thongbao_up['noidung_thongbao']?>"  class="form-control" id="lname">
                             </div>
                         </div>           
                     </div>

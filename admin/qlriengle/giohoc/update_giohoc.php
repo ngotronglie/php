@@ -9,7 +9,7 @@
                         <div class="form-group row">
                             <label for="fname" class="col-sm-3 text-right control-label col-form-label">giờ học</label>
                             <div class="col-sm-9">
-                                <input type="text" name="name_giohoc_" class="form-control" id="fname" value="<?php echo $one_giohoc['name_giohoc']?>">
+                                <input type="text" name="name_giohoc_" class="form-control" required id="fname" value="<?php echo $one_giohoc['name_giohoc']?>">
                             </div>
                         </div>    
                     </div>

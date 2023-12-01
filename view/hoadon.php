@@ -1,4 +1,4 @@
-<h3 class="h3">Lớp học</h3>
+<h3 class="h3">Hóa đơn</h3>
     <div class="container-fluid"> 
     <div class="row">
       <div class="col-12">
@@ -17,17 +17,22 @@
                     <th scope="col">ngày bế giảng</th>
                     <th scope="col">Giá</th>
                     <th scope="col">giảng viên</th>
+                    <th scope="col">ngày mua</th>
                   </tr>
                 </thead>
                   <tbody>
+                    <?php foreach($list_hoadon as $key => $value):?>
                     <tr>
-                      <th scope="row">1</th>
-                      <td scope="col">khóa hoc: c# cho người mới</td>
-                      <td scope="col">23/11/2023</td>
-                      <td scope="col">23/12/2023</td>
-                      <td scope="col">300000</td>
-                      <td scope="col">gv1</td>
+                      <th scope="row"><?php echo $key + 1?></th>
+                      <td scope="col"><?php echo $value['name_khoahoc']?></td>
+                      <td scope="col"><?php echo $value['ngaykhaigiang']?></td>
+                      <td scope="col"><?php echo $value['ngaybegiang']?></td>
+                      <td scope="col"><?php echo number_format($value['price_khoahoc'] - ($value['price_khoahoc'] * $value['giamgia'] / 100))?> vnđ</td>
+                      <?php $user_gv = getone_taikhoan($value['id_taikhoan']);?>
+                      <td scope="col"><?php echo ($user_gv['user']) ?></td>
+                      <td scope="col"><?php echo ($value['ngaymua']) ?></td>
                     </tr>
+                    <?php endforeach;?>
                   </tbody>
                 <tfoot>
                   <tr>
@@ -37,6 +42,7 @@
                     <th scope="col">ngày bế giảng</th>
                     <th scope="col">Giá</th>
                     <th scope="col">giảng viên</th>
+                    <th scope="col">ngày mua</th>
                   </tr>
                 </tfoot>
               </table>

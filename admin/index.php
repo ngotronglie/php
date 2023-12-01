@@ -15,6 +15,7 @@
   include '../model/thongke.php';
   include '../model/diem.php';
   include '../model/dangki_khoahoc.php';
+  include '../model/hoadon.php';
   session_start();
 ?>
 
@@ -47,6 +48,7 @@
           $danhsach_binhluan =danhsach_binhluan();
           $danhsach_duyetlop = danhsach_duyetlop();
           $danhsach_duyetlop_daduyet = danhsach_duyetlop_daduyet();
+          $danhsach_hoadon = list_hoadon();
           // thống kê
           $tongdanhmuckhoahoc = tong_danhmuckhoahoc();
           $tongkhoahoc = tongkhoahoc();
@@ -146,6 +148,56 @@
                   delete_thongbao($_GET['id_thongbao']);
                   header('location: ?act=list_thongbao');
                 }
+                break;
+              }
+
+              // -------- tai khoan --------------------------------
+              case 'list_taikhoan':{
+    
+                
+                include 'taikhoan/list_taikhoan.php';
+                break;
+              }
+              case 'add_taikhoan':{
+                if(isset($_POST['save'])){
+                  $user = $_POST['user'];
+                  $pass = $_POST['pass'];
+                  $email = $_POST['email'];
+                  $address = $_POST['address'];
+                  $tel = $_POST['tel'];
+                  $mota = $_POST['mota'];
+                  add_taikhoan($user ,$pass ,$email ,$address ,$tel ,$mota);
+                  header('location: index.php?act=list_taikhoan');
+                }
+                include 'taikhoan/add_taikhoan.php';
+                break;
+              }
+              case 'update_taikhoan':{
+                if(isset($_GET['id__taikhoan']) && $_GET['id__taikhoan'] >0){
+                  $giangvien_one = getone_taikhoan($_GET['id__taikhoan']);
+                }
+                
+                if(isset($_POST['update'])){
+                  $user = $_POST['user'];
+                  $pass = $_POST['pass'];
+                  $email = $_POST['email'];
+                  $phone = $_POST['phone'];
+                  $address = $_POST['address'];
+                  $mota = $_POST['mota'];
+                  $id = $_POST['id'];
+                  $role = $_POST['role'];
+                  update_taikhoan__($user, $pass, $email, $phone, $address, $mota,$role,$id);
+                  header('location: index.php?act=list_taikhoan');
+                }
+                include 'taikhoan/update_taikhoan.php';
+                break;
+              }
+              case 'delete_taikhoan':{
+                if(isset($_GET['id__taikhoan']) && $_GET['id__taikhoan'] != ""){
+                  delete_giangvien($_GET['id__taikhoan']);
+                  header('location: index.php?act=list_taikhoan');
+                }
+                include 'taikhoan/delete_taikhoan.php';
                 break;
               }
 // ----------------------- giảng viên --------------------------------
@@ -527,23 +579,7 @@
                 include 'qlriengle/danhgia/delete_danhgia.php';
                 break;
               }
-              // -------- tai khoan --------------------------------
-              case 'list_taikhoan':{
-                include 'taikhoan/list_taikhoan.php';
-                break;
-              }
-              case 'add_taikhoan':{
-                include 'taikhoan/add_taikhoan.php';
-                break;
-              }
-              case 'update_taikhoan':{
-                include 'taikhoan/update_taikhoan.php';
-                break;
-              }
-              case 'delete_taikhoan':{
-                include 'taikhoan/delete_taikhoan.php';
-                break;
-              }
+
               case 'logout':{
                 dangxuat_admin();
                 break;

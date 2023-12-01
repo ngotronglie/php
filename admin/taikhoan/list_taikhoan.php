@@ -37,7 +37,7 @@
                                             ?></td>
                                             <td>
                                                 <a class="btn btn-warning" href="index.php?act=update_taikhoan&id__taikhoan=<?php echo $value['id_taikhoan']?>">sửa</a>
-                                                <button onclick="return confirm('Bạn chắc chắn xóa chứ')" class="btn btn-danger">xóa</button>
+                                                <a href="index.php?act=delete_taikhoan&id__taikhoan=<?php echo $value['id_taikhoan']?>" onclick="return confirm('Bạn chắc chắn xóa chứ')" class="btn btn-danger">xóa</a>
                                             </td>
                                         </tr>
                                     <?php endif;?>

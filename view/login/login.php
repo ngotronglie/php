@@ -8,6 +8,7 @@
       aria-describedby="emailHelp"
       placeholder="Enter Username here"
       name="user"
+      required
     />
   </div>
   <div class="form-group">
@@ -18,6 +19,7 @@
       id="exampleInputPassword1"
       placeholder="Enter Password here "
       name="pass"
+      required
     />
   </div>
   <h6>Bạn chưa đăng kí? <a href="index.php?act=dangki">Đăng kí ngay</a></h6>

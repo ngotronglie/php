@@ -16,70 +16,15 @@
                                 </tr>
                             </thead>
                             <tbody>  
+                                <?php foreach($danhsach_hoadon as $key => $value):?>
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>linh</td>
-                                    <td>c# cho người mới bắt đầu</td>
-                                    <td>90,000 vnđ</td>
-                                    <td>17/11/2023</td>
+                                    <th scope="row"><?php echo $key + 1?></th>
+                                    <td><?php echo $value['user']?></td>
+                                    <td><?php echo $value['name_khoahoc']?></td>
+                                    <td><?php echo number_format($value['price_khoahoc'] - ($value['price_khoahoc'] * $value['giamgia'] / 100))?> vnđ</td>
+                                    <td><?php echo $value['ngaymua']?></td>
                                 </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>linh</td>
-                                    <td>c# cho người mới bắt đầu</td>
-                                    <td>90,000 vnđ</td>
-                                    <td>17/11/2023</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>linh</td>
-                                    <td>c# cho người mới bắt đầu</td>
-                                    <td>90,000 vnđ</td>
-                                    <td>17/11/2023</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>linh</td>
-                                    <td>c# cho người mới bắt đầu</td>
-                                    <td>90,000 vnđ</td>
-                                    <td>17/11/2023</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>linh</td>
-                                    <td>c# cho người mới bắt đầu</td>
-                                    <td>90,000 vnđ</td>
-                                    <td>17/11/2023</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>linh</td>
-                                    <td>c# cho người mới bắt đầu</td>
-                                    <td>90,000 vnđ</td>
-                                    <td>17/11/2023</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>linh</td>
-                                    <td>c# cho người mới bắt đầu</td>
-                                    <td>90,000 vnđ</td>
-                                    <td>17/11/2023</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>linh</td>
-                                    <td>c# cho người mới bắt đầu</td>
-                                    <td>90,000 vnđ</td>
-                                    <td>17/11/2023</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>linh</td>
-                                    <td>c# cho người mới bắt đầu</td>
-                                    <td>90,000 vnđ</td>
-                                    <td>17/11/2023</td>
-                                </tr>
-
+                                <?php endforeach;?>
                             </tbody>
                             <tfoot>
                                 <tr>

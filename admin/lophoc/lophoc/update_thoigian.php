@@ -20,13 +20,13 @@
                         <div class="form-group row">
                             <label for="fname" class="col-sm-3 text-right control-label col-form-label">ngày khai giảng</label>
                             <div class="col-sm-9">
-                                <input name="ngaykhaigiang" type="text" value="<?php echo date('d/m/Y', strtotime($lophoc['ngaykhaigiang']))?>" class="form-control" id="fname">
+                                <input name="ngaykhaigiang" required type="text" value="<?php echo date('d/m/Y', strtotime($lophoc['ngaykhaigiang']))?>" class="form-control" id="fname">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="fname" class="col-sm-3 text-right control-label col-form-label">ngày bế gảng</label>
                             <div class="col-sm-9">
-                            <input name="ngaybegiang" type="text" value="<?php echo date('d/m/Y', strtotime($lophoc['ngaybegiang']))?>" class="form-control" id="fname">
+                            <input name="ngaybegiang" type="text" required value="<?php echo date('d/m/Y', strtotime($lophoc['ngaybegiang']))?>" class="form-control" id="fname">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -43,7 +43,7 @@
                         <div class="form-group row">
                             <label for="fname" class="col-sm-3 text-right control-label col-form-label">nhóm zalo</label>
                             <div class="col-sm-9">
-                                <input name="zalo" value="<?php echo $lophoc['nhomzalo']?>" type="text" class="form-control" id="fname">
+                                <input name="zalo" required value="<?php echo $lophoc['nhomzalo']?>" type="text" class="form-control" id="fname">
                             </div>
                         </div>
                         <div class="form-group row">

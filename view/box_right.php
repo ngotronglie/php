@@ -16,6 +16,7 @@
                 type="submit"
                 value="tìm kiếm"
                 name="timkiem"
+                required
                 />
             </form>
             </div>

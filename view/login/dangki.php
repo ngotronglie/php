@@ -8,6 +8,7 @@
             aria-describedby="emailHelp"
             placeholder="Enter Username here"
             name="user"
+            required
           />
         </div>
         <div class="form-group">
@@ -18,6 +19,7 @@
             id="exampleInputPassword1"
             placeholder="Enter Password here "
             name="password"
+            required
           />
         </div>
         <div class="form-group">
@@ -28,6 +30,7 @@
             id="email"
             placeholder="Enter email here "
             name="email"
+            required
           />
         </div>
         <div class="form-group">
@@ -38,6 +41,7 @@
             id="address"
             placeholder="Enter address here"
             name="address"
+            required
           />
         </div>
         <div class="form-group">
@@ -48,6 +52,7 @@
             id="phone"
             placeholder="Enter number phone here"
             name="phone"
+            required
           />
         </div>
         <div class="form-group">
@@ -59,6 +64,7 @@
             id="mota"
             placeholder="Enter mô tả here"
             name="mota"
+            required
           />
         </div>
         <h6 class="h6 text-center">
