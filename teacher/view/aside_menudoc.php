@@ -18,29 +18,6 @@
             class="sidebar-link has-arrow waves-effect waves-dark"
             href="javascript:void(0)"
             aria-expanded="false"
-            ><i class="far fa-comment-alt"></i
-            ><span class="hide-menu">feedback</span></a
-          >
-          <ul aria-expanded="false" class="collapse first-level">
-            <li class="sidebar-item">
-              <a href="index.php?act=list_feedback" class="sidebar-link"
-                ><i class="far fa-edit"></i
-                ><span class="hide-menu">khóa học 1</span></a
-              >
-            </li>
-            <li class="sidebar-item">
-              <a href="index.php?act=list_feedback" class="sidebar-link"
-                ><i class="far fa-edit"></i
-                ><span class="hide-menu">khóa học 2</span></a
-              >
-            </li>
-          </ul>
-        </li>
-        <li class="sidebar-item">
-          <a
-            class="sidebar-link has-arrow waves-effect waves-dark"
-            href="javascript:void(0)"
-            aria-expanded="false"
             ><i class="fas fa-users"></i
             ><span class="hide-menu">sinh viên</span></a
           >
@@ -59,6 +36,15 @@
             </li>
 
           </ul>
+        </li>
+        <li class="sidebar-item">
+          <a
+            class="sidebar-link waves-effect waves-dark sidebar-link"
+            href="index.php?act=list_feedback"
+            aria-expanded="false"
+            ><i class="far fa-comment-alt"></i
+            ><span class="hide-menu">feedback</span></a
+          >
         </li>
         <li class="sidebar-item">
           <a

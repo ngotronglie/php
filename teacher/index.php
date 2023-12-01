@@ -6,6 +6,7 @@
   include '../model/lop/lop.php';
   include '../model/feedback.php';
   include '../model/taikhoan/taikhoan.php';
+  include '../model/diemtongket.php';
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +25,8 @@
     <?php include 'view/header.php'?>
     <?php include 'view/aside_menudoc.php'?>
     <div class="page-wrapper">
-        <?php 
+        <?php
+
           if(isset($_GET['act']) && $_GET['act']!= ""){
             $act = $_GET['act'];
             switch ($act) {
@@ -45,16 +47,36 @@
               }
 //            ------------------------------- feedback ---------------------------------
               case 'list_feedback':{
+                if($_SESSION){
+                  $user = $_SESSION['user'];
+                  $id_taikhoan = search_id_taikhoan($user);
+                }
+                $danhsach_feedback = List_feedback($id_taikhoan);
                 include 'feedback/list_feedback.php';
                 break;
               }
 
               //  -------------------- banner marketing ----------------------------
               case 'list_sinhvien':{
+                if($_SESSION){
+                  $user = $_SESSION['user'];
+                  $id_taikhoan_gv = search_id_taikhoan($user);
+                }
+                $danhsach_hocvien = List_hocvien($id_taikhoan_gv);
                 include 'qlsinhvien/list_sinhvien.php';
                 break;
               }
               case 'update_sinhvien':{
+                if(isset($_GET['id_user']) && $_GET['id_user']!=""){
+                  $diemtongket = getone_diemtongket($_GET['id_user']);
+                }
+                if(isset($_POST['capnhat'])){
+                  $diem = $_POST['diem'];
+                  $nhanxet =$_POST['nhanxet'];
+                  $id_taikhoan = $_POST['id_taikhoan'];
+                  update_nhanxet_diem($diem,$nhanxet,$id_taikhoan);
+                  header('location: index.php?act=list_sinhvien');
+                }
                 include 'qlsinhvien/update_sinhvien.php';
                 break;
               }

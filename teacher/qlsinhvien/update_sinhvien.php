@@ -2,66 +2,58 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <form class="form-horizontal" action="">
+                <form method="POST" class="form-horizontal" action="index.php?act=update_sinhvien">
                     <div class="card-body">
                         <h4 class="card-title">Cập nhật thông tin sinh viên</h4>
                         <div class="form-group row">
+                            <?php $id_user = getone_id_tk($diemtongket['user']);?>
+                            
+                            <input type="hidden" name="id_taikhoan" value="<?php echo $id_user['id_taikhoan']?>">
                             <label for="fname" class="col-sm-3 text-right control-label col-form-label">tên sinh viên</label>
                             <div class="col-sm-9">
-                                <input type="text" value="Ngô Trọng Liêm" class="form-control" id="fname" disabled>
+                                <input type="text" value="<?php echo $diemtongket['user'] ?>" class="form-control" id="fname" disabled>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="lname" class="col-sm-3 text-right control-label col-form-label">email</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="lname">
+                                <input type="text" value="<?php echo $diemtongket['email']?>" class="form-control" id="lname" disabled>
                             </div>
                         </div>   
                         <div class="form-group row">
                             <label for="lname" class="col-sm-3 text-right control-label col-form-label">số điện thoại</label>
                             <div class="col-sm-9">
-                                <input type="number" value="0376278382" class="form-control" id="lname" disabled>
+                                <input type="number" value="<?php echo $diemtongket['tel']?>" class="form-control" id="lname" disabled>
                             </div>
                         </div>      
                         <div class="form-group row">
                             <label for="lname" class="col-sm-3 text-right control-label col-form-label">khóa học</label>
                             <div class="col-sm-9">
-                                <input type="text" value="c# cho ời mới bắt đầu" class="form-control" id="lname" disabled>
+                                <input type="text" value="<?php echo $diemtongket['name_khoahoc']?>" class="form-control" id="lname" disabled>
                             </div>
                         </div>           
                         <div class="form-group row">
                             <label for="lname" class="col-sm-3 text-right control-label col-form-label">lớp học</label>
                             <div class="col-sm-9">
-                                <input type="text" value="F304" class="form-control" id="lname"disabled>
+                                <input type="text" value="<?php echo $diemtongket['name_phong']?>" class="form-control" id="lname"disabled>
                             </div>
                         </div> 
                         <div class="form-group row">
                             <label for="lname" class="col-sm-3 text-right control-label col-form-label">điểm</label>
                             <div class="col-sm-9">
-                                <input type="number" min="0" max="10" class="form-control" id="lname">
+                                <input type="number" name="diem"  min="0" max="10" class="form-control" id="lname">
                             </div>
                         </div> 
                         <div class="form-group row">
                             <label for="lname" class="col-sm-3 text-right control-label col-form-label">nhận xét</label>
                             <div class="col-sm-9">
-                                <input type="text" min="0" max="10" class="form-control" id="lname">
+                                <input type="text" name="nhanxet" class="form-control" id="lname">
                             </div>
                         </div> 
-                        <div class="form-group row">
-                            <label for="role" class="col-sm-3 text-right control-label col-form-label">Trạng thái hoạt động</label>
-                            <div class="col-sm-9">
-                                <select class="form-control" id="role" name="role">
-                                    <option value="0">Đi học</option>
-                                    <option value="1">Bỏ học</option>
-                                    
-                                </select>
-                            </div>
-                        </div>
-
                     </div>
                     <div class="border-top">
                         <div class="card-body">
-                            <a href="#" class="btn btn-success">update</a>
+                            <button name="capnhat" class="btn btn-success">Cập nhật</button>
                         </div>
                     </div>
                 </form>

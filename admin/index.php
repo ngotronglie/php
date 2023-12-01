@@ -305,7 +305,6 @@
                   $id_taikhoan_ = $taikhoan['id_taikhoan'];
                   $id_lophoc_ = $id_lophoc['id_lophoc'];
                   update_slot($id_lophoc_);
-                  
                   tangluotdangki($id_lophoc_);
                   insert_diem($id_taikhoan_, $id_lophoc_);
                   insert_hoadon($id_taikhoan_, $id_lophoc_); 

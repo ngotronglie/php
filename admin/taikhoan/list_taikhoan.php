@@ -4,7 +4,7 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Danh sách sinh viên</h5>
-                    <a href="index.php?act=add_giangvien" class="btn btn-success">Thêm giảng viên</a>
+                    <a href="index.php?act=add_taikhoan" class="btn btn-success">Thêm tài khoản</a>
                     <div class="table-responsive">
                         <table id="zero_config" class="table table-striped table-bordered">
                             <thead>

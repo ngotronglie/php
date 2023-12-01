@@ -11,6 +11,7 @@
   include './model/hoadon.php';
   include './model/phonghoc.php';
   include './model/diem.php';
+  include './model/feedback.php';
   // include '';
 ?>
 
@@ -155,7 +156,9 @@
             case 'chitietchitiet':{
               if(isset($_GET['id_lophoc']) && $_GET['id_lophoc'] > 0){
                 $lophoc = getone_lophoc($_GET['id_lophoc']);
+                
               }
+              
               include 'view/chitietchitietlophoc.php';
               break;
             }
@@ -165,6 +168,7 @@
                 $lophoc = get_onelopdadangki($_GET['id_dkkh']);
               }
               include 'view/chitietlopdadangki.php';
+              break;
             }
 
             case 'dangki_lophoc':{
@@ -197,6 +201,20 @@
               break;
             }
             case 'noidung_lopdadangki':{
+              if(isset($_POST['send'])){
+                if($_SESSION){
+                  $user = $_SESSION['user'];
+                  $id_taikhoan = search_id_taikhoan($user);
+                }
+                $id_lophoc = $_POST['id_lophoc'];
+                $noidung = $_POST['noidung'];
+                insert_feedback($id_lophoc, $id_taikhoan, $noidung);
+              }
+
+              
+              if(isset($_GET['id_dkkh']) && $_GET['id_dkkh'] != ""){
+                $lophoc = get_onelopdadangki($_GET['id_dkkh']);
+              }
               include 'view/chitiet_lopdangki.php';
               break;
             }

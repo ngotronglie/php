@@ -11,57 +11,30 @@
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">đánh giá</th>
                                     <th scope="col">khóa học</th>                         
-                                    <th scope="col">câu hỏi</th>
                                     <th scope="col">trả lời của học sinh</th>
+                                    <th scope="col">Ngày Khai giảng</th>
+                                    <th scope="col">Ngày bế giảng</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php foreach($danhsach_feedback as $key => $value):?>
                                 <tr>
-                                    <td scope="col">1</td>
-                                    <td scope="col">tốt</td>
-                                    <td scope="col">c# cho người mới</td>                         
-                                    <td scope="col">giảng viên có dạy được không?</td>
-                                    <td scope="col">thầy sp rất nhiệt tình</td>
+                                    <td scope="col"><?php echo $key + 1?></td>
+                                    <td scope="col"><?php echo $value['name_khoahoc']?></td>
+                                    <td scope="col"><?php echo $value['traloi_sinhvien']?></td>
+                                    <td scope="col"><?php echo date('d/m/Y', strtotime($value['ngaykhaigiang']))?></td>
+                                    <td scope="col"><?php echo date('d/m/Y', strtotime($value['ngaybegiang']))?></td>
                                 </tr>
-                                <tr>
-                                    <td scope="col">2</td>
-                                    <td scope="col">không tốt</i></td>
-                                    <td scope="col">khóa học</td>                         
-                                    <td scope="col">câu hỏi</td>
-                                    <td scope="col">trả lời của học sinh</td>
-                                </tr>
-                                <tr>
-                                    <td scope="col">3</td>
-                                    <td scope="col">trung bình</i></td>
-                                    <td scope="col">khóa học</td>                         
-                                    <td scope="col">câu hỏi</td>
-                                    <td scope="col">trả lời của học sinh</td>
-                                </tr>
-                                <tr>
-                                    <td scope="col">4</td>
-                                    <td scope="col">chuyên nghiệp</i></td>
-                                    <td scope="col">khóa học</td>                         
-                                    <td scope="col">câu hỏi</td>
-                                    <td scope="col">trả lời của học sinh</td>
-                                </tr>
-                                <tr>
-                                    <td scope="col">5</td>
-                                    <td scope="col">không chuyên nghiệp</i></td>
-                                    <td scope="col">khóa học</td>                         
-                                    <td scope="col">câu hỏi</td>
-                                    <td scope="col">trả lời của học sinh</td>
-                                </tr>
+                                <?php endforeach;?>
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>số sao</th>
-                                    <th>đánh giá</th>
-                                    <th>khóa học</th>
-                                    <th>câu hỏi</th>
-                                    <th>câu trả lời</th>
-                                    
+                                    <th scope="col">#</th>
+                                    <th scope="col">khóa học</th>                         
+                                    <th scope="col">trả lời của học sinh</th>
+                                    <th scope="col">Ngày Khai giảng</th>
+                                    <th scope="col">Ngày bế giảng</th>
                                 </tr>
                             </tfoot>
                         </table>

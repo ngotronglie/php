@@ -227,4 +227,14 @@
         $result = pdo_query_one($sql);
         return $result;
     }
+    function getone_id_tk($user_name){
+        $sql = "SELECT taikhoan.id_taikhoan FROM `dangki_khoahoc` INNER JOIN taikhoan on taikhoan.id_taikhoan = dangki_khoahoc.id_taikhoan WHERE user = '$user_name'";
+        $result = pdo_query_one($sql);
+        return $result;
+    }
+    function getone_name_taikhoan($user_name){
+        $sql = "SELECT taikhoan.id_taikhoan FROM `dangki_khoahoc` INNER JOIN taikhoan on taikhoan.id_taikhoan = dangki_khoahoc.id_taikhoan WHERE user = '$user_name'";
+        $result = pdo_query_one($sql);
+        return $result;
+    }
 ?>

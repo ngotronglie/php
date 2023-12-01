@@ -15,180 +15,31 @@
                                     <th scope="col">email</th>
                                     <th scope="col">số điện thoại</th>
                                     <th scope="col">khóa học</th>
-                                    <th scope="col">lớp học</th>
+                                    <th scope="col">Phòng học</th>
                                     <th scope="col">điểm</th>
                                     <th scope="col">nhận xét</th>
                                     <th scope="col">học lực</th>
-                                    <th scope="col">trạng thái hoạt động</th>
                                     <th scope="col">action</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php foreach($danhsach_hocvien as $key => $value):?>
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>Hà Thị Thùy Linh</td>
-                                    <td>linhhttph41422@fpt.edu.vn</td>
-                                    <td>0376278382</td>
-                                    <td>c# cho người mới bắt đầu</td>
-                                    <td>F304</td>
-                                    <td>9.5</td>
-                                    <td>rất tiến bộ trong học tập</td>
-                                    <td>xuất sắc</td>
-                                    <td><span style="color:#fff !important" class=" badge bg-success">đi học</span></td>
+                                    <th scope="row"><?php echo $key +1?></th>
+                                    <td><?php echo $value['user']?></td>
+                                    <td><?php echo $value['email']?></td>
+                                    <td><?php echo $value['tel']?></td>
+                                    <td><?php echo $value['name_khoahoc']?></td>
+                                    <td><?php echo $value['name_phong']?></td>
+                                    <td><?php echo $value['diem']?></td>
+                                    <td><?php echo $value['nhanxet']?></td>
+                                    <td><?php echo diem($value['diem'])?></td>
                                     <td>
-                                        <a href="index.php?act=update_sinhvien" class="btn btn-warning">Sửa</a>
+                                        <?php $id_taikhoan_user = getone_id_tk($value['user'])?>
+                                        <a href="index.php?act=update_sinhvien&id_user=<?php echo ($id_taikhoan_user['id_taikhoan'])?>" class="btn btn-warning">Sửa</a>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Phạm Thị Thùy Trang</td>
-                                    <td>trangpttph33087@fpt.edu.vn</td>
-                                    <td>0376278382</td>
-                                    <td>c# cho người mới bắt đầu</td>
-                                    <td>F304</td>
-                                    <td>9.5</td>
-                                    <td>rất tiến bộ trong học tập</td>
-                                    <td>xuất sắc</td>
-                                    <td><span style="color:#fff !important" class=" badge bg-success">đi học</span></td>
-                                    <td>
-                                        <a href="index.php?act=update_sinhvien" class="btn btn-warning">Sửa</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Ngô Trọng Liêm</td>
-                                    <td>ngotrongliem2004@gmail.com</td>
-                                    <td>0376278382</td>
-                                    <td>c# cho người mới bắt đầu</td>
-                                    <td>F304</td>
-                                    <td>9.5</td>
-                                    <td>rất tiến bộ trong học tập</td>
-                                    <td>xuất sắc</td>
-                                    <td><span style="color:#fff !important" class=" badge bg-success">đi học</span></td>
-                                    <td>
-                                        <a href="index.php?act=update_sinhvien" class="btn btn-warning">Sửa</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Ngô Trọng Liêm</td>
-                                    <td>ngotrongliem2004@gmail.com</td>
-                                    <td>0376278382</td>
-                                    <td>c# cho người mới bắt đầu</td>
-                                    <td>F304</td>
-                                    <td>9.5</td>
-                                    <td>rất tiến bộ trong học tập</td>
-                                    <td>xuất sắc</td>
-                                    <td><span style="color:#fff !important" class=" badge bg-success">đi học</span></td>
-                                    <td>
-                                        <a href="index.php?act=update_sinhvien" class="btn btn-warning">Sửa</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Ngô Trọng Liêm</td>
-                                    <td>ngotrongliem2004@gmail.com</td>
-                                    <td>0376278382</td>
-                                    <td>c# cho người mới bắt đầu</td>
-                                    <td>F304</td>
-                                    <td>9.5</td>
-                                    <td>rất tiến bộ trong học tập</td>
-                                    <td>xuất sắc</td>
-                                    <td><span style="color:#fff !important" class=" badge bg-success">đi học</span></td>
-                                    <td>
-                                        <a href="index.php?act=update_sinhvien" class="btn btn-warning">Sửa</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Ngô Trọng Liêm</td>
-                                    <td>ngotrongliem2004@gmail.com</td>
-                                    <td>0376278382</td>
-                                    <td>c# cho người mới bắt đầu</td>
-                                    <td>F304</td>
-                                    <td>0</td>
-                                    <td>không biết bị sao</td>
-                                    <td>kém</td>
-                                    <td><span style="color:#fff !important" class=" badge bg-success">đi học</span></td>
-                                    <td>
-                                        <a href="index.php?act=update_sinhvien" class="btn btn-warning">Sửa</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Ngô Trọng Liêm</td>
-                                    <td>ngotrongliem2004@gmail.com</td>
-                                    <td>0376278382</td>
-                                    <td>c# cho người mới bắt đầu</td>
-                                    <td>F304</td>
-                                    <td>9.5</td>
-                                    <td>rất tiến bộ trong học tập</td>
-                                    <td>xuất sắc</td>
-                                    <td><span style="color:#fff !important" class=" badge bg-success">đi học</span></td>
-                                    <td>
-                                        <a href="index.php?act=update_sinhvien" class="btn btn-warning">Sửa</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Ngô Trọng Liêm</td>
-                                    <td>ngotrongliem2004@gmail.com</td>
-                                    <td>0376278382</td>
-                                    <td>c# cho người mới bắt đầu</td>
-                                    <td>F304</td>
-                                    <td>9.5</td>
-                                    <td>rất tiến bộ trong học tập</td>
-                                    <td>xuất sắc</td>
-                                    <td><span style="color:#fff !important" class=" badge bg-success">đi học</span></td>
-                                    <td>
-                                        <a href="index.php?act=update_sinhvien" class="btn btn-warning">Sửa</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Ngô Trọng Liêm</td>
-                                    <td>ngotrongliem2004@gmail.com</td>
-                                    <td>0376278382</td>
-                                    <td>c# cho người mới bắt đầu</td>
-                                    <td>F304</td>
-                                    <td>9.5</td>
-                                    <td>rất tiến bộ trong học tập</td>
-                                    <td>xuất sắc</td>
-                                    <td><span style="color:#fff !important" class=" badge bg-success">đi học</span></td>
-                                    <td>
-                                        <a href="index.php?act=update_sinhvien" class="btn btn-warning">Sửa</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Ngô Trọng Liêm</td>
-                                    <td>ngotrongliem2004@gmail.com</td>
-                                    <td>0376278382</td>
-                                    <td>c# cho người mới bắt đầu</td>
-                                    <td>F304</td>
-                                    <td>2,5</td>
-                                    <td>không biết thế nào</td>
-                                    <td>yếu</td>
-                                    <td><span style="color:#fff !important" class=" badge bg-danger">bỏ học</span></td>
-                                    <td>
-                                        <a href="index.php?act=update_sinhvien" class="btn btn-warning">Sửa</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Ngô Trọng Liêm</td>
-                                    <td>ngotrongliem2004@gmail.com</td>
-                                    <td>0376278382</td>
-                                    <td>c# cho người mới bắt đầu</td>
-                                    <td>F304</td>
-                                    <td>0</td>
-                                    <td>chả biết sao nữa</td>
-                                    <td>xuất sắc</td>
-                                    <td><span style="color:#fff !important" class=" badge bg-success">đi học</span></td>
-                                    <td>
-                                        <a href="index.php?act=update_sinhvien" class="btn btn-warning">Sửa</a>
-                                    </td>
-                                </tr>
+                                <?php endforeach;?>
                             </tbody>
                             <tfoot>
                                 <tr>
@@ -197,11 +48,10 @@
                                     <th>email</th>
                                     <th>số điện thoại</th>
                                     <th>khóa học</th>
-                                    <th>lớp học</th>
+                                    <th>phòng học</th>
                                     <th>điểm</th>
                                     <th>nhận xét</th>
                                     <th>học lực</th>
-                                    <th>trạng thái hoạt động</th>
                                     <th>action</th>
                                 </tr>
                             </tfoot>

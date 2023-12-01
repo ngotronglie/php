@@ -4,15 +4,14 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">
-            Danh sách lớp học khóa học
+            Lớp học khóa học
             <span class="badge bg-info text-light"
-              >C# cho người mới bắt đầu</span
+              ><?php echo $lophoc['name_khoahoc']?></span
             >
           </h5>
-          <div class="table-responsive">
+          <div class="">
             <table
-              id="zero_config"
-              class="table table-striped table-bordered"
+              class="table"
             >
               <thead>
                 <tr>
@@ -24,7 +23,6 @@
                   <th scope="col">zalo</th>
                   <th scope="col">điểm</th>
                   <th scope="col">đánh giá</th>
-                  <th scope="col">trạng thái</th>
                   <th scope="col">trạng thái lớp</th>
                 </tr>
               </thead>
@@ -32,31 +30,16 @@
 
                 <tr>
                   <th scope="col">#</th>
-                  <td scope="col">F302</td>
-                  <td scope="col">C# cho người mới bắt đầu</td>
-                  <td scope="col">9h25 - thứ 3/5/7/hàng tuần</td>
-                  <td scope="col">Ngô TRọng Liêm</td>
-                  <td scope="col">https://zalo.me/g/xkddzi068</td>
-                  <td scope="col">9.5</td>
-                  <td scope="col"><?php diem(9.5)?></td>
-                  <td scope="col">đi học</td>
-                  <td scope="col">đang hoạt động</td>
+                  <td scope="col"><?php echo $lophoc['name_phong']?></td>
+                  <td scope="col"><?php echo $lophoc['name_khoahoc']?></td>
+                  <td scope="col"><?php echo $lophoc['name_giohoc']?></td>
+                  <td scope="col"><?php echo $lophoc['user']?></td>
+                  <td scope="col"><?php echo $lophoc['nhomzalo']?></td>
+                  <td scope="col"><?php echo $lophoc['diem']?></td>
+                  <td scope="col"><?php diem($lophoc['diem'])?></td>
+                  <td scope="col"><?php echo $lophoc['name_trangthai']?></td>
                 </tr>
               </tbody>
-              <tfoot>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">phòng</th>
-                  <th scope="col">khóa học</th>
-                  <th scope="col">giờ học</th>
-                  <th scope="col">giảng viên</th>
-                  <th scope="col">zalo</th>
-                  <th scope="col">điểm</th>
-                  <th scope="col">đánh giá</th>
-                  <th scope="col">trạng thái</th>
-                  <th scope="col">trạng thái lớp</th>
-                </tr>
-              </tfoot>
             </table>
           </div>
         </div>
@@ -65,10 +48,11 @@
   </div>
   <div class="feed-back">
     <h4 class="h4 text-bold">feed back học viên</h4>
-    <form action="index.php?act=noidung_lopdadangki" method="POST" >
-      <label class="badge badge-dark" for="">Cảm nhận học viên</label><br>
-      <textarea style="width:100%; height:100px" class="text-center font-14 p-3" name="" id=""></textarea>
-      <button class="btn btn-primary">Send</button>
+    <form class="form"  action="index.php?act=noidung_lopdadangki&id_dkkh=<?php echo $lophoc['id_dkkhoahoc'] ?>" method="POST" >
+      <input type="hidden" name="id_lophoc" value="<?php echo $lophoc['id_lophoc']?>">
+      <label class="badge badge-dark label" for="">Cảm nhận học viên</label><br>
+      <textarea  style="width:100%; height:100px" class="text-center font-14 p-3" name="noidung" id=""></textarea>
+      <button name="send" class="btn btn-primary">Send</button>
     </form>
   </div>
 </div>
