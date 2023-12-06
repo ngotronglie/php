@@ -120,28 +120,15 @@
             </li>
           </ul>
         </li>
+
         <li class="sidebar-item">
           <a
-            class="sidebar-link has-arrow waves-effect waves-dark"
-            href="javascript:void(0)"
+            class="sidebar-link waves-effect waves-dark sidebar-link"
+            href="index.php?act=list_feedback"
             aria-expanded="false"
             ><i class="fas fa-envelope"></i
             ><span class="hide-menu">feedback</span></a
           >
-          <ul aria-expanded="false" class="collapse first-level">
-            <li class="sidebar-item">
-              <a href="index.php?act=list_feedback" class="sidebar-link"
-                ><i class="far fa-edit"></i
-                ><span class="hide-menu">feedback</span></a
-              >
-            </li>
-            <li class="sidebar-item">
-              <a href="index.php?act=list_question_feedback" class="sidebar-link"
-                ><i class="far fa-edit"></i
-                ><span class="hide-menu">câu hỏi feedback</span></a
-              >
-            </li>
-          </ul>
         </li>
         <li class="sidebar-item">
           <a

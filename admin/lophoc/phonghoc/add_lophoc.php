@@ -9,13 +9,13 @@
                         <div class="form-group row">
                             <label for="fname" class="col-sm-3 text-right control-label col-form-label">phòng</label>
                             <div class="col-sm-9">
-                                <input name="phong" type="text" class="form-control" id="fname">
+                                <input name="phong" type="text" class="form-control" id="fname" required>
                             </div>
                         </div>    
                         <div class="form-group row">
                             <label for="fname" class="col-sm-3 text-right control-label col-form-label">mô tả lớp học</label>
                             <div class="col-sm-9">
-                                <input name="mota" type="text" class="form-control" id="fname">
+                                <input name="mota" type="text" class="form-control" id="fname" required>
                             </div>
                         </div>
                         <div class="form-group row">

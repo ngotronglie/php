@@ -15,27 +15,12 @@
         </li>
         <li class="sidebar-item">
           <a
-            class="sidebar-link has-arrow waves-effect waves-dark"
-            href="javascript:void(0)"
+            class="sidebar-link waves-effect waves-dark sidebar-link"
+            href="index.php?act=list_sinhvien"
             aria-expanded="false"
             ><i class="fas fa-users"></i
-            ><span class="hide-menu">sinh viên</span></a
+            ><span class="hide-menu">Sinh viên</span></a
           >
-          <ul aria-expanded="false" class="collapse first-level">
-            <li class="sidebar-item">
-              <a href="index.php?act=list_sinhvien" class="sidebar-link"
-                ><i class="far fa-edit"></i
-                ><span class="hide-menu">Lớp học 1</span></a
-              >
-            </li>
-            <li class="sidebar-item">
-              <a href="index.php?act=list_sinhvien" class="sidebar-link"
-                ><i class="far fa-edit"></i
-                ><span class="hide-menu">Lớp học 2</span></a
-              >
-            </li>
-
-          </ul>
         </li>
         <li class="sidebar-item">
           <a

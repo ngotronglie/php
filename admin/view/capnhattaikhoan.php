@@ -11,6 +11,7 @@
             placeholder="Enter Username here"
             value="<?php echo $taikhoan['user']?>"
             name="user"
+            required 
           />
         </div>
         <div class="form-group">
@@ -22,6 +23,7 @@
             placeholder="Enter Password here "
             value="<?php echo $taikhoan['pass']?>"
             name="password"
+            required
           />
         </div>
         <div class="form-group">
@@ -33,6 +35,7 @@
             placeholder="Enter email here "
             name="email"
             value="<?php echo $taikhoan['email'] ?>"
+            required
           />
         </div>
         <div class="form-group">
@@ -44,6 +47,7 @@
             placeholder="Enter address here"
             name="address"
             value="<?php echo $taikhoan['address']?>"
+            required
           />
         </div>
         <div class="form-group">
@@ -55,6 +59,7 @@
             placeholder="Enter number phone here"
             name="phone"
             value="<?php echo $taikhoan['tel']?>"
+            required
           />
         </div>
         <div class="form-group">
@@ -67,6 +72,7 @@
             placeholder="Enter mô tả here"
             name="mota"
             value="<?php echo $taikhoan['mota']?>"
+            required
           />
         </div>
         <button onclick="return confirm('Sau khi cập nhật bạn cần đăng nhập lại!')" name="capnhat" type="submit" class="btn btn-warning">cập nhật</button>

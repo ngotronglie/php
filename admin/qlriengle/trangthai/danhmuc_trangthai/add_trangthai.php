@@ -8,7 +8,7 @@
                         <div class="form-group row">
                             <label for="fname" class="col-sm-3 text-right control-label col-form-label">danh mục trạng thái</label>
                             <div class="col-sm-9">
-                                <input type="text" name='name_danhmuc_trangthai' class="form-control" id="fname" placeholder="thêm danh mục khóa học">
+                                <input type="text" name='name_danhmuc_trangthai' class="form-control" required id="fname" placeholder="thêm danh mục khóa học">
                             </div>
                         </div> 
                     </div>

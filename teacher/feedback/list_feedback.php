@@ -23,8 +23,8 @@
                                     <td scope="col"><?php echo $key + 1?></td>
                                     <td scope="col"><?php echo $value['name_khoahoc']?></td>
                                     <td scope="col"><?php echo $value['traloi_sinhvien']?></td>
-                                    <td scope="col"><?php echo date('d/m/Y', strtotime($value['ngaykhaigiang']))?></td>
-                                    <td scope="col"><?php echo date('d/m/Y', strtotime($value['ngaybegiang']))?></td>
+                                    <td scope="col"><?php echo $value['ngaykhaigiang']?></td>
+                                    <td scope="col"><?php echo $value['ngaybegiang']?></td>
                                 </tr>
                                 <?php endforeach;?>
                             </tbody>

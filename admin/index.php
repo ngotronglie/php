@@ -16,6 +16,7 @@
   include '../model/diem.php';
   include '../model/dangki_khoahoc.php';
   include '../model/hoadon.php';
+  include '../model/feedback.php';
   session_start();
 ?>
 
@@ -49,6 +50,7 @@
           $danhsach_duyetlop = danhsach_duyetlop();
           $danhsach_duyetlop_daduyet = danhsach_duyetlop_daduyet();
           $danhsach_hoadon = list_hoadon();
+          $danhsach_feedback = list_feedback_admin();
           // thống kê
           $tongdanhmuckhoahoc = tong_danhmuckhoahoc();
           $tongkhoahoc = tongkhoahoc();
@@ -153,8 +155,6 @@
 
               // -------- tai khoan --------------------------------
               case 'list_taikhoan':{
-    
-                
                 include 'taikhoan/list_taikhoan.php';
                 break;
               }
@@ -342,10 +342,16 @@
               }
 //            ------------------------------- feedback ---------------------------------
               case 'list_feedback':{
-                include 'qlriengle/feedback/list_feedback.php';
+                include 'feedback/list_feedback.php';
                 break;
               }
-
+              case 'delete_feedback':{
+                if(isset($_GET['id_feedback']) && $_GET['id_feedback'] > 0){
+                  delete_feedback($_GET['id_feedback']);
+                  header('location: index.php?act=list_feedback');
+                }
+                break;
+              }
               // list duyệt --------------------------------
               case 'list_chuaduyet':{
                 if(isset($_GET['id_dangki']) && $_GET['id_dangki'] != ""){

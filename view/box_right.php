@@ -36,7 +36,7 @@
 
         <!-- Top 10 -->
         <div class="card mt-5" style="width: 18rem">
-            <div class="card-header">Top 10 SP có nhiều view nhất</div>
+            <div class="card-header">Top 10 khóa học có nhiều view nhất</div>
                 <?php foreach($top10_view as $value):?>
                 <div class="list-group">
                     <a

@@ -9,7 +9,7 @@
                         <input type="hidden" name="id_dm_tt" value="<?php echo $dm_trangthai['iddm_trangthai']?>">
                             <label for="fname" class="col-sm-3 text-right control-label col-form-label">danh mục trạng thái</label>
                             <div class="col-sm-9">
-                                <input type="text" name="name_dm_tt" class="form-control" id="fname" value="<?php echo $dm_trangthai['namedm_trangthai'] ?>">
+                                <input type="text" name="name_dm_tt" class="form-control" id="fname" required value="<?php echo $dm_trangthai['namedm_trangthai'] ?>">
                             </div>
                         </div>    
                     </div>

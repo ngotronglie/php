@@ -139,6 +139,16 @@
         $result = pdo_query_one($sql);
         return $result;
     }
+
+
+    function danhsach_loptheo_giangvien($id_taikhoan){
+        $sql = "SELECT * FROM lophoc INNER JOIN khoahoc on lophoc.id_khoahoc = khoahoc.id_khoahoc
+        INNER JOIN phonghoc on phonghoc.id_phonghoc = lophoc.id_phonghoc
+        INNER JOIN gio_hoc on gio_hoc.id_giohoc = phonghoc.id_giohoc
+        WHERE khoahoc.id_taikhoan = $id_taikhoan";
+        $result = pdo_query($sql);
+        return $result;
+    }
     
     function List_hocvien($id_gv){
         $sql = "SELECT * FROM `dangki_khoahoc` INNER JOIN taikhoan on dangki_khoahoc.id_taikhoan = taikhoan.id_taikhoan 
@@ -150,6 +160,8 @@
         $result = pdo_query($sql);
         return $result;
     }
+
+
 
     function diem($diem){
         if($diem == 0){

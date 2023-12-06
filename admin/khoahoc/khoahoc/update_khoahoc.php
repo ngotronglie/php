@@ -9,7 +9,7 @@
                         <div class="form-group row">
                             <label for="fname" class="col-sm-3 text-right control-label col-form-label">Tên khóa học</label>
                             <div class="col-sm-9">
-                                <input name="tenkhoahoc" type="text" class="form-control" id="fname" value="<?php echo $khoahoc_ud['name_khoahoc']?>">
+                                <input name="tenkhoahoc" required type="text" class="form-control" id="fname" value="<?php echo $khoahoc_ud['name_khoahoc']?>">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -22,13 +22,13 @@
                         <div class="form-group row">
                             <label for="lname" class="col-sm-3 text-right control-label col-form-label">nội dung khóa học</label>
                             <div class="col-sm-9">
-                                <input name="noidung" type="text" class="form-control" id="lname" value="<?php echo $khoahoc_ud['noidung_khoahoc']?>">
+                                <input name="noidung" required type="text" class="form-control" id="lname" value="<?php echo $khoahoc_ud['noidung_khoahoc']?>">
                             </div>
                         </div>    
                         <div class="form-group row">
                             <label for="lname" class="col-sm-3 text-right control-label col-form-label">giá khóa học</label>
                             <div class="col-sm-9">
-                                <input name="price" type="number" class="form-control" id="lname" value="<?php echo $khoahoc_ud['price_khoahoc']?>">
+                                <input name="price" required type="number" class="form-control" id="lname" value="<?php echo $khoahoc_ud['price_khoahoc']?>">
                             </div>
                         </div>
                         <div class="form-group row">

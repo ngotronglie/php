@@ -14,12 +14,12 @@
     <?php include 'view/head.php'?>
 
   <body>
-    <!-- <div class="preloader">
+    <div class="preloader">
       <div class="lds-ripple">
         <div class="lds-pos"></div>
         <div class="lds-pos"></div>
       </div>
-    </div> -->
+    </div>
     
     <div id="main-wrapper">
     <?php include 'view/header.php'?>
@@ -32,17 +32,12 @@
             switch ($act) {
               // ------------------------ lop hoc ---------------------------------
               case 'list_lophoc':{
-                include 'qllop/list_lophoc.php';
-                break;
-              }
-
-              case 'add_lophoc':{
-                include 'qllop/add_lophoc.php';
-                break;
-              }
-
-              case 'update_lophoc':{
-                include 'qllop/update_lophoc.php';
+                if($_SESSION){
+                  $user = $_SESSION['user'];
+                  $id_taikhoan = search_id_taikhoan($user);
+                }
+                $danhsachlophoc_giangvien = danhsach_loptheo_giangvien($id_taikhoan);
+                include 'lophoc/list_lophoc.php';
                 break;
               }
 //            ------------------------------- feedback ---------------------------------
