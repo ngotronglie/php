@@ -68,6 +68,11 @@
           $tongluotdangkigiangvien = tongluotdangkigiangvien();
           $taikhoanlophocchuaduyet = taikhoanlophocchuaduyet();
           $taikhoanlophocdaduyet = taikhoanlophocdaduyet();
+          // thong ke đầu
+          $tongdoanhthu = tongdoanhthu();
+          $tonghoadon = tonghoadon();
+          $tongluot_dangki = tongluot_dangki();
+          $tongluot_xem = tongluot_xem();
           if(isset($_GET['act']) && $_GET['act']!= ""){
             $act = $_GET['act'];
             switch ($act) {

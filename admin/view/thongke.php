@@ -1,3 +1,42 @@
+<div class="row m-3">
+    <!-- Column -->
+    <div class="col-md-6 col-lg-3">
+        <div class="card card-hover">
+            <div class="box bg-cyan text-center">
+                <h3 class="font-light font-bold text-white"><?php echo number_format($tongdoanhthu['gia'])?> vnđ</h3>
+                <h6 class="text-white">Tổng doanh thu</h6>
+            </div>
+        </div>
+    </div>
+    <!-- Column -->
+    <div class="col-md-6 col-lg-3">
+        <div class="card card-hover">
+            <div class="box bg-success text-center">
+                <h3 class="font-light font-bold text-white"><?php echo $tonghoadon['COUNT(id_hoadon)']?></h3>
+                <h6 class="text-white">Số hóa đơn</h6>
+            </div>
+        </div>
+    </div>
+        <!-- Column -->
+    <div class="col-md-6 col-lg-3">
+        <div class="card card-hover">
+            <div class="box bg-warning text-center">
+                <h3 class="font-light font-bold text-white"><?php echo $tongluot_dangki['tong_dangki']?></h3>
+                <h6 class="text-white">Tổng lượt đăng kí</h6>
+            </div>
+        </div>
+    </div>
+    <!-- Column -->
+    <div class="col-md-6 col-lg-3">
+        <div class="card card-hover">
+            <div class="box bg-danger text-center">
+                <h3 class="font-light font-bold text-white"><?php echo $tongluot_xem['tong_xem']?></h3>
+                <h6 class="text-white">Lượt xem trên mọi khóa học</h6>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="container-fluild">
     <canvas id="myChart"></canvas>
     <canvas id="myChart2"></canvas>

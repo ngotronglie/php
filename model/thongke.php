@@ -83,7 +83,29 @@
         $result = pdo_query_one($sql);
         return $result;
     }
-    
 
+    // thống kê đầu tiên 
+
+    function tongdoanhthu(){
+        $sql = "SELECT SUM(kh.price_khoahoc - (kh.price_khoahoc * giamgia / 100)) AS gia
+                FROM hoadon hd
+                JOIN lophoc lh ON hd.id_lophoc = lh.id_lophoc
+                JOIN khoahoc kh ON lh.id_khoahoc = kh.id_khoahoc;";
+        $result = pdo_query_one($sql);
+        return $result;
+    }
+    
+    function tongluot_dangki(){
+        $sql = "SELECT SUM(kh.luot_dangki) AS tong_dangki
+        FROM khoahoc kh";
+        $result = pdo_query_one($sql);
+        return $result;
+    }
+    function tongluot_xem(){
+        $sql = "SELECT SUM(kh.luot_xem) AS tong_xem
+        FROM khoahoc kh";
+        $result = pdo_query_one($sql);
+        return $result;
+    }
 
 ?>

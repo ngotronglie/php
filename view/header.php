@@ -6,7 +6,7 @@
         <a href="index.php#khoahoc" class="h5 m-3">Khóa học</a>
         <a href="index.php?act=hoadon" class="h5 m-3">Hóa đơn</a>
         <a href="index.php?act=list_giangvien" class="h5 m-3">Thông tin giảng viên</a>
-        <a href="index.php?act=tuyendung" class="h5 m-3">Tuyển dụng giảng viên</a>
+        <a href="index.php?act=tuyendung" class="h5 m-3">Tuyển dụng</a>
         
         </div>
         <div>
