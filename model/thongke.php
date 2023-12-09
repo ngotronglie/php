@@ -107,5 +107,32 @@
         $result = pdo_query_one($sql);
         return $result;
     }
+    // giảng viên
+
+    function tong_lophoc_giangvien($id){
+        $sql = "SELECT COUNT(*) AS TongKhoaHoc
+        FROM khoahoc INNER JOIN lophoc on khoahoc.id_khoahoc = lophoc.id_khoahoc
+        WHERE id_taikhoan = $id;";
+        $result = pdo_query_one($sql);
+        return $result;
+    }
+    function tong_hocvien($id){
+        $sql = "SELECT COUNT(dangki_khoahoc.id_taikhoan) AS TongDangKy
+        FROM khoahoc
+        inner JOIN lophoc ON khoahoc.id_khoahoc = lophoc.id_khoahoc
+        INNER JOIN dangki_khoahoc ON lophoc.id_lophoc = dangki_khoahoc.id_lophoc
+        WHERE khoahoc.id_taikhoan = $id and dangki_khoahoc.role_duyet = 1";
+        $result = pdo_query_one($sql);
+        return $result;
+    }
+    function tong_feedback($id){
+        $sql = "SELECT COUNT(feedback.traloi_sinhvien) AS SoLuongTraloi
+        FROM khoahoc
+        INNER JOIN lophoc ON khoahoc.id_khoahoc = lophoc.id_khoahoc
+        INNER JOIN feedback ON lophoc.id_lophoc = feedback.id_lophoc
+        WHERE khoahoc.id_taikhoan = $id";
+        $result = pdo_query_one($sql);
+        return $result;
+    }
 
 ?>

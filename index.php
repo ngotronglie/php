@@ -12,7 +12,6 @@
   include './model/phonghoc.php';
   include './model/diem.php';
   include './model/feedback.php';
-  // include '';
 ?>
 
 
@@ -20,12 +19,12 @@
 <html dir="ltr" lang="en">
   <?php include 'view/head.php'?>
   <body>
-    <!-- <div class="preloader">
+    <div class="preloader">
       <div class="lds-ripple">
         <div class="lds-pos"></div>
         <div class="lds-pos"></div>
       </div>
-    </div> -->
+    </div>
     <div class="container-fluid">
       <?php include 'view/header.php'?>
       
@@ -140,14 +139,16 @@
                 $id_khoahoc = $_POST['id_khoahoc'];
                 $noidung = $_POST['noidung'];
                 insert_binhluan($id_khoahoc, $noidung, $id_taikhoan);
-              } 
+              } // gửi bình luận
+
+
               if(isset($_GET['id__khoahoc']) && $_GET['id__khoahoc']!=""){
-                $khoahoc = getone_chitiet_khoahoc($_GET['id__khoahoc']);
-                tangluotxem($_GET['id__khoahoc']);
+                $khoahoc = getone_chitiet_khoahoc($_GET['id__khoahoc']); // trả về 1 khoas học 
+                tangluotxem($_GET['id__khoahoc']); // tăng lượt xem 
                 $khoahoc_cungloai = khoahoc_cungloai($_GET['id__khoahoc']);
                 $binhluan = load_binhluan($_GET['id__khoahoc']);
               }
-              $list_lophoc_cung_name = list_lophoc_cung_name($khoahoc['name_khoahoc']);
+              $list_lophoc_cung_name = list_lophoc_cung_name($khoahoc['name_khoahoc']); // lớp học cùng tên 
               // $binhluan = load_binhluan($_GET['id__khoahoc']);
              
               include 'view/chitiet_khoahoc.php';
@@ -191,9 +192,9 @@
 
             case 'lop_dadangki':{
               if($_SESSION){
-                $id_taikhoan = search_id_taikhoan($_SESSION['user']);
-                $lopda_dangki = list_lopda_dangki($id_taikhoan);
-                $lopda_dangki_duyet = list_lopda_dangki_duyet($id_taikhoan);
+                $id_taikhoan = search_id_taikhoan($_SESSION['user']); // tìm kiếm cái id tài khoản của session
+                $lopda_dangki = list_lopda_dangki($id_taikhoan); // danh sach lớp đã đăng kí
+                $lopda_dangki_duyet = list_lopda_dangki_duyet($id_taikhoan); // danh sách lớp đã duyệt
               }else{
                 header('location: index.php?act=login');
               }

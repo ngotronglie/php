@@ -7,8 +7,8 @@
         pdo_execute($sql);
     }
     function check_quantri($user){
-        $sql = "SELECT * FROM taikhoan where user = '$user'";
-        $taikhoan = pdo_query_one($sql);
+        $sql = "SELECT * FROM taikhoan where user = '$user'";  // lấy cái tài khoản mà là tài khoản đang đăng nhập vào hệ thống 
+        $taikhoan = pdo_query_one($sql); // trả về 1 giá trị  
         if($taikhoan!= false){
             if($taikhoan['role'] == 1){
                 echo '<a style="margin-left: 5px" class="btn btn-orange" href="./admin/index.php">quay lại quản trị</a>';
@@ -245,6 +245,11 @@
     }
     function getone_name_taikhoan($user_name){
         $sql = "SELECT taikhoan.id_taikhoan FROM `dangki_khoahoc` INNER JOIN taikhoan on taikhoan.id_taikhoan = dangki_khoahoc.id_taikhoan WHERE user = '$user_name'";
+        $result = pdo_query_one($sql);
+        return $result;
+    }
+    function lay_id_taikhoan($username){
+        $sql = "SELECT taikhoan.id_taikhoan FROM `taikhoan` WHERE taikhoan.user = '$username'";
         $result = pdo_query_one($sql);
         return $result;
     }

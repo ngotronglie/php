@@ -7,6 +7,7 @@
   include '../model/feedback.php';
   include '../model/taikhoan/taikhoan.php';
   include '../model/diemtongket.php';
+  include '../model/thongke.php';
 ?>
 
 <!DOCTYPE html>
@@ -26,6 +27,13 @@
     <?php include 'view/aside_menudoc.php'?>
     <div class="page-wrapper">
         <?php
+          if($_SESSION){
+             $id_taikhoan = lay_id_taikhoan($_SESSION['user']);
+             $tong_lophoc_giangvien = tong_lophoc_giangvien($id_taikhoan['id_taikhoan']);
+             $tong_hocvien = tong_hocvien($id_taikhoan['id_taikhoan']);
+             $tong_feedback = tong_feedback($id_taikhoan['id_taikhoan']);
+          
+          }
 
           if(isset($_GET['act']) && $_GET['act']!= ""){
             $act = $_GET['act'];
@@ -105,9 +113,7 @@
           }else{
             include 'view/thongke.php';
           }
-        
         ?>
-        
         <?php include 'view/footer.php';?>
     </div>
     <?php include 'view/script.php'?>

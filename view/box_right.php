@@ -3,7 +3,8 @@
         <div class="card" style="width: 18rem">
             <div class="card-header">Tìm kiếm</div>
             <div class="card-body">
-            <form action="index.php?act=search_khoahoc" method="POST">
+            <form action="index.php?act=search_khoahoc" method="POST"> 
+                <!-- method = post , gửi đến index.php  có act = search_khoahoc -->
                 <input
                 type="text"
                 class="form-control"

@@ -4,7 +4,7 @@
                                       INNER JOIN danhmuc_khoahoc on khoahoc.iddm_khoahoc = danhmuc_khoahoc.iddm_khoahoc order by id_khoahoc desc";
         $result = pdo_query($sql);
         return $result;
-    }
+    } // lấy danh sách khóa học
 
 
     function add_khoahoc($iddmkh, $photo, $name_kh, $noidung_kh, $gia,$idtk,$giamgia){

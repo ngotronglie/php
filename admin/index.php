@@ -24,12 +24,12 @@
 <html dir="ltr" lang="en">
     <?php include 'view/head.php'?>
   <body>
-    <!-- <div class="preloader">
+    <div class="preloader">
       <div class="lds-ripple">
         <div class="lds-pos"></div>
         <div class="lds-pos"></div>
       </div>
-    </div> -->
+    </div>
     <div id="main-wrapper">
     <?php include 'view/header.php';?>
     <?php include 'view/aside_menudoc.php';?>
